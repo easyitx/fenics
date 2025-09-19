@@ -25,6 +25,7 @@ const config: Config = {
             // Цвета для UI компонентов (кнопки, инпуты и т.п.)
             colors: {
                 // Основные цвета из CSS переменных
+                primary: 'var(--color-primary)',
                 background: 'var(--color-background)',
                 surface: {
                     DEFAULT: 'var(--color-surface)',

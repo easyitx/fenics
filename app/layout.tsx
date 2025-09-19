@@ -1,8 +1,10 @@
 import React from "react";
 import type {Metadata} from 'next';
 import {FontsProvider} from './providers/fonts-provider';
-import {proximaNova} from '@/src/shared/lib/fonts';
+import {proximaNova} from '@/shared/lib/fonts';
+import {Header} from '@/widgets';
 import './globals.css';
+import '@/shared/styles/index.scss';
 
 export const metadata: Metadata = {
     title: 'My App',
@@ -14,9 +16,12 @@ export default function RootLayout({ children }: {
 }) {
     return (
         <html lang="ru" className={proximaNova.variable}>
-            <body className="font-sans antialiased">
+            <body>
                 <FontsProvider>
-                    {children}
+                    <Header />
+                    <main>
+                        {children}
+                    </main>
                 </FontsProvider>
             </body>
         </html>

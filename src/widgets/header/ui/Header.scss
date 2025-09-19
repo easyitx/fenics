@@ -1,0 +1,58 @@
+.header {
+  height: 67px;
+  padding: 20px 107px;
+  padding-top: 40px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    max-width: 100%;
+    gap: 40px;
+  }
+  
+  &__logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    
+    img {
+      height: auto;
+      width: auto;
+    }
+  }
+
+  &__navigation {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
+  }
+}
+
+// Адаптивность для мобильных устройств
+@media (max-width: 768px) {
+  .header {
+    padding: 20px 24px;
+    
+    &__navigation {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 20px 16px;
+  }
+}

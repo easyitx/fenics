@@ -2,5 +2,126 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Импорт стилей shared слоя */
-@import '../src/shared/styles/index.scss';
+/* Цветовые переменные для темной темы */
+:root {
+  /* Основные цвета приложения */
+  --color-primary: #EB2BAC;
+  --color-background: #0F0A0D;
+  --color-surface: #1A1518;
+  --color-surface-secondary: #252025;
+  --color-surface-tertiary: #302B30;
+  
+  /* Текстовые цвета */
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #B8B3B8;
+  --color-text-tertiary: #8A858A;
+  --color-text-disabled: #5C575C;
+  
+  /* Акцентные цвета */
+  --color-accent-primary: #6366F1;
+  --color-accent-secondary: #8B5CF6;
+  --color-accent-tertiary: #EC4899;
+  
+  /* Состояния */
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  --color-info: #3B82F6;
+  
+  /* Границы */
+  --color-border-primary: #3A353A;
+  --color-border-secondary: #2A252A;
+  --color-border-focus: var(--color-accent-primary);
+  
+  /* Тени */
+  --shadow-sm: 0 1px 2px 0 rgba(15, 10, 13, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(15, 10, 13, 0.1), 0 2px 4px -1px rgba(15, 10, 13, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(15, 10, 13, 0.1), 0 4px 6px -2px rgba(15, 10, 13, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(15, 10, 13, 0.1), 0 10px 10px -5px rgba(15, 10, 13, 0.04);
+  
+  /* Переходы */
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 250ms ease-in-out;
+  --transition-slow: 350ms ease-in-out;
+  
+  /* Радиусы скругления */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+  
+  /* Размеры */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+}
+
+/* Сброс стилей */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-proxima-nova), system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  min-height: 100%;
+  position: relative;
+}
+
+/* Убираем стандартные стили для списков */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Убираем стандартные стили для ссылок */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Убираем стандартные стили для кнопок */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Убираем стандартные стили для инпутов */
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Убираем outline для всех элементов, но добавляем focus-visible */
+*:focus {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}

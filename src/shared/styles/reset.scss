@@ -1,4 +1,4 @@
-/* Сброс стилей */
+// Сброс стилей
 *,
 *::before,
 *::after {
@@ -22,21 +22,36 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   min-height: 100%;
+  position: relative;
+
+  // Добавляем текстурную рябь для фона
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='12' numOctaves='6' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: -1;
+  }
 }
 
-/* Убираем стандартные стили для списков */
+// Убираем стандартные стили для списков
 ul,
 ol {
   list-style: none;
 }
 
-/* Убираем стандартные стили для ссылок */
+// Убираем стандартные стили для ссылок
 a {
   color: inherit;
   text-decoration: none;
 }
 
-/* Убираем стандартные стили для кнопок */
+// Убираем стандартные стили для кнопок
 button {
   background: none;
   border: none;
@@ -44,7 +59,7 @@ button {
   font-family: inherit;
 }
 
-/* Убираем стандартные стили для инпутов */
+// Убираем стандартные стили для инпутов
 input,
 textarea,
 select {
@@ -52,7 +67,7 @@ select {
   font-size: inherit;
 }
 
-/* Убираем outline для всех элементов, но добавляем focus-visible */
+// Убираем outline для всех элементов, но добавляем focus-visible
 *:focus {
   outline: none;
 }
