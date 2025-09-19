@@ -1,0 +1,137 @@
+@import './variables.scss';
+
+// Сброс стилей и базовые настройки
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-proxima-nova), system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+// Базовые классы для контейнеров
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  
+  @media (min-width: 768px) {
+    padding: 0 var(--spacing-lg);
+  }
+  
+  @media (min-width: 1024px) {
+    padding: 0 var(--spacing-xl);
+  }
+}
+
+.container-fluid {
+  width: 100%;
+  padding: 0 var(--spacing-md);
+}
+
+// Базовые классы для сетки
+.grid {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.flex {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// Базовые классы для поверхностей
+.surface {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-secondary);
+}
+
+.surface-secondary {
+  background-color: var(--color-surface-secondary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-secondary);
+}
+
+.surface-tertiary {
+  background-color: var(--color-surface-tertiary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-primary);
+}
+
+// Утилитарные классы для отступов
+.p-xs { padding: var(--spacing-xs); }
+.p-sm { padding: var(--spacing-sm); }
+.p-md { padding: var(--spacing-md); }
+.p-lg { padding: var(--spacing-lg); }
+.p-xl { padding: var(--spacing-xl); }
+
+.m-xs { margin: var(--spacing-xs); }
+.m-sm { margin: var(--spacing-sm); }
+.m-md { margin: var(--spacing-md); }
+.m-lg { margin: var(--spacing-lg); }
+.m-xl { margin: var(--spacing-xl); }
+
+// Утилитарные классы для текста
+.text-primary { color: var(--color-text-primary); }
+.text-secondary { color: var(--color-text-secondary); }
+.text-tertiary { color: var(--color-text-tertiary); }
+.text-disabled { color: var(--color-text-disabled); }
+
+.text-success { color: var(--color-success); }
+.text-warning { color: var(--color-warning); }
+.text-error { color: var(--color-error); }
+.text-info { color: var(--color-info); }
+
+// Утилитарные классы для фона
+.bg-surface { background-color: var(--color-surface); }
+.bg-surface-secondary { background-color: var(--color-surface-secondary); }
+.bg-surface-tertiary { background-color: var(--color-surface-tertiary); }
+
+.bg-accent-primary { background-color: var(--color-accent-primary); }
+.bg-accent-secondary { background-color: var(--color-accent-secondary); }
+.bg-accent-tertiary { background-color: var(--color-accent-tertiary); }
+
+// Утилитарные классы для переходов
+.transition-fast { transition: all var(--transition-fast); }
+.transition-normal { transition: all var(--transition-normal); }
+.transition-slow { transition: all var(--transition-slow); }
+
+// Утилитарные классы для теней
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow-md { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+.shadow-xl { box-shadow: var(--shadow-xl); }
+
+// Утилитарные классы для скругления
+.rounded-sm { border-radius: var(--radius-sm); }
+.rounded-md { border-radius: var(--radius-md); }
+.rounded-lg { border-radius: var(--radius-lg); }
+.rounded-xl { border-radius: var(--radius-xl); }
+.rounded-full { border-radius: var(--radius-full); }

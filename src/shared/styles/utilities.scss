@@ -1,0 +1,149 @@
+/* Утилитарные классы */
+
+/* Отступы */
+.p-xs { padding: var(--spacing-xs); }
+.p-sm { padding: var(--spacing-sm); }
+.p-md { padding: var(--spacing-md); }
+.p-lg { padding: var(--spacing-lg); }
+.p-xl { padding: var(--spacing-xl); }
+.p-2xl { padding: var(--spacing-2xl); }
+.p-3xl { padding: var(--spacing-3xl); }
+
+.px-xs { padding-left: var(--spacing-xs); padding-right: var(--spacing-xs); }
+.px-sm { padding-left: var(--spacing-sm); padding-right: var(--spacing-sm); }
+.px-md { padding-left: var(--spacing-md); padding-right: var(--spacing-md); }
+.px-lg { padding-left: var(--spacing-lg); padding-right: var(--spacing-lg); }
+.px-xl { padding-left: var(--spacing-xl); padding-right: var(--spacing-xl); }
+
+.py-xs { padding-top: var(--spacing-xs); padding-bottom: var(--spacing-xs); }
+.py-sm { padding-top: var(--spacing-sm); padding-bottom: var(--spacing-sm); }
+.py-md { padding-top: var(--spacing-md); padding-bottom: var(--spacing-md); }
+.py-lg { padding-top: var(--spacing-lg); padding-bottom: var(--spacing-lg); }
+.py-xl { padding-top: var(--spacing-xl); padding-bottom: var(--spacing-xl); }
+
+.m-xs { margin: var(--spacing-xs); }
+.m-sm { margin: var(--spacing-sm); }
+.m-md { margin: var(--spacing-md); }
+.m-lg { margin: var(--spacing-lg); }
+.m-xl { margin: var(--spacing-xl); }
+.m-2xl { margin: var(--spacing-2xl); }
+.m-3xl { margin: var(--spacing-3xl); }
+
+.mx-xs { margin-left: var(--spacing-xs); margin-right: var(--spacing-xs); }
+.mx-sm { margin-left: var(--spacing-sm); margin-right: var(--spacing-sm); }
+.mx-md { margin-left: var(--spacing-md); margin-right: var(--spacing-md); }
+.mx-lg { margin-left: var(--spacing-lg); margin-right: var(--spacing-lg); }
+.mx-xl { margin-left: var(--spacing-xl); margin-right: var(--spacing-xl); }
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+.my-xs { margin-top: var(--spacing-xs); margin-bottom: var(--spacing-xs); }
+.my-sm { margin-top: var(--spacing-sm); margin-bottom: var(--spacing-sm); }
+.my-md { margin-top: var(--spacing-md); margin-bottom: var(--spacing-md); }
+.my-lg { margin-top: var(--spacing-lg); margin-bottom: var(--spacing-lg); }
+.my-xl { margin-top: var(--spacing-xl); margin-bottom: var(--spacing-xl); }
+
+/* Цвета текста */
+.text-primary { color: var(--color-text-primary); }
+.text-secondary { color: var(--color-text-secondary); }
+.text-tertiary { color: var(--color-text-tertiary); }
+.text-disabled { color: var(--color-text-disabled); }
+
+.text-success { color: var(--color-success); }
+.text-warning { color: var(--color-warning); }
+.text-error { color: var(--color-error); }
+.text-info { color: var(--color-info); }
+
+.text-accent-primary { color: var(--color-accent-primary); }
+.text-accent-secondary { color: var(--color-accent-secondary); }
+.text-accent-tertiary { color: var(--color-accent-tertiary); }
+
+/* Цвета фона */
+.bg-surface { background-color: var(--color-surface); }
+.bg-surface-secondary { background-color: var(--color-surface-secondary); }
+.bg-surface-tertiary { background-color: var(--color-surface-tertiary); }
+
+.bg-accent-primary { background-color: var(--color-accent-primary); }
+.bg-accent-secondary { background-color: var(--color-accent-secondary); }
+.bg-accent-tertiary { background-color: var(--color-accent-tertiary); }
+
+.bg-success { background-color: var(--color-success); }
+.bg-warning { background-color: var(--color-warning); }
+.bg-error { background-color: var(--color-error); }
+.bg-info { background-color: var(--color-info); }
+
+/* Переходы */
+.transition-fast { transition: all var(--transition-fast); }
+.transition-normal { transition: all var(--transition-normal); }
+.transition-slow { transition: all var(--transition-slow); }
+
+/* Тени */
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow-md { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+.shadow-xl { box-shadow: var(--shadow-xl); }
+
+/* Скругления */
+.rounded-sm { border-radius: var(--radius-sm); }
+.rounded-md { border-radius: var(--radius-md); }
+.rounded-lg { border-radius: var(--radius-lg); }
+.rounded-xl { border-radius: var(--radius-xl); }
+.rounded-full { border-radius: var(--radius-full); }
+
+/* Границы */
+.border { border: 1px solid var(--color-border-secondary); }
+.border-primary { border: 1px solid var(--color-border-primary); }
+.border-focus { border: 1px solid var(--color-border-focus); }
+
+.border-t { border-top: 1px solid var(--color-border-secondary); }
+.border-b { border-bottom: 1px solid var(--color-border-secondary); }
+.border-l { border-left: 1px solid var(--color-border-secondary); }
+.border-r { border-right: 1px solid var(--color-border-secondary); }
+
+/* Типографика */
+.text-xs { font-size: 0.75rem; line-height: 1rem; }
+.text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+.text-base { font-size: 1rem; line-height: 1.5rem; }
+.text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+.text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+.text-2xl { font-size: 1.5rem; line-height: 2rem; }
+.text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+.text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+
+.font-light { font-weight: 300; }
+.font-normal { font-weight: 400; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+.font-extrabold { font-weight: 800; }
+.font-black { font-weight: 900; }
+
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+/* Позиционирование */
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed { position: fixed; }
+.sticky { position: sticky; }
+
+/* Видимость */
+.hidden { display: none; }
+.block { display: block; }
+.inline { display: inline; }
+.inline-block { display: inline-block; }
+
+/* Overflow */
+.overflow-hidden { overflow: hidden; }
+.overflow-auto { overflow: auto; }
+.overflow-scroll { overflow: scroll; }
+
+/* Курсор */
+.cursor-pointer { cursor: pointer; }
+.cursor-not-allowed { cursor: not-allowed; }
+.cursor-default { cursor: default; }
+
+/* Выделение текста */
+.select-none { user-select: none; }
+.select-text { user-select: text; }
+.select-all { user-select: all; }
