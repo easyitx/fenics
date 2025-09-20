@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Цветовые переменные для темной темы */
+:root {
+    /* Основные цвета приложения */
+    --color-primary: #EB2BAC;
+    --color-background: #0F0A0D;
+    --color-surface: #1A1016;
+    --color-surface-secondary: "";
+    --color-surface-tertiary: "";
+
+    /* Текстовые цвета */
+    --color-text-primary: #EB2BAC;
+    --color-text-secondary: #5A5257;
+    --color-text-tertiary: #FFFFFFAB;
+    --color-text-white: #FFFFFF;
+
+    /* Акцентные цвета */
+    --color-accent-primary: #F5B0DB;
+    --color-accent-secondary: "";
+    --color-accent-tertiary: "";
+
+    /* Состояния */
+    --color-success: "";
+    --color-warning: "";
+    --color-error: "";
+    --color-info: "";
+
+    /* Границы */
+    --color-border-primary: #A40E74;
+    --color-border-secondary: "";
+    --color-border-focus: var(--color-accent-primary);
+
+    /* Переходы */
+    --transition-fast: 150ms ease-in-out;
+    --transition-normal: 250ms ease-in-out;
+    --transition-slow: 350ms ease-in-out;
+
+    /* Радиусы скругления */
+    --radius-sm: 4px;
+    --radius-md: 10px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-full: 9999px;
+
+    /* Размеры */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    --spacing-3xl: 64px;
+}

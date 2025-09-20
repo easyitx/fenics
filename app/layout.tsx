@@ -3,7 +3,7 @@ import type {Metadata} from 'next';
 import {FontsProvider} from './providers/fonts-provider';
 import {proximaNova} from '@/shared/lib/fonts';
 import {Header} from '@/widgets';
-import './globals.css';
+import './globals.scss';
 import '@/shared/styles/index.scss';
 
 export const metadata: Metadata = {
