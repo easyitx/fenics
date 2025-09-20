@@ -29,29 +29,23 @@ const config: Config = {
                 background: 'var(--color-background)',
                 surface: {
                     DEFAULT: 'var(--color-surface)',
-                    secondary: 'var(--color-surface-secondary)',
-                    tertiary: 'var(--color-surface-tertiary)',
+                    // Убираем ссылки на пустые переменные
                 },
                 text: {
                     primary: 'var(--color-text-primary)',
                     secondary: 'var(--color-text-secondary)',
                     tertiary: 'var(--color-text-tertiary)',
-                    disabled: 'var(--color-text-disabled)',
+                    white: 'var(--color-text-white)',
                 },
                 accent: {
                     primary: 'var(--color-accent-primary)',
-                    secondary: 'var(--color-accent-secondary)',
-                    tertiary: 'var(--color-accent-tertiary)',
+                    // Убираем ссылки на пустые переменные
                 },
                 border: {
                     primary: 'var(--color-border-primary)',
-                    secondary: 'var(--color-border-secondary)',
                     focus: 'var(--color-border-focus)',
                 },
-                success: 'var(--color-success)',
-                warning: 'var(--color-warning)',
-                error: 'var(--color-error)',
-                info: 'var(--color-info)',
+                // Убираем ссылки на пустые переменные состояний
             },
             borderRadius: {
                 'sm': 'var(--radius-sm)',
@@ -69,12 +63,7 @@ const config: Config = {
                 '2xl': 'var(--spacing-2xl)',
                 '3xl': 'var(--spacing-3xl)',
             },
-            boxShadow: {
-                'sm': 'var(--shadow-sm)',
-                'md': 'var(--shadow-md)',
-                'lg': 'var(--shadow-lg)',
-                'xl': 'var(--shadow-xl)',
-            },
+            // Убираем ссылки на несуществующие тени
             transitionDuration: {
                 'fast': '150ms',
                 'normal': '250ms',
