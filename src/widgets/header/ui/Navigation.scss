@@ -20,24 +20,13 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 120%;
-    letter-spacing: 0%;
-    padding: 8px 0;
+    letter-spacing: 0;
+    padding: 18px 0;
     transition: all 0.2s ease;
-    color: #666666;
+    color: rgba(90, 82, 87, 1);
 
     &--active {
       color: #FFFFFF;
-      
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        right: 0;
-        height: 2px;
-        background: var(--color-primary);
-        border-radius: 1px;
-      }
     }
 
     &--disabled {

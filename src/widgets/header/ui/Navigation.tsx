@@ -15,10 +15,10 @@ interface NavigationItem {
 }
 
 const navigationItems: NavigationItem[] = [
-  { id: 'cases', label: 'Кейсы', icon: 'cases', href: '/cases' },
-  { id: 'upgrades', label: 'Апгрейды', icon: 'upgrades', href: '/upgrades', disabled: true },
-  { id: 'bonuses', label: 'Бонусы', icon: 'bonuses', href: '/bonuses', disabled: true },
-  { id: 'calendar', label: 'Календарь', icon: 'calendar', href: '/calendar', disabled: true },
+  { id: 'cases', label: 'Кейсы', icon: 'box', href: '/' },
+  { id: 'upgrades', label: 'Апгрейды', icon: 'flash', href: '/upgrades', disabled: false },
+  { id: 'bonuses', label: 'Бонусы', icon: 'magic-star', href: '/bonuses', disabled: false },
+  { id: 'calendar', label: 'Календарь', icon: 'calendar', href: '/calendar', disabled: false },
 ];
 
 export const Navigation: React.FC = () => {
@@ -37,7 +37,7 @@ export const Navigation: React.FC = () => {
                   <Icon 
                     name={item.icon} 
                     color="secondary" 
-                    size="20" 
+                    size="22"
                     className="navigation__icon"
                   />
                   <span className="navigation__text">{item.label}</span>
