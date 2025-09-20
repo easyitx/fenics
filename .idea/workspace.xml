@@ -5,14 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8a3a473-340d-4f4e-a877-68ada18a0971" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/globals.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/styles/base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/base.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/styles/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/styles/reset.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/reset.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Icon/Icon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Icon/Icon.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/header/ui/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/header/ui/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/header/ui/Navigation.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/header/ui/Navigation.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/header/ui/Navigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/header/ui/Navigation.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +98,7 @@
       <workItem from="1758262874618" duration="2041000" />
       <workItem from="1758265346014" duration="1399000" />
       <workItem from="1758279297714" duration="1858000" />
-      <workItem from="1758315844641" duration="7431000" />
+      <workItem from="1758315844641" duration="11373000" />
     </task>
     <servers />
   </component>

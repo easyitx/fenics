@@ -21,7 +21,7 @@ export const Header: React.FC = () => {
                 </div>
 
                 <div className="header__navigation">
-                    {/* <Navigation/> */}
+                     <Navigation/>
                 </div>
 
                 <div className="header__actions">

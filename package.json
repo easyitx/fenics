@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "build:icons": "svg-sprite-generate -d ./public/icons -o ./public/icons/sprite.svg",
+    "dev:icons": "npm run build:icons -- --watch"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -23,7 +25,9 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.5.3",
+    "next-svg-sprite": "^0.3.0",
     "sass": "^1.92.1",
+    "svg-sprite-generator": "^0.0.7",
     "tailwindcss": "^4.1.13",
     "typescript": "^5"
   }
