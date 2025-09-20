@@ -21,13 +21,13 @@ export const Header: React.FC = () => {
                 </div>
 
                 <div className="header__navigation">
-                    <Navigation/>
+                    {/* <Navigation/> */}
                 </div>
 
                 <div className="header__actions">
                     <Button variant="primary">
                         Войти
-                        <Icon name="add-circle" color="primary" size="24"/>
+                        <Icon name="add-circle" color="primary" size={24}/>
                     </Button>
                 </div>
             </div>
