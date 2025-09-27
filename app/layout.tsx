@@ -2,7 +2,7 @@ import React from "react";
 import type {Metadata} from 'next';
 import {FontsProvider} from './providers/fonts-provider';
 import {proximaNova} from '@/shared/lib/fonts';
-import {Header} from '@/widgets';
+import {Banners, Footer, Header} from '@/widgets';
 import './globals.scss';
 import '@/shared/styles/index.scss';
 
@@ -19,9 +19,11 @@ export default function RootLayout({ children }: {
             <body>
                 <FontsProvider>
                     <Header />
+                    <Banners/>
                     <main>
                         {children}
                     </main>
+                    <Footer/>
                 </FontsProvider>
             </body>
         </html>

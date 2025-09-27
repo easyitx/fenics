@@ -1,0 +1,111 @@
+.footer {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  max-width: 1709px;
+  margin: 0 auto;
+  background: var(--color-background);
+  padding: 40px 70px;
+
+  &__main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 1.7rem 1.5rem;
+    border-radius: 1.5rem;
+    background: var(--color-surface);
+    height: 100%;
+    margin-top: 30px;
+
+    .footer__counters {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 3.8rem;
+
+      .counter {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        gap: 1rem;
+        white-space: nowrap;
+
+        .counter__icon {
+          font-size: 2.2rem;
+        }
+
+        .counter__info {
+          display: flex;
+          flex-direction: column;
+          gap: .1rem;
+
+          .counter__value {
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 700;
+            line-height: normal;
+            font-variant: tabular-nums;
+          }
+
+          .counter__title {
+            color: var(--color-text-secondary);
+            font-size: 1rem;
+            font-weight: 500;
+            line-height: normal;
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 0;
+
+    .footer__column_left {
+
+      .footer__date {
+        color: var(--color-accent-primary);
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1rem;
+      }
+
+      .footer__address {
+        color: var(--color-text-secondary);
+        width: 25.9rem;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.1rem;
+        margin-top: 10px;
+      }
+    }
+
+    .footer__links {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-template-rows: min-content;
+      row-gap: 1.2rem;
+      column-gap: 5.4rem;
+      white-space: nowrap;
+
+      .footer__nav-item {
+        color: var(--color-text-secondary);
+        font-size: 16px;
+        font-weight: 600;
+        line-height: normal;
+        -webkit-transition: color .2s ease-out 0s,text-decoration .2s ease-out 0s;
+        -moz-transition: color .2s ease-out 0s,text-decoration .2s ease-out 0s;
+        transition: color .2s ease-out 0s,text-decoration .2s ease-out 0s;
+
+        &:hover {
+          color: var(--color-text-white);
+        }
+      }
+    }
+
+  }
+}

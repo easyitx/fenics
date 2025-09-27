@@ -11,7 +11,6 @@ interface NavigationItem {
   label: string;
   icon: string;
   href: string;
-  disabled?: boolean;
 }
 
 const navigationItems: NavigationItem[] = [
@@ -31,18 +30,18 @@ export const Navigation: React.FC = () => {
           const isActive = pathname === item.href;
 
           return (
-            <li key={item.id} className="navigation__item">
+            <li key={item.id} className="navigationItem">
               <Link
                 href={item.href}
-                className={`navigation__link ${isActive ? 'navigation__link--active' : ''}`}
+                className={`navigationLink ${isActive ? 'navigationLink--active' : ''}`}
               >
                 <Icon
                   name={item.icon}
                   color={isActive ? 'primary' : 'secondary'}
-                  size={20}
-                  className="navigation__icon"
+                  size={21}
+                  className="navigationIcon"
                 />
-                <span className="navigation__text">{item.label}</span>
+                <span className="navigationText">{item.label}</span>
               </Link>
             </li>
           );

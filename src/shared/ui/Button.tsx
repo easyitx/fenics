@@ -14,7 +14,7 @@ export const Button: React.FC<ButtonProps> = ({
 }) => {
     const baseStyles = {
         fontWeight: 700,
-        fontSize: '16px',
+        fontSize: '14px',
         lineHeight: '120%',
         letterSpacing: '0%',
         border: 'none',
@@ -23,7 +23,7 @@ export const Button: React.FC<ButtonProps> = ({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        gap: '10px',
+        gap: '8px',
     };
 
     const variants = {
@@ -36,8 +36,8 @@ export const Button: React.FC<ButtonProps> = ({
 
     const sizes = {
         large: {
-            padding: '22px',
-            borderRadius: '10px',
+            padding: '16px',
+            borderRadius: '8px',
         },
         // Можно добавить другие размеры
     };
