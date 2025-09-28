@@ -1,0 +1,83 @@
+// Breakpoints with more logical names
+$breakpoints: (
+  xs: 360px,
+  // Extra small phones
+  sm: 425px,
+  // Small phones
+  px: 525px,
+  // Phones landscape
+  md: 768px,
+  // Tablets portrait
+  lg: 1024px,
+  // Tablets landscape / small laptops
+  xl: 1920px,
+  // Desktop
+  xxl: 2560px // Large desktop,,
+);
+
+// Media query mixin with improved logic
+@mixin respond-to($size) {
+  @if map-has-key($breakpoints, $size) {
+    @media screen and (min-width: map-get($breakpoints, $size)) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint `#{$size}`. Available breakpoints: #{map-keys($breakpoints)}";
+  }
+}
+
+// Alias mixins for backward compatibility
+@mixin phones-xs {
+  @include respond-to(xs) {
+    @content;
+  }
+}
+@mixin phones {
+  @include respond-to(sm) {
+    @content;
+  }
+}
+@mixin phones-xl {
+  @include respond-to(px) {
+    @content;
+  }
+}
+@mixin tablets {
+  @include respond-to(md) {
+    @content;
+  }
+}
+@mixin laptop {
+  @include respond-to(lg) {
+    @content;
+  }
+}
+@mixin desktop {
+  @include respond-to(xl) {
+    @content;
+  }
+}
+@mixin desktop-xl {
+  @include respond-to(xxl) {
+    @content;
+  }
+}
+
+// Additional useful mixins
+@mixin hover-supported {
+  @media (hover: hover) and (pointer: fine) {
+    @content;
+  }
+}
+
+@mixin dark-mode {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}
+
+@mixin reduced-motion {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+}
