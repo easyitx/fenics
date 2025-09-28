@@ -1,60 +1,44 @@
 .header {
+  position: relative;
   z-index: 100;
+  width: 100%;
+  max-width: 1709px;
+  margin: 0 auto;
   
   &__container {
     display: flex;
     align-items: center;
-    height: 100%;
     max-width: 100%;
-    padding: 40px 108px 20px;
-    gap: 40px;
+    height: 100%;
+    margin-top: 30px;
+    padding: 0 78px;
+
+    .app_logo {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+
+      img {
+        height: 37px;
+        width: 131px;
+        object-fit: contain;
+      }
+    }
+
+    .header_navigation {
+      display: flex;
+      align-items: center;
+      margin-left: 58px;
+    }
+
+    .header_actions {
+      margin-left: auto;
+    }
   }
 
   &__live {
-    position: relative;
-    margin-left: 20px;
-    height: 120px;
-  }
-  
-  &__logo {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-    
-    img {
-      height: auto;
-      width: auto;
-    }
-  }
-
-  &__navigation {
-    display: flex;
-    justify-content: center;
-    margin-left: 80px;
-  }
-
-  &__actions {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-shrink: 0;
-    margin-left: auto;
-  }
-}
-
-// Адаптивность для мобильных устройств
-@media (max-width: 768px) {
-  .header {
-    padding: 20px 24px;
-    
-    &__navigation {
-      display: none;
-    }
-  }
-}
-
-@media (max-width: 480px) {
-  .header {
-    padding: 20px 16px;
+    margin-top: 23px;
+    height: 126px;
+    padding-bottom: 15px;
   }
 }

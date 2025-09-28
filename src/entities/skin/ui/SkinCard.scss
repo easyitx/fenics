@@ -1,0 +1,81 @@
+@import "mix-card";
+
+.skinCardLive {
+  position: relative;
+  height: 100%;
+  width: 142px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: none;
+
+  // Для фона
+  @include container-bg;
+
+  .skinCardLiveInner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    height: 100%;
+    border-radius: inherit;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 66px;
+      height: 20px;
+      border-radius: 8px;
+      background: #F9F273;
+      border: 1.5px solid var(--color-background);
+    }
+
+    .skinCardLiveLogo {
+      width: 67px;
+      height: 67px;
+      object-fit: contain;
+    }
+
+    .skinCardLiveImage {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 94px;
+      height: 94px;
+      object-fit: contain;
+    }
+
+    .skinCardLiveInfo {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      left: 10px;
+      bottom: 8px;
+
+      .skinName {
+        color: #FFFFFFAB;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0;
+        text-wrap: nowrap;
+        max-width: 120px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+
+      .skinWeapon {
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 16px;
+        letter-spacing: 0;
+        color: var(--color-text-white);
+      }
+    }
+  }
+}

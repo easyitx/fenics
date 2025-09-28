@@ -1,56 +1,41 @@
 .navigation {
+  margin-top: 6px;
+
   &__list {
     display: flex;
     align-items: center;
     gap: 40px;
     list-style: none;
-    margin: 0;
-    padding: 0;
-  }
 
-  &__item {
-    position: relative;
-  }
+    .navigationItem {
+      position: relative;
 
-  &__link {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 120%;
-    letter-spacing: 0;
-    padding: 18px 0;
-    transition: all 0.2s ease;
-    color: rgba(90, 82, 87, 1);
+      .navigationLink {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 17px;
+        transition: all 0.2s ease;
+        color: rgba(90, 82, 87, 1);
 
-    &--active {
-      color: #FFFFFF;
+        .navigationIcon {
+          flex-shrink: 0;
+        }
+
+        .navigationText {
+          white-space: nowrap;
+        }
+
+        &--active {
+          color: #FFFFFF;
+        }
+
+        &:hover:not(&--disabled):not(&--active) {
+          color: #FFFFFF;
+        }
+      }
     }
-
-    &--disabled {
-      cursor: not-allowed;
-      opacity: 0.5;
-    }
-
-    &:hover:not(&--disabled):not(&--active) {
-      color: #FFFFFF;
-    }
-  }
-
-  &__icon {
-    flex-shrink: 0;
-  }
-
-  &__text {
-    white-space: nowrap;
-  }
-}
-
-// Адаптивность
-@media (max-width: 768px) {
-  .navigation {
-    display: none;
   }
 }
