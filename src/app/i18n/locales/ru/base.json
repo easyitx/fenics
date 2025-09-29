@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "title": "fenics.gg",
+    "description": ""
+  },
+  "languageSwitcher": {
+    "en": "ENG",
+    "ru": "RU"
+  },
+  "header": {
+    "nav": {
+      "cases": "Кейсы",
+      "upgrades": "Апгрейды",
+      "bonuses": "Бонусы",
+      "calendar": "Календарь"
+    }
+  }
+}
