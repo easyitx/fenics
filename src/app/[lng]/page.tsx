@@ -20,8 +20,8 @@ export default function Home() {
                   className="caseImage"
                   src="/cases/1.png"
                   alt="case"
-                  width={142} // пример ширины
-                  height={142} // пример высоты
+                  width={300}
+                  height={300}
                 />
               </div>
               <div className="boxesListItem__footer"></div>
@@ -44,8 +44,8 @@ export default function Home() {
                   className="caseImage"
                   src="https://api.csfade.gg/boxes/76cb2310-1044-4e93-8cbe-23a9b756949b.webp"
                   alt="case"
-                  width={142} // задаём нужные размеры
-                  height={142}
+                  width={300}
+                  height={300}
                 />
               </div>
               <div className="boxesListItem__footer"></div>
@@ -68,8 +68,8 @@ export default function Home() {
                   className="caseImage"
                   src="https://api.csfade.gg/boxes/76cb2310-1044-4e93-8cbe-23a9b756949b.webp"
                   alt="case"
-                  width={142}
-                  height={142}
+                  width={300}
+                  height={300}
                 />
               </div>
               <div className="boxesListItem__footer"></div>

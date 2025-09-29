@@ -55,8 +55,8 @@ export const Footer: React.FC = () => {
             <Image
               src="/app_logo.svg"
               alt="App Logo"
-              width={131}
-              height={37}
+              width={0}
+              height={0}
               priority
             />
           </div>

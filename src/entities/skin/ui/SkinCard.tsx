@@ -31,6 +31,9 @@ export const SkinCard = () => {
           className="skinCardLiveImage"
           src={skin.itemImage}
           alt={skin.marketName}
+          priority
+          width={142}
+          height={142}
         />
 
         <div className="skinCardLiveInfo">
