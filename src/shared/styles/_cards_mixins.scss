@@ -1,3 +1,4 @@
+@use "sass:map";
 $rarity-themes: (
   common: (
     bg-main: linear-gradient(180deg, #413e53 0%, #4e4a60 100%),
@@ -26,7 +27,7 @@ $rarity-themes: (
 @mixin container-bg($namespace: "&") {
   @each $rarity, $colors in $rarity-themes {
     #{$namespace}__#{$rarity} {
-      background: map-get($colors, bg-main);
+      background: map.get($colors, bg-main);
     }
   }
 }
