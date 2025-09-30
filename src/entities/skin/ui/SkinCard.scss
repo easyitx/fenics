@@ -22,7 +22,7 @@
     border-radius: inherit;
 
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: 50%;
@@ -30,7 +30,7 @@
       width: 66px;
       height: 20px;
       border-radius: 8px;
-      background: #F9F273;
+      background: #f9f273;
       border: 1.5px solid var(--color-background);
     }
 
@@ -58,11 +58,11 @@
       bottom: 8px;
 
       .skinName {
-        color: #FFFFFFAB;
+        color: #ffffffab;
         font-weight: 400;
-        font-size: 12px;
-        line-height: 14px;
-        letter-spacing: 0;
+        font-size: var(--font-size-xs);
+        line-height: var(--line-height-snug);
+        letter-spacing: var(--letter-spacing-normal);
         text-wrap: nowrap;
         max-width: 120px;
         text-overflow: ellipsis;
@@ -71,9 +71,9 @@
 
       .skinWeapon {
         font-weight: 700;
-        font-size: 13px;
-        line-height: 16px;
-        letter-spacing: 0;
+        font-size: var(--font-size-sm);
+        line-height: var(--line-height-snug);
+        letter-spacing: var(--letter-spacing-normal);
         color: var(--color-text-white);
       }
     }
