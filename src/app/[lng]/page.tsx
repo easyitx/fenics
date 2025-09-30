@@ -61,7 +61,7 @@ export default function Home() {
         </div>
 
         <div className="boxes__section__list">
-          {new Array(12).fill(0).map((_, i) => (
+          {new Array(4).fill(0).map((_, i) => (
             <div key={i} className="boxesListItem">
               <div className="boxesListItem__case">
                 <Image

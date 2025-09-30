@@ -31,7 +31,7 @@ export const LiveStream: React.FC = () => {
         </div>
 
         <div className="itemsList">
-          {new Array(40).fill(0).map((_, i) => (
+          {new Array(20).fill(0).map((_, i) => (
             <SkinCard key={i} />
           ))}
         </div>

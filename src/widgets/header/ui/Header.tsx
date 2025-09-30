@@ -3,11 +3,15 @@ import Image from "next/image";
 import "./Header.scss";
 import { Button, Icon } from "@/shared/ui";
 import { Navigation } from "./Navigation";
-import { LiveStream } from "@/widgets/live-stream";
+import { cn } from "@/shared/lib/utils";
 
-export const Header: React.FC = () => {
+interface IHeaderProps {
+  classname?: string;
+}
+
+export const Header: React.FC<IHeaderProps> = ({ classname = "" }) => {
   return (
-    <header className="header">
+    <header className={cn("header", [classname])}>
       <div className="header__container">
         <div className="app_logo">
           <Image
@@ -29,9 +33,6 @@ export const Header: React.FC = () => {
             <Icon name="add-circle" color="primary" size={20} />
           </Button>
         </div>
-      </div>
-      <div className="header__live">
-        <LiveStream />
       </div>
     </header>
   );

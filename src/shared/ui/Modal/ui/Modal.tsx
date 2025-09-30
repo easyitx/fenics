@@ -10,7 +10,7 @@ interface ModalProps {
   onOpenChange: (open: boolean) => void;
   title?: string;
   children: React.ReactNode;
-  width?: string;
+  width?: string; // кастомная ширина
 }
 
 export const Modal = ({
@@ -25,6 +25,7 @@ export const Modal = ({
       <AnimatePresence>
         {open && (
           <Dialog.Portal forceMount>
+            {/* Overlay */}
             <Dialog.Overlay asChild>
               <motion.div
                 className="fixed inset-0 bg-black/50 z-40"
@@ -34,6 +35,7 @@ export const Modal = ({
               />
             </Dialog.Overlay>
 
+            {/* Content */}
             <Dialog.Content asChild>
               <motion.div
                 initial={{ opacity: 0, y: 40 }}

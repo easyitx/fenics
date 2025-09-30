@@ -9,6 +9,9 @@ import "@/shared/styles/index.scss";
 import { languages } from "@/app/i18n/settings";
 import { AppProvider } from "@/app/providers/app-provider";
 
+import { LiveStream } from "@/widgets/live-stream";
+import { MainLayout } from "@/shared/ui/MainLayout/";
+
 export const metadata: Metadata = {
   title: "Fenics.gg",
   description: "test",
@@ -28,10 +31,15 @@ export default async function RootLayout({
     <html lang={lng} dir={dir(lng)} className={proximaNova.variable}>
       <body>
         <AppProvider lng={lng}>
-          <Header />
-          <Banners />
-          <main>{children}</main>
-          <Footer />
+          <MainLayout
+            renderProps={{
+              header: () => <Header />,
+              banners: () => <Banners />,
+              liveStream: () => <LiveStream />,
+              content: () => <>{children}</>,
+              footer: () => <Footer />,
+            }}
+          />
         </AppProvider>
       </body>
     </html>
