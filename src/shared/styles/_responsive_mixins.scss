@@ -1,0 +1,112 @@
+// ======================
+// Responsive миксины для адаптивных шрифтов
+// ======================
+
+// Миксин для адаптивных размеров шрифтов
+@mixin responsive-font-size(
+  $mobile,
+  $tablet: null,
+  $desktop: null,
+  $large: null
+) {
+  font-size: $mobile;
+
+  @if $tablet {
+    @media (min-width: 640px) {
+      font-size: $tablet;
+    }
+  }
+
+  @if $desktop {
+    @media (min-width: 1024px) {
+      font-size: $desktop;
+    }
+  }
+
+  @if $large {
+    @media (min-width: 1280px) {
+      font-size: $large;
+    }
+  }
+}
+
+// Миксин для адаптивных line-height
+@mixin responsive-line-height(
+  $mobile,
+  $tablet: null,
+  $desktop: null,
+  $large: null
+) {
+  line-height: $mobile;
+
+  @if $tablet {
+    @media (min-width: 640px) {
+      line-height: $tablet;
+    }
+  }
+
+  @if $desktop {
+    @media (min-width: 1024px) {
+      line-height: $desktop;
+    }
+  }
+
+  @if $large {
+    @media (min-width: 1280px) {
+      line-height: $large;
+    }
+  }
+}
+
+// Миксин для создания типографических стилей
+@mixin typography(
+  $size,
+  $weight: normal,
+  $line-height: normal,
+  $letter-spacing: normal
+) {
+  font-size: var(--font-size-#{$size});
+  font-weight: $weight;
+  line-height: var(--line-height-#{$line-height});
+  letter-spacing: var(--letter-spacing-#{$letter-spacing});
+}
+
+// Миксин для заголовков
+@mixin heading($level: 1) {
+  @if $level == 1 {
+    @include typography(6xl, 900, tight, tight);
+  } @else if $level == 2 {
+    @include typography(5xl, 800, tight, tight);
+  } @else if $level == 3 {
+    @include typography(4xl, 700, snug, tight);
+  } @else if $level == 4 {
+    @include typography(3xl, 700, snug, normal);
+  } @else if $level == 5 {
+    @include typography(2xl, 700, normal, normal);
+  } @else if $level == 6 {
+    @include typography(xl, 700, normal, normal);
+  }
+}
+
+// Миксин для текста
+@mixin text-body {
+  @include typography(base, normal, normal, normal);
+}
+
+@mixin text-caption {
+  @include typography(sm, normal, snug, normal);
+}
+
+@mixin text-small {
+  @include typography(xs, normal, snug, normal);
+}
+
+// Миксин для кнопок
+@mixin button-text {
+  @include typography(sm, 700, tight, normal);
+}
+
+// Миксин для навигации
+@mixin nav-text {
+  @include typography(lg, 700, normal, normal);
+}

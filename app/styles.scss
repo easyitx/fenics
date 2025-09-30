@@ -6,16 +6,16 @@
 
     .title {
       font-weight: 700;
-      font-size: 28px;
-      line-height: 120%;
+      font-size: var(--font-size-4xl);
+      line-height: var(--line-height-tight);
       color: var(--color-text-white);
     }
 
     .description {
       font-weight: 400;
-      font-size: 14px;
-      line-height: 120%;
-      letter-spacing: 0;
+      font-size: var(--font-size-sm);
+      line-height: var(--line-height-tight);
+      letter-spacing: var(--letter-spacing-normal);
       color: var(--color-text-secondary);
 
       span {
@@ -54,7 +54,8 @@
           object-fit: cover;
         }
       }
-      &__footer {}
+      &__footer {
+      }
     }
   }
 }
