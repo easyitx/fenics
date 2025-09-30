@@ -33,7 +33,9 @@ export default async function RootLayout({
         <AppProvider lng={lng}>
           <MainLayout
             renderProps={{
-              header: () => <Header />,
+              header: () => (
+                <Header classname="container border border-blue-500" />
+              ),
               banners: () => <Banners />,
               liveStream: () => <LiveStream />,
               content: () => <>{children}</>,
