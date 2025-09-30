@@ -4,6 +4,7 @@ import "./Header.scss";
 import { Button, Icon } from "@/shared/ui";
 import { Navigation } from "./Navigation";
 import { cn } from "@/shared/lib/utils";
+import { ProfileBalanceWidget } from "@/widgets/ProfileBalanceWidget/ui/ProfileBalanceWidget";
 
 interface IHeaderProps {
   classname?: string;
@@ -28,6 +29,7 @@ export const Header: React.FC<IHeaderProps> = ({ classname = "" }) => {
         </div>
 
         <div className="header_actions">
+          <ProfileBalanceWidget />
           <Button variant="primary">
             Войти
             <Icon name="add-circle" color="primary" size={20} />

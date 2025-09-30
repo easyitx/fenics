@@ -1,10 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import "./Banners.scss";
+import { cn } from "@/shared/lib/utils";
 
-export const Banners = () => {
+export const Banners = ({ classname = "" }: { classname?: string }) => {
   return (
-    <div className="banners">
+    <div className={cn("banners", [classname])}>
       <div className="banners__inner">
         <div className="sliderSection">
           <Image

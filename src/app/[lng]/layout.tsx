@@ -34,12 +34,22 @@ export default async function RootLayout({
           <MainLayout
             renderProps={{
               header: () => (
-                <Header classname="container border border-blue-500" />
+                <Header classname="container mx-auto px-[2rem]  " />
               ),
-              banners: () => <Banners />,
-              liveStream: () => <LiveStream />,
-              content: () => <>{children}</>,
-              footer: () => <Footer />,
+              liveStream: () => (
+                <div className="container mx-auto py-[1rem] mt-[1rem]">
+                  <LiveStream />
+                </div>
+              ),
+              banners: () => (
+                <Banners classname="container mx-auto mt-[1rem] " />
+              ),
+              content: () => (
+                <div className="container mx-auto mt-[1rem]">{children}</div>
+              ),
+              footer: () => (
+                <Footer classname="container mx-auto px-[2rem] mt-[1rem]" />
+              ),
             }}
           />
         </AppProvider>

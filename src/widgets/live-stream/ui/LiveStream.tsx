@@ -4,12 +4,13 @@ import React from "react";
 import "./LiveStream.scss";
 import { Icon } from "@/shared/ui";
 import { SkinCard } from "@/entities/skin";
+import { cn } from "@/shared/lib/utils";
 
-export const LiveStream: React.FC = () => {
+export const LiveStream: React.FC<{ classname?: string }> = ({ classname }) => {
   const [onlineCount] = React.useState(2430);
 
   return (
-    <div className="live__stream">
+    <div className={cn("live__stream", [classname])}>
       <div className="live__stream__online">
         <div className="onlineContent">
           <Icon name="radar" size={20} color="primary" />

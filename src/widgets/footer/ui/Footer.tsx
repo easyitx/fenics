@@ -3,10 +3,11 @@ import Image from "next/image";
 import "./Footer.scss";
 import { Icon } from "@/shared/ui";
 import Link from "next/link";
+import { cn } from "@/shared/lib/utils";
 
-export const Footer: React.FC = () => {
+export const Footer: React.FC<{ classname?: string }> = ({ classname }) => {
   return (
-    <footer className="footer">
+    <footer className={cn("footer", [classname])}>
       <div className="footer__main">
         <div className="footer__counters">
           <div className="footer__counter counter">
