@@ -1,3 +1,17 @@
-// Главный файл стилей для shared слоя
-@import './reset.scss';
-@import './base.scss';
+@use "./reset.scss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent-primary);
+  border-radius: 3px;
+}

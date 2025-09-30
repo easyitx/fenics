@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "title": "fenics.gg",
+    "description": ""
+  },
+  "languageSwitcher": {
+    "en": "ENG",
+    "ru": "RU"
+  },
+  "header": {
+    "nav": {
+      "cases": "Cases",
+      "upgrades": "Upgrades",
+      "bonuses": "Bonuses",
+      "calendar": "Calendar"
+    }
+  }
+}

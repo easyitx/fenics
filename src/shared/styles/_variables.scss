@@ -1,0 +1,68 @@
+/* Цветовые переменные для темной темы */
+:root {
+  /* Основные цвета приложения */
+  --color-primary: #eb2bac;
+  --color-background: #0f0a0d;
+  --color-surface: #1a1016;
+  --color-surface-secondary: "";
+  --color-surface-tertiary: "";
+
+  /* Текстовые цвета */
+  --color-text-primary: #eb2bac;
+  --color-text-secondary: #5a5257;
+  --color-text-tertiary: #ffffffab;
+  --color-text-white: #ffffff;
+
+  /* Акцентные цвета */
+  --color-accent-primary: #f5b0db;
+  --color-accent-secondary: "";
+  --color-accent-tertiary: "";
+
+  /* Состояния */
+  --color-success: "";
+  --color-warning: "";
+  --color-error: "";
+  --color-info: "";
+
+  /* Границы */
+  --color-border-primary: #a40e74;
+  --color-border-secondary: "";
+  --color-border-focus: var(--color-accent-primary);
+
+  /* Переходы */
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 250ms ease-in-out;
+  --transition-slow: 350ms ease-in-out;
+
+  /* Радиусы скругления */
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* Размеры */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+}
+
+$breakpoints: (
+  xs: 360px,
+  // Extra small phones
+  sm: 425px,
+  // Small phones
+  px: 525px,
+  // Phones landscape
+  md: 768px,
+  // Tablets portrait
+  lg: 1024px,
+  // Tablets landscape / small laptops
+  xl: 1920px,
+  // Desktop
+  xxl: 2560px // Large desktop,,,
+);

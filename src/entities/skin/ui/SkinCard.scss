@@ -1,4 +1,4 @@
-@import "mix-card";
+@use "../../../shared/styles/cards_mixins" as *;
 
 .skinCardLive {
   position: relative;
@@ -22,7 +22,7 @@
     border-radius: inherit;
 
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: 50%;
@@ -30,7 +30,7 @@
       width: 66px;
       height: 20px;
       border-radius: 8px;
-      background: #F9F273;
+      background: #f9f273;
       border: 1.5px solid var(--color-background);
     }
 
@@ -58,7 +58,7 @@
       bottom: 8px;
 
       .skinName {
-        color: #FFFFFFAB;
+        color: #ffffffab;
         font-weight: 400;
         font-size: 12px;
         line-height: 14px;
