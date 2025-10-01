@@ -1,0 +1,161 @@
+// SCSS миксины для rem системы
+// Автоматически адаптирует шрифты под разные экраны
+
+@use "sass:math";
+@use "sass:map" as map;
+
+$base-font-sizes: (
+  mobile: 14px,
+  tablet: 16px,
+  desktop: 18px,
+  large: 20px,
+);
+
+$rem-breakpoints: (
+  mobile: 0px,
+  tablet: 768px,
+  desktop: 1024px,
+  large: 1920px,
+);
+
+// Конвертирует px в rem
+@function px-to-rem($px, $base: 16px) {
+  @return math.div($px, $base) * 1rem;
+}
+
+// Получает базовый размер для брейкпоинта
+@function get-base-font-size($breakpoint: mobile) {
+  @return map.get($base-font-sizes, $breakpoint);
+}
+
+// Создает адаптивный размер шрифта для всех экранов
+@mixin responsive-font-size(
+  $mobile-size,
+  $tablet-size: null,
+  $desktop-size: null,
+  $large-size: null
+) {
+  $tablet-size: if($tablet-size, $tablet-size, $mobile-size);
+  $desktop-size: if($desktop-size, $desktop-size, $tablet-size);
+  $large-size: if($large-size, $large-size, $desktop-size);
+
+  font-size: px-to-rem($mobile-size, get-base-font-size(mobile));
+
+  @media (min-width: map.get($rem-breakpoints, tablet)) {
+    font-size: px-to-rem($tablet-size, get-base-font-size(tablet));
+  }
+
+  @media (min-width: map.get($rem-breakpoints, desktop)) {
+    font-size: px-to-rem($desktop-size, get-base-font-size(desktop));
+  }
+
+  @media (min-width: map.get($rem-breakpoints, large)) {
+    font-size: px-to-rem($large-size, get-base-font-size(large));
+  }
+}
+
+// Адаптивный размер + line-height и font-weight
+@mixin responsive-typography(
+  $mobile-size,
+  $tablet-size: null,
+  $desktop-size: null,
+  $large-size: null,
+  $line-height: null,
+  $font-weight: null
+) {
+  @include responsive-font-size(
+    $mobile-size,
+    $tablet-size,
+    $desktop-size,
+    $large-size
+  );
+
+  @if $line-height {
+    line-height: $line-height;
+  }
+
+  @if $font-weight {
+    font-weight: $font-weight;
+  }
+}
+
+// Готовые миксины для заголовков
+@mixin heading-1 {
+  @include responsive-typography(32px, 40px, 48px, 56px, 1.2, 700);
+}
+
+@mixin heading-2 {
+  @include responsive-typography(28px, 32px, 36px, 42px, 1.3, 700);
+}
+
+@mixin heading-3 {
+  @include responsive-typography(24px, 28px, 32px, 36px, 1.4, 600);
+}
+
+@mixin heading-4 {
+  @include responsive-typography(20px, 24px, 28px, 32px, 1.4, 600);
+}
+
+@mixin heading-5 {
+  @include responsive-typography(18px, 20px, 24px, 28px, 1.5, 500);
+}
+
+@mixin heading-6 {
+  @include responsive-typography(16px, 18px, 20px, 24px, 1.5, 500);
+}
+
+// Готовые миксины для текста
+@mixin body-text {
+  @include responsive-typography(14px, 16px, 18px, 20px, 1.6, 400);
+}
+
+@mixin small-text {
+  @include responsive-typography(12px, 14px, 16px, 18px, 1.5, 400);
+}
+
+@mixin caption-text {
+  @include responsive-typography(10px, 12px, 14px, 16px, 1.4, 400);
+}
+
+@mixin button-text {
+  @include responsive-typography(14px, 16px, 18px, 20px, 1.2, 500);
+}
+
+@mixin label-text {
+  @include responsive-typography(12px, 14px, 16px, 18px, 1.4, 500);
+}
+
+// Генерирует CSS класс с адаптивными размерами
+@mixin create-font-class(
+  $class-name,
+  $mobile-size,
+  $tablet-size: null,
+  $desktop-size: null,
+  $large-size: null
+) {
+  .#{$class-name} {
+    @include responsive-font-size(
+      $mobile-size,
+      $tablet-size,
+      $desktop-size,
+      $large-size
+    );
+  }
+}
+
+// Создает все утилитарные классы для размеров шрифтов
+@mixin create-font-utility-classes {
+  @include create-font-class("text-h1", 32px, 40px, 48px, 56px);
+  @include create-font-class("text-h2", 28px, 32px, 36px, 42px);
+  @include create-font-class("text-h3", 24px, 28px, 32px, 36px);
+  @include create-font-class("text-h4", 20px, 24px, 28px, 32px);
+  @include create-font-class("text-h5", 18px, 20px, 24px, 28px);
+  @include create-font-class("text-h6", 16px, 18px, 20px, 24px);
+
+  @include create-font-class("text-body", 14px, 16px, 18px, 20px);
+  @include create-font-class("text-small", 12px, 14px, 16px, 18px);
+  @include create-font-class("text-caption", 10px, 12px, 14px, 16px);
+
+  @include create-font-class("text-button", 14px, 16px, 18px, 20px);
+  @include create-font-class("text-label", 12px, 14px, 16px, 18px);
+}

@@ -6,6 +6,39 @@ interface TypographyProps {
   color?: TextColor;
   as?: keyof JSX.IntrinsicElements;
   className?: string;
+  size?:
+    | "xs"
+    | "sm"
+    | "base"
+    | "lg"
+    | "xl"
+    | "2xl"
+    | "3xl"
+    | "4xl"
+    | "5xl"
+    | "6xl"
+    | "h1"
+    | "h2"
+    | "h3"
+    | "h4"
+    | "h5"
+    | "h6"
+    | "body"
+    | "small"
+    | "caption"
+    | "button"
+    | "label";
+  weight?:
+    | "thin"
+    | "extralight"
+    | "light"
+    | "normal"
+    | "medium"
+    | "semibold"
+    | "bold"
+    | "extrabold"
+    | "black";
+  lineHeight?: "none" | "tight" | "snug" | "normal" | "relaxed" | "loose";
 }
 
 export function Typography({
@@ -13,13 +46,40 @@ export function Typography({
   color = "primary",
   as: Tag = "p",
   className,
+  size = "base",
+  weight,
+  lineHeight,
 }: TypographyProps) {
+  const getSizeClass = () => {
+    if (size.startsWith("h")) {
+      return `text-${size}`;
+    }
+    return `text-${size}`;
+  };
+
+  const getWeightClass = () => {
+    if (weight) {
+      return `font-${weight}`;
+    }
+    return "";
+  };
+
+  const getLineHeightClass = () => {
+    if (lineHeight) {
+      return `leading-${lineHeight}`;
+    }
+    return "";
+  };
+
   return (
     <Tag
       className={`
-        ${className ?? ""}
+        ${getSizeClass()}
+        ${getWeightClass()}
+        ${getLineHeightClass()}
         text-${color}
-      `}
+        ${className ?? ""}
+      `.trim()}
       style={{ color: `var(--color-text-${color})` }}
     >
       {children}
