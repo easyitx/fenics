@@ -17,7 +17,7 @@
   border-radius: 3px;
 }
 
-// Утилитарные классы для rem системы
+/* Утилитарные классы для rem системы */
 @include rem.create-font-utility-classes;
 
 .rem-responsive {
@@ -25,7 +25,7 @@
   line-height: var(--line-height-normal);
 }
 
-// Размеры шрифтов
+/* Размеры шрифтов */
 .text-xs {
   font-size: var(--font-size-xs);
 }
@@ -57,7 +57,7 @@
   font-size: var(--font-size-6xl);
 }
 
-// Межстрочные интервалы
+/* Межстрочные интервалы */
 .leading-none {
   line-height: var(--line-height-none);
 }
@@ -77,7 +77,7 @@
   line-height: var(--line-height-loose);
 }
 
-// Веса шрифтов
+/* Веса шрифтов */
 .font-thin {
   font-weight: var(--font-weight-thin);
 }

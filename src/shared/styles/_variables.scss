@@ -12,7 +12,8 @@
   --color-text-secondary: #5a5257;
   --color-text-tertiary: #ffffffab;
   --color-text-white: #ffffff;
-
+  --color-text-black: #000000;
+  --color-text-scarlet: #f5b0db;
   /* Акцентные цвета */
   --color-accent-primary: #f5b0db;
   --color-accent-secondary: "";
@@ -103,5 +104,5 @@ $breakpoints: (
   // Tablets landscape / small laptops
   xl: 1920px,
   // Desktop
-  xxl: 2560px // Large desktop,,,,,
+  xxl: 2560px // Large desktop,,,,,,,,,
 );

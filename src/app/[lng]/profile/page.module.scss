@@ -1,0 +1,44 @@
+@import "@/shared/styles/variables";
+@import "@/shared/styles/rem_mixins";
+
+.profilePage {
+  min-height: 100vh;
+  background: var(--color-background);
+  padding: var(--spacing-lg);
+
+  @media (max-width: 768px) {
+    padding: var(--spacing-md);
+  }
+}
+
+.profileContainer {
+  display: flex;
+  gap: var(--spacing-xl);
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: flex-start;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  @media (max-width: 768px) {
+    gap: var(--spacing-md);
+  }
+}
+
+.profileCard {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 320px;
+
+  @media (max-width: 1024px) {
+    max-width: 100%;
+  }
+}
+
+.skinsTable {
+  flex: 1;
+  min-width: 0;
+}

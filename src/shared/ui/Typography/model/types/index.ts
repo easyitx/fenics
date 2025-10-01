@@ -3,6 +3,8 @@ export const textColors = [
   "secondary",
   "tertiary",
   "white",
+  "black",
+  "scarlet",
 ] as const;
 
 export type TextColor = (typeof textColors)[number];
