@@ -54,3 +54,33 @@ export const Button: React.FC<ButtonProps> = ({
     </button>
   );
 };
+
+interface UnstyledButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode;
+}
+
+export const UnstyledButton: React.FC<UnstyledButtonProps> = ({
+  children,
+  ...props
+}) => {
+  return (
+    <button
+      style={{
+        background: "none",
+        border: "none",
+        padding: 0,
+        margin: 0,
+        cursor: "pointer",
+        font: "inherit",
+        color: "inherit",
+        textDecoration: "none",
+        outline: "none",
+        ...props.style,
+      }}
+      {...props}
+    >
+      {children}
+    </button>
+  );
+};
