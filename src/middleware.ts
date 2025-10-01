@@ -2,7 +2,7 @@ import acceptLanguage from "accept-language";
 import { NextRequest, NextResponse } from "next/server";
 import { cookieName, fallbackLng, languages } from "@/app/i18n/settings";
 
-// @ts-expect-error
+// @ts-expect-error - acceptLanguage.languages is not properly typed
 acceptLanguage.languages(languages);
 
 export const config = {
@@ -38,7 +38,7 @@ export function middleware(req: NextRequest) {
   }
 
   if (req.headers.has("referer")) {
-    // @ts-expect-error
+    // @ts-expect-error - referer header can be null but URL constructor expects string
     const refererUrl = new URL(req.headers.get("referer"));
     const lngInReferer = languages.find((l) =>
       refererUrl.pathname.startsWith(`/${l}`)
