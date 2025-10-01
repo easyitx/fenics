@@ -11,6 +11,7 @@ import { AppProvider } from "@/app/providers/app-provider";
 
 import { LiveStream } from "@/widgets/live-stream";
 import { MainLayout } from "@/shared/ui/MainLayout/";
+import { RemSystemProvider } from "@/shared/ui/RemSystemProvider";
 
 export const metadata: Metadata = {
   title: "Fenics.gg",
@@ -30,29 +31,31 @@ export default async function RootLayout({
   return (
     <html lang={lng} dir={dir(lng)} className={proximaNova.variable}>
       <body>
-        <AppProvider lng={lng}>
-          <MainLayout
-            renderProps={{
-              header: () => (
-                <Header classname="container mx-auto px-[2rem]  " />
-              ),
-              liveStream: () => (
-                <div className="container mx-auto py-[1rem] mt-[1rem]">
-                  <LiveStream />
-                </div>
-              ),
-              banners: () => (
-                <Banners classname="container mx-auto mt-[1rem] " />
-              ),
-              content: () => (
-                <div className="container mx-auto mt-[1rem]">{children}</div>
-              ),
-              footer: () => (
-                <Footer classname="container mx-auto px-[2rem] mt-[1rem]" />
-              ),
-            }}
-          />
-        </AppProvider>
+        <RemSystemProvider>
+          <AppProvider lng={lng}>
+            <MainLayout
+              renderProps={{
+                header: () => (
+                  <Header classname="container mx-auto px-[2rem]  " />
+                ),
+                liveStream: () => (
+                  <div className="container mx-auto py-[1rem] mt-[1rem]">
+                    <LiveStream />
+                  </div>
+                ),
+                banners: () => (
+                  <Banners classname="container mx-auto mt-[1rem] " />
+                ),
+                content: () => (
+                  <div className="container mx-auto mt-[1rem]">{children}</div>
+                ),
+                footer: () => (
+                  <Footer classname="container mx-auto px-[2rem] mt-[1rem]" />
+                ),
+              }}
+            />
+          </AppProvider>
+        </RemSystemProvider>
       </body>
     </html>
   );

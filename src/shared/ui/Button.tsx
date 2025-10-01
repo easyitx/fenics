@@ -1,6 +1,6 @@
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
-  variant?: "primary";
+  variant?: "primary" | "surface" | "outline" | "black";
   size?: "large";
 }
 
@@ -21,12 +21,24 @@ export const Button: React.FC<ButtonProps> = ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    gap: "8px",
   };
 
   const variants = {
     primary: {
       background: "var(--color-primary)",
+      color: "#FFFFFF",
+    },
+    surface: {
+      background: "var(--color-surface)",
+      color: "#FFFFFF",
+    },
+    outline: {
+      background: "transparent",
+      color: "#FFFFFF",
+      border: "1px solid var(--color-border-primary)",
+    },
+    black: {
+      background: "var(--color-text-black)",
       color: "#FFFFFF",
     },
     // Можно добавить другие варианты
@@ -46,6 +58,36 @@ export const Button: React.FC<ButtonProps> = ({
         ...baseStyles,
         ...variants[variant],
         ...sizes[size],
+        ...props.style,
+      }}
+      {...props}
+    >
+      {children}
+    </button>
+  );
+};
+
+interface UnstyledButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode;
+}
+
+export const UnstyledButton: React.FC<UnstyledButtonProps> = ({
+  children,
+  ...props
+}) => {
+  return (
+    <button
+      style={{
+        background: "none",
+        border: "none",
+        padding: 0,
+        margin: 0,
+        cursor: "pointer",
+        font: "inherit",
+        color: "inherit",
+        textDecoration: "none",
+        outline: "none",
         ...props.style,
       }}
       {...props}
