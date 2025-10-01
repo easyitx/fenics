@@ -84,57 +84,53 @@ export function ProfileCard({ className }: ProfileCardProps) {
       <div className={styles.socialLinks}>
         {/* Telegram */}
         <div className={styles.socialItem}>
-          <div className="flex items-center justify-center gap-2 h-12">
-            <Button className="w-fit h-full">
-              <Image
-                src="/icons/tg.svg"
-                alt="Telegram"
-                width={23}
-                height={19}
-                className={styles.socialIcon}
-              />
-            </Button>
-            <Button className="w-2/3 flex flex-col items-center justify-center h-full">
-              <Typography size="small" weight="semibold" color="white">
-                TELEGRAM
+          <Button className="w-fit h-full">
+            <Image
+              src="/icons/tg.svg"
+              alt="Telegram"
+              width={23}
+              height={19}
+              className={styles.socialIcon}
+            />
+          </Button>
+          <Button className="w-2/3 flex flex-col items-center justify-center h-full">
+            <Typography size="small" weight="semibold" color="white">
+              TELEGRAM
+            </Typography>
+            <div className={styles.status}>
+              <div className={styles.statusDot}></div>
+              <Typography size="xs" color="white">
+                Активно
               </Typography>
-              <div className={styles.status}>
-                <div className={styles.statusDot}></div>
-                <Typography size="xs" color="white">
-                  Активно
-                </Typography>
-              </div>
-            </Button>
-          </div>
+            </div>
+          </Button>
         </div>
 
         {/* VK */}
         <div className={styles.socialItem}>
-          <div className="flex items-center justify-center gap-2 h-12">
-            <Button className="w-fit h-full" variant="surface">
-              <Image
-                src="/icons/vk.svg"
-                alt="VK"
-                width={23}
-                height={23}
-                className={styles.socialIcon}
-              />
-            </Button>
-            <Button
-              variant="surface"
-              className="w-2/3 flex flex-col items-center justify-center h-full"
-            >
-              <Typography size="small" weight="semibold" color="white">
-                VK
+          <Button className="w-fit h-full" variant="surface">
+            <Image
+              src="/icons/vk.svg"
+              alt="VK"
+              width={23}
+              height={23}
+              className={styles.socialIcon}
+            />
+          </Button>
+          <Button
+            variant="surface"
+            className="w-2/3 flex flex-col items-center justify-center h-full"
+          >
+            <Typography size="small" weight="semibold" color="white">
+              VK
+            </Typography>
+            <div className={styles.status}>
+              <div className={styles.statusDot}></div>
+              <Typography size="xs" color="white">
+                Не активно
               </Typography>
-              <div className={styles.status}>
-                <div className={styles.statusDot}></div>
-                <Typography size="xs" color="white">
-                  Не активно
-                </Typography>
-              </div>
-            </Button>
-          </div>
+            </div>
+          </Button>
         </div>
       </div>
     </div>

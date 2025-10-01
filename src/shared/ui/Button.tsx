@@ -1,6 +1,6 @@
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
-  variant?: "primary" | "surface" | "outline";
+  variant?: "primary" | "surface" | "outline" | "black";
   size?: "large";
 }
 
@@ -36,6 +36,10 @@ export const Button: React.FC<ButtonProps> = ({
       background: "transparent",
       color: "#FFFFFF",
       border: "1px solid var(--color-border-primary)",
+    },
+    black: {
+      background: "var(--color-text-black)",
+      color: "#FFFFFF",
     },
     // Можно добавить другие варианты
   };

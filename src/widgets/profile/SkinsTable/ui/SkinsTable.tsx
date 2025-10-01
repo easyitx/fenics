@@ -7,6 +7,7 @@ import { Button } from "@/shared/ui/Button";
 import styles from "./SkinsTable.module.scss";
 import { Input } from "@/components/ui/input";
 import { FeaturedItem } from "@/widgets/profile/FeaturedItem";
+import { SkinCard } from "@/entities/skin";
 
 interface SkinItem {
   id: string;
@@ -21,6 +22,398 @@ interface SkinsTableProps {
 }
 
 const mockSkins: SkinItem[] = [
+  {
+    id: "1",
+    name: "Kukri Knife Fade",
+    price: "30$",
+    image: "/cases/1.png",
+    isHighlighted: true,
+  },
+  {
+    id: "2",
+    name: "FAMAS Contrast Spr...",
+    price: "15$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "3",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "4",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "5",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "6",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "7",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "8",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "1",
+    name: "Kukri Knife Fade",
+    price: "30$",
+    image: "/cases/1.png",
+    isHighlighted: true,
+  },
+  {
+    id: "2",
+    name: "FAMAS Contrast Spr...",
+    price: "15$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "3",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "4",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "5",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "6",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "7",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "8",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "1",
+    name: "Kukri Knife Fade",
+    price: "30$",
+    image: "/cases/1.png",
+    isHighlighted: true,
+  },
+  {
+    id: "2",
+    name: "FAMAS Contrast Spr...",
+    price: "15$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "3",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "4",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "5",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "6",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "7",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "8",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "1",
+    name: "Kukri Knife Fade",
+    price: "30$",
+    image: "/cases/1.png",
+    isHighlighted: true,
+  },
+  {
+    id: "2",
+    name: "FAMAS Contrast Spr...",
+    price: "15$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "3",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "4",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "5",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "6",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "7",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "8",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "1",
+    name: "Kukri Knife Fade",
+    price: "30$",
+    image: "/cases/1.png",
+    isHighlighted: true,
+  },
+  {
+    id: "2",
+    name: "FAMAS Contrast Spr...",
+    price: "15$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "3",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "4",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "5",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "6",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "7",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "8",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "1",
+    name: "Kukri Knife Fade",
+    price: "30$",
+    image: "/cases/1.png",
+    isHighlighted: true,
+  },
+  {
+    id: "2",
+    name: "FAMAS Contrast Spr...",
+    price: "15$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "3",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "4",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "5",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "6",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "7",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "8",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "1",
+    name: "Kukri Knife Fade",
+    price: "30$",
+    image: "/cases/1.png",
+    isHighlighted: true,
+  },
+  {
+    id: "2",
+    name: "FAMAS Contrast Spr...",
+    price: "15$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "3",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "4",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "5",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "6",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "7",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "8",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "1",
+    name: "Kukri Knife Fade",
+    price: "30$",
+    image: "/cases/1.png",
+    isHighlighted: true,
+  },
+  {
+    id: "2",
+    name: "FAMAS Contrast Spr...",
+    price: "15$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "3",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "4",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "5",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "6",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "7",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
+  {
+    id: "8",
+    name: "Desert Eagle Night",
+    price: "30$",
+    image: "/cases/1.png",
+  },
   {
     id: "1",
     name: "Kukri Knife Fade",
@@ -220,44 +613,11 @@ export function SkinsTable({ className }: SkinsTableProps) {
         {mockSkins.map((skin) => (
           <div
             key={skin.id}
-            className={`${styles.skinCard} ${
-              skin.isHighlighted ? styles.highlighted : ""
-            }`}
+            className={styles.skinCardWrapper}
             onMouseEnter={() => setHoveredItem(skin.id)}
             onMouseLeave={() => setHoveredItem(null)}
           >
-            <div className={styles.skinImageContainer}>
-              <Image
-                src={skin.image}
-                alt={skin.name}
-                width={120}
-                height={80}
-                className={styles.skinImage}
-              />
-              <div className={styles.priceTag}>
-                <Typography size="small" weight="bold">
-                  {skin.price}
-                </Typography>
-              </div>
-              {skin.isHighlighted && (
-                <div className={styles.highlightIcon}>
-                  <Image
-                    src="/icons/magic-star.svg"
-                    alt="Highlight"
-                    width={16}
-                    height={16}
-                    className={styles.starIcon}
-                  />
-                </div>
-              )}
-            </div>
-            <Typography
-              size="small"
-              weight="medium"
-              className={styles.skinName}
-            >
-              {skin.name}
-            </Typography>
+            <SkinCard />
 
             {/* Hover Actions */}
             {hoveredItem === skin.id && (
@@ -266,15 +626,28 @@ export function SkinsTable({ className }: SkinsTableProps) {
                   className={styles.actionButton}
                   onClick={() => handleItemAction("sell", skin.id)}
                 >
-                  <Typography size="small" weight="medium">
+                  <Image
+                    src="/icons/shopping.svg"
+                    alt="Sell"
+                    width={16}
+                    height={16}
+                  />
+                  <Typography size="small" weight="semibold" color="white">
                     Продать
                   </Typography>
                 </Button>
                 <Button
                   className={styles.actionButton}
+                  variant="black"
                   onClick={() => handleItemAction("withdraw", skin.id)}
                 >
-                  <Typography size="small" weight="medium">
+                  <Image
+                    src="/icons/steam.svg"
+                    alt="Steam"
+                    width={16}
+                    height={16}
+                  />
+                  <Typography size="small" weight="semibold" color="white">
                     Забрать
                   </Typography>
                 </Button>
