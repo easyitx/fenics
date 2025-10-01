@@ -18,14 +18,11 @@ export default {
         extrabold: "800",
         black: "900",
       },
-      // Цвета для UI компонентов (кнопки, инпуты и т.п.)
       colors: {
-        // Основные цвета из CSS переменных
         primary: "var(--color-primary)",
         background: "var(--color-background)",
         surface: {
           DEFAULT: "var(--color-surface)",
-          // Убираем ссылки на пустые переменные
         },
         text: {
           primary: "var(--color-text-primary)",
@@ -35,13 +32,11 @@ export default {
         },
         accent: {
           primary: "var(--color-accent-primary)",
-          // Убираем ссылки на пустые переменные
         },
         border: {
           primary: "var(--color-border-primary)",
           focus: "var(--color-border-focus)",
         },
-        // Убираем ссылки на пустые переменные состояний
       },
       borderRadius: {
         sm: "var(--radius-sm)",
@@ -50,6 +45,7 @@ export default {
         xl: "var(--radius-xl)",
         full: "var(--radius-full)",
       },
+      // ✅ теперь расширение, а не перезапись
       spacing: {
         xs: "var(--spacing-xs)",
         sm: "var(--spacing-sm)",
