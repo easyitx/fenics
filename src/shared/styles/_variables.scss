@@ -27,7 +27,7 @@
 
   /* Границы */
   --color-border-primary: #a40e74;
-  --color-border-secondary: "";
+  --color-border-secondary: #2a252a;
   --color-border-focus: var(--color-accent-primary);
 
   /* Переходы */
@@ -104,5 +104,5 @@ $breakpoints: (
   // Tablets landscape / small laptops
   xl: 1920px,
   // Desktop
-  xxl: 2560px // Large desktop,,,,,,,,,
+  xxl: 2560px // Large desktop,,,,,,,,,,
 );

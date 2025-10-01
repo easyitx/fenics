@@ -27,6 +27,10 @@
   }
 }
 
+.topbarIcon {
+  margin-right: var(--spacing-sm);
+}
+
 .tradeLinkSection {
   display: flex;
   background: var(--color-surface);
@@ -209,12 +213,11 @@
 
 .tabs {
   display: flex;
-  gap: var(--spacing-sm);
 }
 
 .tab {
   background: transparent;
-  border: none;
+  border: 1px solid var(--color-text-secondary);
   border-radius: var(--radius-md);
   padding: var(--spacing-sm) var(--spacing-md);
   cursor: pointer;
@@ -222,6 +225,11 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-xs);
+
+  img {
+    filter: brightness(0) saturate(100%) invert(39%) sepia(8%) saturate(1090%)
+      hue-rotate(314deg) brightness(95%) contrast(88%);
+  }
 
   p {
     color: var(--color-text-secondary);
@@ -231,7 +239,11 @@
 
   &.active {
     background: var(--color-primary);
+    border-color: var(--color-primary);
     @include responsive-typography(12px, 14px, 16px, 18px);
+    img {
+      filter: brightness(0) invert(1);
+    }
 
     p {
       color: var(--color-text-white);
@@ -240,8 +252,75 @@
 
   &:hover:not(.active) {
     background: var(--color-background);
+    border-color: var(--color-text-secondary);
     @include responsive-typography(12px, 14px, 16px, 18px);
+
+    img {
+      filter: brightness(0) saturate(100%) invert(39%) sepia(8%) saturate(1090%)
+        hue-rotate(314deg) brightness(95%) contrast(88%);
+    }
+
+    p {
+      color: var(--color-text-secondary);
+    }
   }
+}
+
+.actionIcon {
+  filter: brightness(0) invert(1);
+}
+
+.upgradesPlaceholder {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-2xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.placeholderContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+  text-align: center;
+}
+
+.placeholderIcon {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(8%) saturate(1090%)
+    hue-rotate(314deg) brightness(95%) contrast(88%);
+  opacity: 0.6;
+}
+
+.placeholderDescription {
+  max-width: 300px;
+  line-height: 1.5;
+}
+
+.placeholderButton {
+  background: var(--color-background);
+  border: 1px solid var(--color-text-secondary);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  cursor: not-allowed;
+  opacity: 0.5;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+.leftButton {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.rightButton {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .actions {
