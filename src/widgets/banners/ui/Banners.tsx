@@ -3,6 +3,7 @@ import Image from "next/image";
 import "./Banners.scss";
 import { cn } from "@/shared/lib/utils";
 import { Button, Icon, Input } from "@/shared/ui";
+import { PromoInput } from "@/widgets/PromoInput/ui/PromoInput";
 
 export interface BannersProps {
   classname?: string;
@@ -41,13 +42,7 @@ export const Banners = ({ classname = "" }: BannersProps) => {
             blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
           />
           <div className="absolute top-1/3 left-1/2 -translate-x-1/2">
-            <Input
-              variant="promo"
-              leftIcon="gift"
-              placeholder="Введите промокод:"
-              className="flex-1 bold text-text-secondary border-none rounded-md"
-              rightIcon="promo"
-            />
+            <PromoInput />
           </div>
         </div>
       </div>
