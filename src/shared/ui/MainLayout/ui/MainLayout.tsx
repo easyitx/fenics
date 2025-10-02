@@ -1,7 +1,14 @@
 import React, { ReactNode } from "react";
 import { AppBackground } from "@/shared/ui/AppBackground";
+import { MobileNavigationContainer } from "@/shared/ui/MobileNavigationContainer";
 
-type TLayoutItems = "header" | "footer" | "content" | "liveStream" | "banners";
+type TLayoutItems =
+  | "header"
+  | "footer"
+  | "content"
+  | "liveStream"
+  | "banners"
+  | "mobileNavigation";
 
 interface ILayoutRenderProps extends Record<TLayoutItems, () => ReactNode> {}
 
@@ -10,15 +17,23 @@ interface ILayoutProps {
 }
 
 export const MainLayout = ({
-  renderProps: { banners, content, footer, header, liveStream },
+  renderProps: {
+    banners,
+    content,
+    footer,
+    header,
+    liveStream,
+    mobileNavigation,
+  },
 }: ILayoutProps) => {
   return (
-    <AppBackground>
+    <div className="pt-10">
       {header?.()}
       {liveStream?.()}
       {banners?.()}
       <main className="">{content?.()}</main>
       {footer?.()}
-    </AppBackground>
+      {mobileNavigation?.()}
+    </div>
   );
 };

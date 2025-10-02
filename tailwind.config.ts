@@ -3,8 +3,9 @@ import type { Config } from "tailwindcss";
 export default {
   content: [
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/widgets/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/shared/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -18,25 +19,47 @@ export default {
         extrabold: "800",
         black: "900",
       },
+      screens: {
+        xs: "var(--breakpoint-xs)",
+        sm: "var(--breakpoint-sm)",
+        px: "var(--breakpoint-px)",
+        md: "var(--breakpoint-md)",
+        lg: "var(--breakpoint-lg)",
+        xl: "var(--breakpoint-xl)",
+        xxl: "var(--breakpoint-xxl)",
+      },
       colors: {
-        primary: "var(--color-primary)",
-        background: "var(--color-background)",
+        primary: "#eb2bac",
+        background: "#0f0a0d",
         surface: {
-          DEFAULT: "var(--color-surface)",
+          DEFAULT: "#1a1016",
         },
         text: {
-          primary: "var(--color-text-primary)",
-          secondary: "var(--color-text-secondary)",
-          tertiary: "var(--color-text-tertiary)",
-          white: "var(--color-text-white)",
+          primary: "#eb2bac",
+          secondary: "#5a5257",
+          tertiary: "#ffffffab",
+          white: "#ffffff",
         },
         accent: {
-          primary: "var(--color-accent-primary)",
+          primary: "#f5b0db",
         },
         border: {
-          primary: "var(--color-border-primary)",
-          focus: "var(--color-border-focus)",
+          primary: "#a40e74",
+          focus: "#f5b0db",
         },
+      },
+      spacing: {
+        xs: "var(--spacing-xs)",
+        sm: "var(--spacing-sm)",
+        md: "var(--spacing-md)",
+        lg: "var(--spacing-lg)",
+        xl: "var(--spacing-xl)",
+        header: "var(--spacing-header)",
+      },
+      transitionTimingFunction: {
+        fast: "ease-in-out",
+        normal: "ease-in-out",
+        slow: "ease-in-out",
       },
       borderRadius: {
         sm: "var(--radius-sm)",
@@ -45,20 +68,11 @@ export default {
         xl: "var(--radius-xl)",
         full: "var(--radius-full)",
       },
-      // ✅ теперь расширение, а не перезапись
-      spacing: {
-        xs: "var(--spacing-xs)",
-        sm: "var(--spacing-sm)",
-        md: "var(--spacing-md)",
-        lg: "var(--spacing-lg)",
-        xl: "var(--spacing-xl)",
-        "2xl": "var(--spacing-2xl)",
-        "3xl": "var(--spacing-3xl)",
-      },
+
       transitionDuration: {
-        fast: "150ms",
-        normal: "250ms",
-        slow: "350ms",
+        fast: "var(--transition-fast)",
+        normal: "var(--transition-normal)",
+        slow: "var(--transition-slow)",
       },
     },
   },

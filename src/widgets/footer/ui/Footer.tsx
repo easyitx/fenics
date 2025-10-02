@@ -61,10 +61,6 @@ export const Footer: React.FC<{ classname?: string }> = ({ classname }) => {
               priority
             />
           </div>
-          {/*<div*/}
-          {/*    className="flex items-center justify-center w-[4rem] h-[4rem] rounded-[1.4rem] bg-[linear-gradient(28deg,#F66A7B_-10.79%,#69224D_83.56%)]">*/}
-          {/*    <span className="text-[#191D3E] text-[1.5rem] font-400 leading-normal uppercase">18+</span>*/}
-          {/*</div>*/}
         </div>
       </div>
 

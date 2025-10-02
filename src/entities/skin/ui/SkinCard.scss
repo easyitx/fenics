@@ -3,10 +3,13 @@
 .skinCardLive {
   position: relative;
   height: 100%;
-  width: 142px;
+  width: clamp(80px, 8vw, 142px);
+  min-width: 80px;
+  max-width: 142px;
   border-radius: 8px;
   overflow: hidden;
   border: none;
+  flex-shrink: 0;
 
   // Для фона
   @include container-bg;
@@ -35,8 +38,8 @@
     }
 
     .skinCardLiveLogo {
-      width: 67px;
-      height: 67px;
+      width: clamp(38px, 4.5vw, 67px);
+      height: clamp(38px, 4.5vw, 67px);
       object-fit: contain;
     }
 
@@ -45,8 +48,8 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 94px;
-      height: 94px;
+      width: clamp(53px, 6.5vw, 94px);
+      height: clamp(53px, 6.5vw, 94px);
       object-fit: contain;
     }
 
@@ -60,19 +63,19 @@
       .skinName {
         color: #ffffffab;
         font-weight: 400;
-        font-size: 12px;
-        line-height: 14px;
+        font-size: clamp(9px, 0.8vw, 12px);
+        line-height: clamp(11px, 0.9vw, 14px);
         letter-spacing: 0;
         text-wrap: nowrap;
-        max-width: 120px;
+        max-width: clamp(60px, 7vw, 120px);
         text-overflow: ellipsis;
         overflow: hidden;
       }
 
       .skinWeapon {
         font-weight: 700;
-        font-size: 13px;
-        line-height: 16px;
+        font-size: clamp(10px, 0.9vw, 13px);
+        line-height: clamp(13px, 1vw, 16px);
         letter-spacing: 0;
         color: var(--color-text-white);
       }

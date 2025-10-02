@@ -1,5 +1,22 @@
 @use "sass:map";
-@use "./variables";
+
+$breakpoints: (
+  xs: 360px,
+  // Extra small phones
+  sm: 425px,
+  // Small phones
+  px: 525px,
+  // Phones landscape
+  md: 768px,
+  // Tablets portrait
+  lg: 1024px,
+  // Tablets landscape / small laptops
+  lgx: 1440px,
+
+  xl: 1920px,
+  // Desktop
+  xxl: 2560px,
+);
 
 // Media query mixin with improved logic
 @mixin respond-to($size) {
@@ -35,6 +52,11 @@
 }
 @mixin laptop {
   @include respond-to(lg) {
+    @content;
+  }
+}
+@mixin laptop-xl {
+  @include respond-to(lgx) {
     @content;
   }
 }

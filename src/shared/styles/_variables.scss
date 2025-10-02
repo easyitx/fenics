@@ -42,27 +42,19 @@
   --radius-full: 9999px;
 
   /* Размеры */
-  --spacing-xs: 4px;
-  --spacing-sm: 8px;
-  --spacing-md: 16px;
-  --spacing-lg: 24px;
-  --spacing-xl: 32px;
-  --spacing-2xl: 48px;
-  --spacing-3xl: 64px;
-}
+  --spacing-xs: 0.25rem; // 4px
+  --spacing-sm: 0.5rem; // 8px
+  --spacing-md: 1rem; // 16px
+  --spacing-lg: 1.5rem; // 24px
+  --spacing-xl: 2rem; // 32px
+  --spacing-header: 4rem; // 48px
 
-$breakpoints: (
-  xs: 360px,
-  // Extra small phones
-  sm: 425px,
-  // Small phones
-  px: 525px,
-  // Phones landscape
-  md: 768px,
-  // Tablets portrait
-  lg: 1024px,
-  // Tablets landscape / small laptops
-  xl: 1920px,
-  // Desktop
-  xxl: 2560px // Large desktop,,,
-);
+  /* Размеры экранов */
+  --breakpoint-xs: 360px;
+  --breakpoint-sm: 425px;
+  --breakpoint-px: 525px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1920px;
+  --breakpoint-xxl: 2560px;
+}

@@ -1,0 +1,33 @@
+// Main styles import
+
+@use "../../shared/styles/variables" as *;
+@use "../../shared/styles/responsive_mixins" as *;
+@use "../../shared/styles/cards_mixins" as *;
+@use "../../shared/styles/styles" as *;
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--font-proxima-nova), system-ui, -apple-system,
+    BlinkMacSystemFont, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent-primary);
+  border-radius: 3px;
+}

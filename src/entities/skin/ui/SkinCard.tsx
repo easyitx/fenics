@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import "./SkinCard.scss";
+import { Typography } from "@/shared/ui";
 
 export const SkinCard = () => {
   const skin = {
@@ -23,9 +24,7 @@ export const SkinCard = () => {
           viewBox="0 0 65 80"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-        >
-          {/* SVG paths */}
-        </svg>
+        ></svg>
 
         <Image
           className="skinCardLiveImage"
@@ -37,8 +36,8 @@ export const SkinCard = () => {
         />
 
         <div className="skinCardLiveInfo">
-          <span className="skinName">{skin.shortName}</span>
-          <span className="skinWeapon">{skin.weaponName}</span>
+          <Typography className="skinName">{skin.shortName}</Typography>
+          <Typography className="skinWeapon">{skin.weaponName}</Typography>
         </div>
       </div>
     </div>

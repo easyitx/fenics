@@ -1,0 +1,43 @@
+@import "@/shared/styles/responsive_mixins";
+
+.desktop-navigation {
+  margin-top: 6px;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    list-style: none;
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 17px;
+    transition: all 0.2s ease;
+    color: rgba(90, 82, 87, 1);
+
+    &--active {
+      color: #ffffff;
+    }
+
+    &:hover:not(&--disabled):not(&--active) {
+      color: #ffffff;
+    }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+  }
+
+  &__text {
+    white-space: nowrap;
+  }
+}
