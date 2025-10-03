@@ -1,6 +1,4 @@
 import React, { ReactNode } from "react";
-import { AppBackground } from "@/shared/ui/AppBackground";
-import { MobileNavigationContainer } from "@/shared/ui/MobileNavigationContainer";
 
 type TLayoutItems =
   | "header"

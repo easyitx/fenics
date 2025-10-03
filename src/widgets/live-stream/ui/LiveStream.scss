@@ -1,6 +1,8 @@
 .live__stream {
   position: relative;
+
   height: 7rem;
+
   display: flex;
   align-items: center;
   max-width: 100%;
@@ -119,6 +121,7 @@
       height: 100%;
       gap: clamp(2px, 0.2vw, 3px);
       width: 100%;
+
       overflow-x: auto;
       scrollbar-width: none;
       -ms-overflow-style: none;

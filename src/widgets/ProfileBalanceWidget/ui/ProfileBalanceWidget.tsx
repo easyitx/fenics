@@ -26,7 +26,7 @@ export const ProfileBalanceWidget: FC<ProfileBalanceWidgetProps> = ({
       }}
     >
       <div className="flex flex-col justify-center flex-grow px-5">
-        <Typography className="text-white  text-sm" as="p" maxLength={10}>
+        <Typography className="text-white  text-sm" as="p">
           {user?.username}
         </Typography>
         <Price

@@ -1,5 +1,5 @@
 // Main styles import
-
+@use "../../shared/styles/rem_mixins" as *;
 @use "../../shared/styles/variables" as *;
 @use "../../shared/styles/responsive_mixins" as *;
 @use "../../shared/styles/cards_mixins" as *;

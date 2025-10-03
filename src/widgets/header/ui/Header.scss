@@ -2,13 +2,20 @@
   position: relative;
   z-index: 100;
   width: 100%;
+<<<<<<< HEAD
   height: var(--spacing-header);
+=======
+>>>>>>> dev
 
   &__container {
     display: flex;
     align-items: center;
     max-width: 100%;
     height: 100%;
+<<<<<<< HEAD
+=======
+    margin-top: 30px;
+>>>>>>> dev
 
     .app_logo {
       display: flex;
@@ -32,8 +39,20 @@
       margin-left: auto;
       display: flex;
       gap: 15px;
+<<<<<<< HEAD
       align-items: stretch;
       height: 100%;
     }
   }
+=======
+      align-items: center;
+    }
+  }
+
+  &__live {
+    margin-top: 23px;
+    height: 126px;
+    padding-bottom: 15px;
+  }
+>>>>>>> dev
 }

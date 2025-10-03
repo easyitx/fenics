@@ -10,7 +10,7 @@ interface ModalProps {
   onOpenChange: (open: boolean) => void;
   title?: string;
   children: React.ReactNode;
-  width?: string; // кастомная ширина
+  width?: string;
 }
 
 export const Modal = ({

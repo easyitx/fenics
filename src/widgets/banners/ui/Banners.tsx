@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import "./Banners.scss";
 import { cn } from "@/shared/lib/utils";
-import { Button, Icon, Input } from "@/shared/ui";
+import { Button, Icon } from "@/shared/ui";
 import { PromoInput } from "@/widgets/PromoInput/ui/PromoInput";
 
 export interface BannersProps {
