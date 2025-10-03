@@ -12,12 +12,8 @@
   --color-text-secondary: #5a5257;
   --color-text-tertiary: #ffffffab;
   --color-text-white: #ffffff;
-<<<<<<< HEAD
-
-=======
   --color-text-black: #000000;
   --color-text-scarlet: #f5b0db;
->>>>>>> dev
   /* Акцентные цвета */
   --color-accent-primary: #f5b0db;
   --color-accent-secondary: "";
@@ -31,11 +27,7 @@
 
   /* Границы */
   --color-border-primary: #a40e74;
-<<<<<<< HEAD
-  --color-border-secondary: "";
-=======
   --color-border-secondary: #2a252a;
->>>>>>> dev
   --color-border-focus: var(--color-accent-primary);
 
   /* Переходы */
@@ -51,24 +43,6 @@
   --radius-full: 9999px;
 
   /* Размеры */
-<<<<<<< HEAD
-  --spacing-xs: 0.25rem; // 4px
-  --spacing-sm: 0.5rem; // 8px
-  --spacing-md: 1rem; // 16px
-  --spacing-lg: 1.5rem; // 24px
-  --spacing-xl: 2rem; // 32px
-  --spacing-header: 4rem; // 48px
-
-  /* Размеры экранов */
-  --breakpoint-xs: 360px;
-  --breakpoint-sm: 425px;
-  --breakpoint-px: 525px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 1024px;
-  --breakpoint-xl: 1920px;
-  --breakpoint-xxl: 2560px;
-}
-=======
   --spacing-xs: 4px;
   --spacing-sm: 8px;
   --spacing-md: 16px;
@@ -115,6 +89,15 @@
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
   --font-weight-black: 900;
+
+  /* Breakpoints */
+  --breakpoint-xs: 360px;
+  --breakpoint-sm: 425px;
+  --breakpoint-px: 525px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1920px;
+  --breakpoint-xxl: 2560px;
 }
 
 $breakpoints: (
@@ -130,6 +113,5 @@ $breakpoints: (
   // Tablets landscape / small laptops
   xl: 1920px,
   // Desktop
-  xxl: 2560px // Large desktop,,,,,,,,,,
+  xxl: 2560px // Large desktop,,,,
 );
->>>>>>> dev

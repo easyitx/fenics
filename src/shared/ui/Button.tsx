@@ -5,7 +5,7 @@ import { cn } from "../lib/utils";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
-  variant?: "primary" | "secondary" | "outline";
+  variant?: "primary" | "secondary" | "outline" | "surface";
   size?: "sm" | "md" | "lg";
   fullWidth?: boolean;
 }
@@ -27,6 +27,7 @@ export const Button: React.FC<ButtonProps> = ({
       "bg-[var(--color-surface)] text-[var(--color-text-primary)] hover:opacity-80",
     outline:
       "border border-[var(--color-primary)] text-[var(--color-primary)] bg-transparent hover:bg-[var(--color-primary)] hover:text-white",
+    surface: "bg-[var(--color-surface)] text-[#FFFFFF] hover:opacity-80",
   };
 
   const sizes = {
@@ -45,6 +46,35 @@ export const Button: React.FC<ButtonProps> = ({
         sizes[size],
         className
       )}
+    >
+      {children}
+    </button>
+  );
+};
+interface UnstyledButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode;
+}
+
+export const UnstyledButton: React.FC<UnstyledButtonProps> = ({
+  children,
+  ...props
+}) => {
+  return (
+    <button
+      style={{
+        background: "none",
+        border: "none",
+        padding: 0,
+        margin: 0,
+        cursor: "pointer",
+        font: "inherit",
+        color: "inherit",
+        textDecoration: "none",
+        outline: "none",
+        ...props.style,
+      }}
+      {...props}
     >
       {children}
     </button>

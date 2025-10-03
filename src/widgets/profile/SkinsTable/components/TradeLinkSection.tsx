@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { Typography } from "@/shared/ui/Typography";
 import { Button } from "@/shared/ui/Button";
-import { Input } from "@/components/ui/input";
+import { Input } from "@/shared/ui/Input";
 import styles from "../ui/SkinsTable.module.scss";
 
 interface TradeLinkSectionProps {
@@ -49,7 +49,7 @@ export const TradeLinkSection: React.FC<TradeLinkSectionProps> = ({
           type="text"
           placeholder="https://steamcommunity.com/tra..."
           value={tradeLink}
-          onChange={(e) => onTradeLinkChange(e.target.value)}
+          onChange={onTradeLinkChange}
           className={styles.inputField}
         />
         <Button className="bg-primary rounded-md p-2" onClick={onAddLink}>
