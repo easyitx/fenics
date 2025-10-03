@@ -1,17 +1,31 @@
-import React from 'react';
-import "./Banners.scss"
+import React from "react";
+import Image from "next/image";
+import "./Banners.scss";
+import { cn } from "@/shared/lib/utils";
 
-export const Banners = () => {
-    return (
-        <div className="banners">
-            <div className="banners__inner">
-                <div className="sliderSection">
-                    <img className="banner" src="/banners/banner.png" alt="banner" />
-                </div>
-                <div className="promoSection">
-                    <img className="banner" src="/banners/promo_banner.png" alt="banner promo" />
-                </div>
-            </div>
+export const Banners = ({ classname = "" }: { classname?: string }) => {
+  return (
+    <div className={cn("banners", [classname])}>
+      <div className="banners__inner">
+        <div className="sliderSection">
+          <Image
+            className="banner"
+            src="/banners/banner.png"
+            alt="banner"
+            width={1500}
+            height={400}
+          />
         </div>
-    );
+        <div className="promoSection">
+          <Image
+            className="banner"
+            src="/banners/promo_banner.png"
+            alt="banner promo"
+            width={600}
+            height={400}
+          />
+        </div>
+      </div>
+    </div>
+  );
 };

@@ -1,33 +1,33 @@
-
+@use "sass:map";
 $rarity-themes: (
-        common: (
-                bg-main: linear-gradient(180deg, #413E53 0%, #4E4A60 100%)
-        ),
-        uncommon: (
-                bg-main: linear-gradient(180deg, #23285B 0%, #2F3E8F 100%)
-        ),
-        rare: (
-                bg-main: linear-gradient(180deg, #291D52 0%, #3D2877 100%)
-        ),
-        mythical: (
-                bg-main: linear-gradient(180deg, #4E1D45 0%, #8D2964 100%)
-        ),
-        legendary: (
-                bg-main: linear-gradient(180deg, #471D30 0%, #772533 100%)
-        ),
-        ancient: (
-                bg-main: linear-gradient(180deg, #ACA752 0%, #565328 141.67%)
-        ),
-        other: (
-                bg-main: linear-gradient(180deg, #393156 0%, #52496A 100%)
-        )
+  common: (
+    bg-main: linear-gradient(180deg, #413e53 0%, #4e4a60 100%),
+  ),
+  uncommon: (
+    bg-main: linear-gradient(180deg, #23285b 0%, #2f3e8f 100%),
+  ),
+  rare: (
+    bg-main: linear-gradient(180deg, #291d52 0%, #3d2877 100%),
+  ),
+  mythical: (
+    bg-main: linear-gradient(180deg, #4e1d45 0%, #8d2964 100%),
+  ),
+  legendary: (
+    bg-main: linear-gradient(180deg, #471d30 0%, #772533 100%),
+  ),
+  ancient: (
+    bg-main: linear-gradient(180deg, #aca752 0%, #565328 141.67%),
+  ),
+  other: (
+    bg-main: linear-gradient(180deg, #393156 0%, #52496a 100%),
+  ),
 );
 
 // Миксин для основного фона контейнера
 @mixin container-bg($namespace: "&") {
-    @each $rarity, $colors in $rarity-themes {
-        #{$namespace}__#{$rarity} {
-            background: map-get($colors, bg-main);
-        }
+  @each $rarity, $colors in $rarity-themes {
+    #{$namespace}__#{$rarity} {
+      background: map.get($colors, bg-main);
     }
+  }
 }
