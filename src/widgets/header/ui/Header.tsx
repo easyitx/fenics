@@ -1,10 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import "./Header.scss";
-import { Button, Icon } from "@/shared/ui";
+import { Button, Icon, Typography } from "@/shared/ui";
 import { Navigation } from "./Navigation";
 import { cn } from "@/shared/lib/utils";
 import { ProfileBalanceWidget } from "@/widgets/ProfileBalanceWidget/ui/ProfileBalanceWidget";
+import Link from "next/link";
 
 interface IHeaderProps {
   classname?: string;
@@ -29,6 +30,12 @@ export const Header: React.FC<IHeaderProps> = ({ classname = "" }) => {
         </div>
 
         <div className="header_actions">
+          <Link href="/profile">
+            <Typography>профиль</Typography>
+          </Link>
+          <Link href="/upgrades">
+            <Typography>апгрейды</Typography>
+          </Link>
           <ProfileBalanceWidget />
           <Button variant="primary">
             Войти

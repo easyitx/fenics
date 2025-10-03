@@ -1,0 +1,45 @@
+.container {
+  background-image: url("/upgrades/cubes.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 400px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.usersItem {
+  background-image: url("/upgrades/usersItem.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 23%; /* 431/1877 ≈ 0.23 (23%) */
+  aspect-ratio: 431 / 431; /* Квадратное соотношение */
+  max-width: 431px;
+  max-height: 431px;
+}
+
+.initial {
+  background-image: url("/upgrades/initial.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 46.7%; /* 877/1877 ≈ 0.467 (46.7%) */
+  aspect-ratio: 877 / 425;
+  max-width: 877px;
+  max-height: 425px;
+}
+
+.upgradeItem {
+  background-image: url("/upgrades/upgradeItem.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 23%; /* 431/1877 ≈ 0.23 (23%) */
+  aspect-ratio: 431 / 431; /* Квадратное соотношение */
+  max-width: 431px;
+  max-height: 431px;
+}

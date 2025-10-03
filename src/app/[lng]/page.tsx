@@ -1,9 +1,12 @@
+import { Banners } from "@/widgets/banners/ui/Banners";
 import "./styles.scss";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <div className="min-h-screen">
+      <Banners classname="container mx-auto mt-[1rem] " />
+
       <div className="boxes__section">
         <div className="boxes__section__heading">
           <h1 className="title">БЕСПЛАТНЫЕ КЕЙСЫ</h1>

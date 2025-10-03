@@ -2,7 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 
 import { proximaNova } from "@/shared/lib/fonts";
-import { Banners, Footer, Header } from "@/widgets";
+import { Footer, Header } from "@/widgets";
 import { dir } from "i18next";
 import "./globals.scss";
 import "@/shared/styles/index.scss";
@@ -40,9 +40,6 @@ export default async function RootLayout({
                 <div className="container mx-auto py-[1rem] mt-[1rem]">
                   <LiveStream />
                 </div>
-              ),
-              banners: () => (
-                <Banners classname="container mx-auto mt-[1rem] " />
               ),
               content: () => (
                 <div className="container mx-auto mt-[1rem]">{children}</div>
