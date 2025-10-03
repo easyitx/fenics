@@ -1,5 +1,6 @@
 {
   "name": "fenicsgg",
+  
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,13 +9,16 @@
     "start": "next start",
     "lint": "eslint",
     "toc": "i18next-resources-for-ts interface -i ./src/app/i18n/locales/en -o ./src/shared/types/resources.d.ts",
+   
     "build:icons": "svg-sprite-generate -d ./public/icons -o ./public/icons/sprite.svg",
-    "dev:icons": "npm run build:icons -- --watch"
+    "dev:icons": "npm run build:icons  --watch"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",
+    "@radix-ui/react-popover": "^1.1.15",
     "accept-language": "^3.0.20",
     "clsx": "^2.1.1",
+    
     "framer-motion": "^12.23.22",
     "i18next": "^25.5.2",
     "i18next-browser-languagedetector": "^8.2.0",
@@ -29,7 +33,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
-    "@tailwindcss/postcss": "^4.1.13",
+    "@tailwindcss/postcss": "^4.1.14",
     "@types/node": "^20.19.18",
     "@types/react": "^19.1.16",
     "@types/react-dom": "^19.1.9",
@@ -39,7 +43,7 @@
     "next-svg-sprite": "^0.3.0",
     "sass": "^1.93.2",
     "svg-sprite-generator": "^0.0.7",
-    "tailwindcss": "^4.1.13",
+    "tailwindcss": "^4.1.14",
     "typescript": "^5.9.2"
   }
 }

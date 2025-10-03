@@ -6,9 +6,6 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const nextConfig: NextConfig = {
   /* config options here */
-  turbopack: {
-    root: __dirname,
-  },
   images: {
     remotePatterns: [
       {
@@ -24,6 +21,9 @@ const nextConfig: NextConfig = {
         pathname: "/**",
       },
     ],
+  },
+  sassOptions: {
+    includePaths: ["./src"],
   },
 };
 

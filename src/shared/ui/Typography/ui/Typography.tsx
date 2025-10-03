@@ -6,6 +6,7 @@ interface TypographyProps {
   color?: TextColor;
   as?: keyof JSX.IntrinsicElements;
   className?: string;
+  maxLength?: number;
   size?:
     | "xs"
     | "sm"
@@ -46,6 +47,7 @@ export function Typography({
   color = "primary",
   as: Tag = "p",
   className,
+  maxLength,
   size = "base",
   weight,
   lineHeight,
@@ -71,6 +73,18 @@ export function Typography({
     return "";
   };
 
+  const truncateText = (text: string, maxLength: number) => {
+    if (text.length <= maxLength) return text;
+    return text.slice(0, maxLength) + "...";
+  };
+
+  const renderContent = () => {
+    if (typeof children === "string" && maxLength) {
+      return truncateText(children, maxLength);
+    }
+    return children;
+  };
+
   return (
     <Tag
       className={`
@@ -80,9 +94,8 @@ export function Typography({
         text-${color}
         ${className ?? ""}
       `.trim()}
-      style={{ color: `var(--color-text-${color})` }}
     >
-      {children}
+      {renderContent()}
     </Tag>
   );
 }

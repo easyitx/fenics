@@ -9,7 +9,6 @@ interface RemSystemProviderProps {
   children: React.ReactNode;
 }
 
-// Инициализирует rem систему и устанавливает базовый размер шрифта
 export function RemSystemProvider({ children }: RemSystemProviderProps) {
   useResponsiveFontSize();
 

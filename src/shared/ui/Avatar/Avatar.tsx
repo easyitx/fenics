@@ -19,7 +19,7 @@ const Avatar: React.FC<AvatarProps> = ({
       alt={`${username}'s avatar`}
       width={size}
       height={size}
-      className={`rounded-lg object-cover ${className}`}
+      className={`rounded-md h-full w-auto ${className}`}
     />
   );
 };

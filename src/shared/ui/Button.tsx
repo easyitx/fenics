@@ -1,72 +1,56 @@
+"use client";
+
+import React from "react";
+import { cn } from "../lib/utils";
+
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
-  variant?: "primary" | "surface" | "outline" | "black";
-  size?: "large";
+  variant?: "primary" | "secondary" | "outline" | "surface";
+  size?: "sm" | "md" | "lg";
+  fullWidth?: boolean;
 }
 
 export const Button: React.FC<ButtonProps> = ({
   children,
   variant = "primary",
-  size = "large",
+  size = "md",
+  fullWidth = false,
+  className,
   ...props
 }) => {
-  const baseStyles = {
-    fontWeight: 700,
-    fontSize: "14px",
-    lineHeight: "120%",
-    letterSpacing: "0%",
-    border: "none",
-    cursor: "pointer",
-    transition: "all 0.2s ease",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  };
+  const baseStyles =
+    "inline-flex gap-2 cursor-pointer items-center justify-center font-bold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed";
 
   const variants = {
-    primary: {
-      background: "var(--color-primary)",
-      color: "#FFFFFF",
-    },
-    surface: {
-      background: "var(--color-surface)",
-      color: "#FFFFFF",
-    },
-    outline: {
-      background: "transparent",
-      color: "#FFFFFF",
-      border: "1px solid var(--color-border-primary)",
-    },
-    black: {
-      background: "var(--color-text-black)",
-      color: "#FFFFFF",
-    },
-    // Можно добавить другие варианты
+    primary: "bg-[var(--color-primary)] text-white hover:opacity-90",
+    secondary:
+      "bg-[var(--color-surface)] text-[var(--color-text-primary)] hover:opacity-80",
+    outline:
+      "border border-[var(--color-primary)] text-[var(--color-primary)] bg-transparent hover:bg-[var(--color-primary)] hover:text-white",
+    surface: "bg-[var(--color-surface)] text-[#FFFFFF] hover:opacity-80",
   };
 
   const sizes = {
-    large: {
-      padding: "16px",
-      borderRadius: "8px",
-    },
-    // Можно добавить другие размеры
+    sm: "px-3 py-1.5 text-sm rounded-md",
+    md: "px-4 py-2 text-base rounded-lg",
+    lg: "px-6 py-3 text-lg rounded-xl",
   };
 
   return (
     <button
-      style={{
-        ...baseStyles,
-        ...variants[variant],
-        ...sizes[size],
-        ...props.style,
-      }}
       {...props}
+      className={cn(
+        baseStyles,
+        variants[variant],
+        fullWidth && "w-full",
+        sizes[size],
+        className
+      )}
     >
       {children}
     </button>
   );
 };
-
 interface UnstyledButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;

@@ -89,6 +89,15 @@
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
   --font-weight-black: 900;
+
+  /* Breakpoints */
+  --breakpoint-xs: 360px;
+  --breakpoint-sm: 425px;
+  --breakpoint-px: 525px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1920px;
+  --breakpoint-xxl: 2560px;
 }
 
 $breakpoints: (
@@ -104,5 +113,5 @@ $breakpoints: (
   // Tablets landscape / small laptops
   xl: 1920px,
   // Desktop
-  xxl: 2560px // Large desktop,,,,,,,,,,
+  xxl: 2560px // Large desktop,,,,
 );

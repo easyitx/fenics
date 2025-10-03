@@ -1,17 +1,20 @@
 import React from "react";
 import type { Metadata } from "next";
+import "./globals.css";
+import "./index.scss";
 
 import { proximaNova } from "@/shared/lib/fonts";
 import { Banners, Footer, Header } from "@/widgets";
+import { AppBackground } from "@/shared/ui/AppBackground";
 import { dir } from "i18next";
-import "./globals.scss";
-import "@/shared/styles/index.scss";
+
 import { languages } from "@/app/i18n/settings";
 import { AppProvider } from "@/app/providers/app-provider";
 
 import { LiveStream } from "@/widgets/live-stream";
 import { MainLayout } from "@/shared/ui/MainLayout/";
-import { RemSystemProvider } from "@/shared/ui/RemSystemProvider";
+import { MobileNavigation } from "@/widgets/MobileNavigation/MobileNavigation";
+import { MobileNavigationContainer } from "@/shared/ui/MobileNavigationContainer";
 
 export const metadata: Metadata = {
   title: "Fenics.gg",
@@ -31,31 +34,33 @@ export default async function RootLayout({
   return (
     <html lang={lng} dir={dir(lng)} className={proximaNova.variable}>
       <body>
-        <RemSystemProvider>
-          <AppProvider lng={lng}>
-            <MainLayout
-              renderProps={{
-                header: () => (
-                  <Header classname="container mx-auto px-[2rem]  " />
-                ),
-                liveStream: () => (
-                  <div className="container mx-auto py-[1rem] mt-[1rem]">
-                    <LiveStream />
+        <AppProvider lng={lng}>
+          <AppBackground />
+          <MainLayout
+            renderProps={{
+              header: () => <Header classname="app-container mx-auto px-5" />,
+              liveStream: () => (
+                <div className="app-container mx-auto py-[1rem] mt-2">
+                  <LiveStream />
+                </div>
+              ),
+              banners: () => <Banners classname="app-container mx-auto mt-2" />,
+              content: () => (
+                <div className="app-container mx-auto mt-16">{children}</div>
+              ),
+              footer: () => (
+                <Footer classname="app-container mx-auto px-[2rem] mt-6" />
+              ),
+              mobileNavigation: () => (
+                <MobileNavigationContainer>
+                  <div className="pb-20">
+                    <MobileNavigation />
                   </div>
-                ),
-                banners: () => (
-                  <Banners classname="container mx-auto mt-[1rem] " />
-                ),
-                content: () => (
-                  <div className="container mx-auto mt-[1rem]">{children}</div>
-                ),
-                footer: () => (
-                  <Footer classname="container mx-auto px-[2rem] mt-[1rem]" />
-                ),
-              }}
-            />
-          </AppProvider>
-        </RemSystemProvider>
+                </MobileNavigationContainer>
+              ),
+            }}
+          />
+        </AppProvider>
       </body>
     </html>
   );

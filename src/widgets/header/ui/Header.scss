@@ -2,13 +2,13 @@
   position: relative;
   z-index: 100;
   width: 100%;
+  height: var(--spacing-header);
 
   &__container {
     display: flex;
     align-items: center;
     max-width: 100%;
     height: 100%;
-    margin-top: 30px;
 
     .app_logo {
       display: flex;
@@ -32,13 +32,8 @@
       margin-left: auto;
       display: flex;
       gap: 15px;
-      align-items: center;
+      align-items: stretch;
+      height: 100%;
     }
-  }
-
-  &__live {
-    margin-top: 23px;
-    height: 126px;
-    padding-bottom: 15px;
   }
 }
