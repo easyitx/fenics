@@ -1,0 +1,41 @@
+.balanceSlider {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 0.5rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.balanceHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.balanceLabel {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.balanceValue {
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 600;
+
+  :global(.primary) {
+    color: #ec4899; // pink-500
+  }
+}
+
+.sliderContainer {
+  width: 100%;
+  padding: 0.5rem 0;
+}
+
+.slider {
+  width: 100%;
+}

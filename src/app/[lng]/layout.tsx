@@ -28,7 +28,7 @@ export default async function RootLayout({
 }) {
   const { lng } = await params;
   return (
-    <html lang={lng} dir={dir(lng)} className={proximaNova.variable}>
+    <html lang={lng} dir={dir(lng)} className={`${proximaNova.variable} dark`}>
       <body>
         <AppProvider lng={lng}>
           <MainLayout
