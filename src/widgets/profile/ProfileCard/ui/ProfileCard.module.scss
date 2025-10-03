@@ -1,0 +1,161 @@
+@import "@/shared/styles/variables";
+@import "@/shared/styles/rem_mixins";
+
+.profileCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 280px;
+  max-width: 320px;
+  width: 100%;
+  gap: var(--spacing-md);
+
+  @media (max-width: 768px) {
+    min-width: 100%;
+    max-width: 100%;
+    padding: var(--spacing-md);
+  }
+}
+
+.userNameContainer {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.avatarContainer {
+  position: relative;
+  margin-bottom: var(--spacing-sm);
+}
+
+.avatar {
+  object-fit: cover;
+}
+
+.username {
+  @include responsive-typography(20px, 24px, 28px, 32px, 1.2, 700);
+  color: var(--color-text-white);
+}
+
+.balance {
+  @include responsive-typography(24px, 28px, 32px, 36px, 1.2, 700);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.userId {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  background: var(--color-accent-primary);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xs) var(--spacing-sm);
+
+  p {
+    color: var(--color-text-white);
+    margin: 0;
+  }
+}
+
+.moneyIcon {
+  margin-right: var(--spacing-xs);
+}
+
+.withdrawalInfo {
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  width: 100%;
+}
+
+.withdrawalLabel {
+  color: var(--color-text-secondary);
+}
+
+.socialLinks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  width: 100%;
+}
+
+.socialItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  width: 100%;
+  gap: var(--spacing-xs);
+}
+
+.telegramButton {
+  background: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: var(--color-accent-primary);
+    transform: translateY(-1px);
+  }
+
+  p {
+    color: var(--color-text-white);
+    margin: 0;
+  }
+}
+
+.vkButton {
+  background: #000;
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  width: 100%;
+
+  &:hover {
+    background: var(--color-surface);
+    transform: translateY(-1px);
+  }
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-white);
+
+  &.inactive {
+    background: var(--color-white);
+  }
+}

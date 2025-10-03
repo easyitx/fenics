@@ -2,7 +2,7 @@ declare type ValueOf<T> = T[keyof T];
 declare type ValueOfContext<T extends object> = {
   [K in keyof T]: ValueOf<T[K]>;
 }[keyof T];
-//@ts-expect-error
+// @ts-expect-error - complex recursive type that TypeScript can't fully infer
 declare type TupleUnion<U extends string, R extends any[] = []> = {
   [S in U]: Exclude<U, S> extends never
     ? [...R, S]

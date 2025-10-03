@@ -33,9 +33,6 @@ export const Header: React.FC<IHeaderProps> = ({ classname = "" }) => {
           <Link href="/profile">
             <Typography>профиль</Typography>
           </Link>
-          <Link href="/upgrades">
-            <Typography>апгрейды</Typography>
-          </Link>
           <ProfileBalanceWidget />
           <Button variant="primary">
             Войти

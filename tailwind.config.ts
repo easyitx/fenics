@@ -40,6 +40,7 @@ export default {
         border: {
           primary: "var(--color-border-primary)",
           focus: "var(--color-border-focus)",
+          secondary: "var(--color-border-secondary)",
         },
         // Убираем ссылки на пустые переменные состояний
       },

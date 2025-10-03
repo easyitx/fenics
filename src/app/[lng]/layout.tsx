@@ -11,6 +11,7 @@ import { AppProvider } from "@/app/providers/app-provider";
 
 import { LiveStream } from "@/widgets/live-stream";
 import { MainLayout } from "@/shared/ui/MainLayout/";
+import { RemSystemProvider } from "@/shared/ui/RemSystemProvider";
 
 export const metadata: Metadata = {
   title: "Fenics.gg",
