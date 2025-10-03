@@ -1,9 +1,9 @@
 @use "./reset.scss";
+@use "./rem_mixins.scss" as rem;
 
 @plugin "tailwindcss-animate";
 
 @custom-variant dark (&:is(.dark *));
-@use "./rem_mixins.scss" as rem;
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
