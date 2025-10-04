@@ -2,12 +2,19 @@
 
 import React from "react";
 import "./LiveStream.scss";
-import { Icon } from "@/shared/ui";
+import { UnstyledButton, Icon } from "@/shared/ui";
 import { SkinCard } from "@/entities/skin";
 import { cn } from "@/shared/lib/utils";
 
+type FilterType = "live" | "top";
+
 export const LiveStream: React.FC<{ classname?: string }> = ({ classname }) => {
-  const [onlineCount] = React.useState(2430);
+  const [onlineCount] = React.useState("2 500");
+  const [activeFilter, setActiveFilter] = React.useState<FilterType>("live");
+
+  const handleFilterChange = (filter: FilterType) => {
+    setActiveFilter(filter);
+  };
 
   return (
     <div className={cn("live__stream", [classname])}>
@@ -21,14 +28,26 @@ export const LiveStream: React.FC<{ classname?: string }> = ({ classname }) => {
 
       <div className="live__stream__items">
         <div className="itemsFilter">
-          <button className="filterButton active">
+          <UnstyledButton
+            className={cn("liveBtn", {
+              "liveBtn--active": activeFilter === "live",
+              "liveBtn--inactive": activeFilter !== "live",
+            })}
+            onClick={() => handleFilterChange("live")}
+          >
             <Icon name="next" size={17} />
             <span className="filterLabel">LIVE</span>
-          </button>
-          <button className="filterButton">
-            <Icon name="cup" size={17} color="secondary" />
+          </UnstyledButton>
+          <UnstyledButton
+            className={cn("liveBtn", {
+              "liveBtn--active": activeFilter === "top",
+              "liveBtn--inactive": activeFilter !== "top",
+            })}
+            onClick={() => handleFilterChange("top")}
+          >
+            <Icon name="cup" size={17} />
             <span className="filterLabel">TOP</span>
-          </button>
+          </UnstyledButton>
         </div>
 
         <div className="itemsList">

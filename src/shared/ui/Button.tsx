@@ -25,7 +25,7 @@ export const Button: React.FC<ButtonProps> = ({
 
   const variants = {
     primary: {
-      background: "var(--color-primary)",
+      background: "var(--color-text-primary)",
       color: "#FFFFFF",
     },
     surface: {
@@ -79,7 +79,6 @@ export const UnstyledButton: React.FC<UnstyledButtonProps> = ({
   return (
     <button
       style={{
-        background: "none",
         border: "none",
         padding: 0,
         margin: 0,
