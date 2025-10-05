@@ -10,13 +10,14 @@ export const Button: React.FC<ButtonProps> = ({
   children,
   variant = "primary",
   size = "large",
+  style,
+  className,
   ...props
 }) => {
   const baseStyles = {
     fontWeight: 700,
     fontSize: "14px",
     lineHeight: "120%",
-    letterSpacing: "0%",
     border: "none",
     cursor: "pointer",
     transition: "all 0.2s ease",
@@ -60,9 +61,9 @@ export const Button: React.FC<ButtonProps> = ({
         ...baseStyles,
         ...variants[variant],
         ...sizes[size],
-        ...props.style,
+        ...style,
       }}
-      className={styles.button}
+      className={`${styles.button} ${className || ""}`}
       {...props}
     >
       {children}
@@ -77,6 +78,8 @@ interface UnstyledButtonProps
 
 export const UnstyledButton: React.FC<UnstyledButtonProps> = ({
   children,
+  style,
+  className,
   ...props
 }) => {
   return (
@@ -90,8 +93,12 @@ export const UnstyledButton: React.FC<UnstyledButtonProps> = ({
         color: "inherit",
         textDecoration: "none",
         outline: "none",
-        ...props.style,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        ...style,
       }}
+      className={className}
       {...props}
     >
       {children}

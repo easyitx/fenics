@@ -1,6 +1,12 @@
 .container {
+  height: 59px;
   display: flex;
+  align-items: center;
   gap: var(--spacing-md);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-primary);
+  background: linear-gradient(180deg, #110b0f 30%, #4d1333 100%);
+  padding: var(--spacing-xs);
 }
 
 .content {
@@ -8,6 +14,5 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: var(--spacing-sm);
-  gap: var(--spacing-sm);
+  padding: var(--spacing-xs) var(--spacing-md);
 }

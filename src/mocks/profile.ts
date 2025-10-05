@@ -8,7 +8,7 @@ interface SkinItem {
   isHighlighted?: boolean;
 }
 
-export const mockUser: IUser = {
+export const user: IUser = {
   username: "RudyGrays",
   balance: {
     current: 3239.24,

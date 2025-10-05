@@ -1,12 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import "./Header.scss";
-import { Button, Icon, Typography } from "@/shared/ui";
+import { Button, Icon, UnstyledButton } from "@/shared/ui";
 import { Navigation } from "./Navigation";
 import { cn } from "@/shared/lib/utils";
 import { ProfileBalanceWidget } from "@/widgets/ProfileBalanceWidget/ui/ProfileBalanceWidget";
 import Link from "next/link";
-import { mockUser } from "@/mocks/profile";
+import { user } from "@/mocks/profile";
 
 interface IHeaderProps {
   classname?: string;
@@ -31,14 +31,36 @@ export const Header: React.FC<IHeaderProps> = ({ classname = "" }) => {
         </div>
 
         <div className="header_actions">
-          <Link href="/profile">
-            <Typography>профиль</Typography>
-          </Link>
-          <ProfileBalanceWidget user={mockUser} />
-          <Button variant="primary">
-            Войти
-            <Icon name="add-circle" color="primary" size={20} />
-          </Button>
+          {user ? (
+            <div className="flex items-center" style={{ gap: "10px" }}>
+              <Button variant="primary" className="h-[59px]">
+                Депозит
+                <Icon name="add-circle" color="primary" size={20} />
+              </Button>
+              <ProfileBalanceWidget user={user} />
+              <UnstyledButton className="w-[59px] h-[59px]">
+                <Image
+                  src="/icons/notification.svg"
+                  alt="Notification"
+                  width={24}
+                  height={24}
+                />
+              </UnstyledButton>
+              <UnstyledButton className="w-[59px] h-[59px]">
+                <Image
+                  src="/icons/Exit.svg"
+                  alt="Exit"
+                  width={24}
+                  height={24}
+                />
+              </UnstyledButton>
+            </div>
+          ) : (
+            <Button variant="primary" className="h-[59px]">
+              Войти
+              <Icon name="add-circle" color="primary" size={20} />
+            </Button>
+          )}
         </div>
       </div>
     </header>
