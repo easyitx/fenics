@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { Typography } from "@/shared/ui/Typography";
-import { Button } from "@/shared/ui/Button";
+import { Button } from "@/shared/ui/Button/ui/Button";
 import { Input } from "@/components/ui/input";
 import styles from "../ui/SkinsTable.module.scss";
 

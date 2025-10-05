@@ -3,6 +3,10 @@
 import { clsx } from "clsx";
 import { NextIcon } from "./icons/NextIcon";
 import { CupIcon } from "./icons/CupIcon";
+import { BoxIcon } from "./icons/BoxIcon";
+import { FlashIcon } from "./icons/FlashIcon";
+import { MagicStarIcon } from "./icons/MagicStarIcon";
+import { CalendarIcon } from "./icons/CalendarIcon";
 
 interface IconProps extends React.SVGProps<SVGSVGElement> {
   name: string;
@@ -12,6 +16,10 @@ interface IconProps extends React.SVGProps<SVGSVGElement> {
 const iconComponents = {
   next: NextIcon,
   cup: CupIcon,
+  box: BoxIcon,
+  flash: FlashIcon,
+  "magic-star": MagicStarIcon,
+  calendar: CalendarIcon,
 };
 
 export const Icon: React.FC<IconProps> = ({

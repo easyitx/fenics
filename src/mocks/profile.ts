@@ -1,3 +1,5 @@
+import { IUser } from "@/entities/user";
+
 interface SkinItem {
   id: string;
   name: string;
@@ -5,6 +7,15 @@ interface SkinItem {
   image: string;
   isHighlighted?: boolean;
 }
+
+export const mockUser: IUser = {
+  username: "RudyGrays",
+  balance: {
+    current: 3239.24,
+    total: 3239.24,
+    currency: "USD",
+  },
+};
 
 export const mockSkins: SkinItem[] = [
   {

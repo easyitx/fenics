@@ -1,3 +1,5 @@
+import styles from "./Button.module.scss";
+
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   variant?: "primary" | "surface" | "outline" | "black";
@@ -60,6 +62,7 @@ export const Button: React.FC<ButtonProps> = ({
         ...sizes[size],
         ...props.style,
       }}
+      className={styles.button}
       {...props}
     >
       {children}

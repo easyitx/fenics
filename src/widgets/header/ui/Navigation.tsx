@@ -43,12 +43,7 @@ export const Navigation: React.FC = () => {
                   isActive ? "navigationLink--active" : ""
                 }`}
               >
-                <Icon
-                  name={item.icon}
-                  color={isActive ? "primary" : "secondary"}
-                  size={21}
-                  className="navigationIcon"
-                />
+                <Icon name={item.icon} size={21} className="navigationIcon" />
                 <Typography color={isActive ? "primary" : "secondary"} as="p">
                   {t(`header.nav.${item.id}`)}
                 </Typography>

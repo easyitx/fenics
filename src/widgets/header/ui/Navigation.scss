@@ -18,7 +18,7 @@
         font-weight: 700;
         font-size: 17px;
         transition: all 0.2s ease;
-        color: rgba(90, 82, 87, 1);
+        color: var(--color-text-secondary);
 
         .navigationIcon {
           flex-shrink: 0;
@@ -29,11 +29,19 @@
         }
 
         &--active {
-          color: #FFFFFF;
+          color: var(--color-text-white);
+
+          svg {
+            color: var(--color-text-primary);
+          }
         }
 
         &:hover:not(&--disabled):not(&--active) {
-          color: #FFFFFF;
+          color: var(--color-text-white);
+        }
+
+        svg {
+          color: var(--color-text-secondary);
         }
       }
     }

@@ -34,9 +34,7 @@ export default async function RootLayout({
         <AppProvider lng={lng}>
           <MainLayout
             renderProps={{
-              header: () => (
-                <Header classname="container mx-auto px-[2rem]  " />
-              ),
+              header: () => <Header classname="container" />,
               liveStream: () => (
                 <div className="container mx-auto py-[1rem] mt-[1rem]">
                   <LiveStream />

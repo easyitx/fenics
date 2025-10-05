@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { Typography } from "@/shared/ui/Typography";
-import { Button } from "@/shared/ui/Button";
+import { Button } from "@/shared/ui/Button/ui/Button";
 import { SkinCard } from "@/entities/skin";
 import { mockSkins } from "@/mocks/profile";
 import styles from "../ui/SkinsTable.module.scss";

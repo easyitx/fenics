@@ -6,6 +6,7 @@ import { Navigation } from "./Navigation";
 import { cn } from "@/shared/lib/utils";
 import { ProfileBalanceWidget } from "@/widgets/ProfileBalanceWidget/ui/ProfileBalanceWidget";
 import Link from "next/link";
+import { mockUser } from "@/mocks/profile";
 
 interface IHeaderProps {
   classname?: string;
@@ -15,7 +16,7 @@ export const Header: React.FC<IHeaderProps> = ({ classname = "" }) => {
   return (
     <header className={cn("header", [classname])}>
       <div className="header__container">
-        <div className="app_logo">
+        <Link href="/" className="app_logo">
           <Image
             src="/app_logo.svg"
             alt="App Logo"
@@ -23,7 +24,7 @@ export const Header: React.FC<IHeaderProps> = ({ classname = "" }) => {
             height={0}
             priority
           />
-        </div>
+        </Link>
 
         <div className="header_navigation">
           <Navigation />
@@ -33,7 +34,7 @@ export const Header: React.FC<IHeaderProps> = ({ classname = "" }) => {
           <Link href="/profile">
             <Typography>профиль</Typography>
           </Link>
-          <ProfileBalanceWidget />
+          <ProfileBalanceWidget user={mockUser} />
           <Button variant="primary">
             Войти
             <Icon name="add-circle" color="primary" size={20} />

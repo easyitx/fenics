@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { Typography } from "@/shared/ui/Typography";
 import styles from "./ProfileCard.module.scss";
-import { UnstyledButton, Button } from "@/shared/ui/Button";
+import { UnstyledButton, Button } from "@/shared/ui/Button/ui/Button";
 
 interface ProfileCardProps {
   className?: string;
