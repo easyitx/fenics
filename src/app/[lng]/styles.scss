@@ -1,4 +1,20 @@
 .boxes__section {
+  padding: 1rem 0;
+  border-radius: 10px;
+
+  &__inner {
+    padding: 1rem;
+    background: var(--color-surface);
+    border-radius: 10px;
+    font-weight: 700;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--color-text-secondary);
+  }
+
   &__heading {
     text-align: center;
 
@@ -22,22 +38,27 @@
     }
   }
 
+  &__progress-bar {
+    padding-top: 3rem;
+  }
+
   &__list {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
     position: relative;
-    align-items: center;
-    justify-content: space-between;
-    grid-gap: 16px 4px;
-    flex-wrap: wrap;
     z-index: 5;
     width: 100%;
+    padding: 1rem 0;
 
     .boxesListItem {
       display: flex;
       flex-direction: column;
       align-items: center;
+      width: 100%;
 
       &__case {
+        width: 100%;
         max-width: 260px;
         transition: var(--transition-slow);
         cursor: pointer;
@@ -48,12 +69,44 @@
 
         .caseImage {
           width: 100%;
-          height: 100%;
+          height: auto;
           object-fit: cover;
+          border-radius: 8px;
         }
       }
+
       &__footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem;
+        width: 100%;
+        margin-top: 0.5rem;
+
+        .button_budget {
+          background: linear-gradient(
+            180deg,
+            #110b0f 50%,
+            #4d1333 90%
+          ) !important;
+        }
       }
+    }
+  }
+
+  // Адаптивность для разных экранов
+  @media (max-width: 768px) {
+    &__list {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0.75rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    &__list {
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 0.5rem;
     }
   }
 }

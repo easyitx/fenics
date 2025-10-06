@@ -1,9 +1,14 @@
 .footer {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   z-index: 100;
   width: 100%;
   background: var(--color-background);
-  padding: 40px 70px;
+  padding: var(--spacing-md) var(--spacing-3xl) var(--spacing-xl)
+    var(--spacing-3xl);
 
   &__main {
     display: flex;
@@ -12,9 +17,7 @@
     gap: 2rem;
     padding: 1.7rem 1.5rem;
     border-radius: 1.5rem;
-    background: var(--color-surface);
     height: 100%;
-    margin-top: 30px;
 
     .footer__counters {
       display: flex;
@@ -61,23 +64,24 @@
   &__bottom {
     display: flex;
     justify-content: space-between;
-    padding: 24px 0;
+
+    width: 100%;
 
     .footer__column_left {
       .footer__date {
         color: var(--color-accent-primary);
-        font-size: 14px;
-        font-weight: 600;
+        font-size: var(--font-size-sm);
+        font-weight: var(--font-weight-semibold);
         line-height: 1rem;
       }
 
       .footer__address {
         color: var(--color-text-secondary);
         width: 25.9rem;
-        font-size: 14px;
-        font-weight: 400;
+        font-size: var(--font-size-sm);
+        font-weight: var(--font-weight-normal);
         line-height: 1.1rem;
-        margin-top: 10px;
+        margin-top: var(--spacing-sm);
       }
     }
 
@@ -91,8 +95,8 @@
 
       .footer__nav-item {
         color: var(--color-text-secondary);
-        font-size: 16px;
-        font-weight: 600;
+        font-size: var(--font-size-base);
+        font-weight: var(--font-weight-semibold);
         line-height: normal;
         -webkit-transition: color 0.2s ease-out 0s,
           text-decoration 0.2s ease-out 0s;

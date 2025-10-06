@@ -3,7 +3,7 @@ import styles from "./Button.module.scss";
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   variant?: "primary" | "surface" | "outline" | "black";
-  size?: "large";
+  size?: "large" | "medium";
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -51,6 +51,11 @@ export const Button: React.FC<ButtonProps> = ({
     large: {
       padding: "16px",
       borderRadius: "8px",
+    },
+    medium: {
+      padding: "8px 16px",
+      borderRadius: "8px",
+      height: "40px",
     },
     // Можно добавить другие размеры
   };

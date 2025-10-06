@@ -5,12 +5,12 @@
   align-items: center;
   max-width: 100%;
   overflow: hidden;
-  padding: 0 0 0 20px;
+  padding: 1rem 0 0 1rem;
 
   &:before {
     content: "";
     position: absolute;
-    top: 0;
+    top: 1rem;
     right: 0;
     width: 239px;
     height: 125px;

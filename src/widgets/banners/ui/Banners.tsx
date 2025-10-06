@@ -22,7 +22,7 @@ export const Banners = ({ classname = "" }: { classname?: string }) => {
             src="/banners/promo_banner.png"
             alt="banner promo"
             width={600}
-            height={400}
+            height={380}
           />
         </div>
       </div>
