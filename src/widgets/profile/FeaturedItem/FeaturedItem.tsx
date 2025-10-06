@@ -5,15 +5,15 @@ const FeaturedItem = () => {
   return (
     <div className={styles.featuredItem}>
       <div className="flex flex-col gap-2">
-        <Typography color="white" weight="semibold">
+        <Typography color="white" weight="semibold" size="xl">
           M4A4 | Howl
         </Typography>
-        <Typography color="secondary">
+        <Typography color="secondary" lineHeight="tight">
           Самый дорогой предмет из кейса за последнее время
         </Typography>
       </div>
       <div className="flex justify-end">
-        <SkinCard />
+        <SkinCard width={170} height={100} />
       </div>
     </div>
   );

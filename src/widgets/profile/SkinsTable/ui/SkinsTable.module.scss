@@ -7,6 +7,7 @@
   gap: var(--spacing-lg);
   flex: 1;
   min-width: 0;
+  max-width: 900px;
 
   @media (max-width: 768px) {
     padding: var(--spacing-md);
@@ -40,6 +41,7 @@
   gap: var(--spacing-sm);
   flex: 1;
   min-width: 300px;
+  max-width: 400px;
   width: 100%;
 
   @media (max-width: 768px) {
@@ -470,6 +472,16 @@
   justify-content: center;
   gap: var(--spacing-xs);
   z-index: 10;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.2s ease-in-out;
+  pointer-events: none;
+}
+
+.skinCardWrapper:hover .hoverActions {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
 }
 
 .actionButton {
@@ -480,6 +492,7 @@
   cursor: pointer;
   transition: var(--transition-fast);
   min-width: 80px;
+  width: 100px;
   height: 28px;
   gap: var(--spacing-xs);
 

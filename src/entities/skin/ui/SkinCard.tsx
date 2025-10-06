@@ -2,7 +2,13 @@ import React from "react";
 import Image from "next/image";
 import "./SkinCard.scss";
 
-export const SkinCard = () => {
+export const SkinCard = ({
+  width,
+  height,
+}: {
+  width?: number;
+  height?: number;
+}) => {
   const skin = {
     _id: "zx",
     marketName: "★ StatTrak™ Flip Knife | Case Hardened (Well-Worn)",
@@ -14,7 +20,10 @@ export const SkinCard = () => {
   };
 
   return (
-    <div className={`skinCardLive skinCardLive__${skin.rarity}`}>
+    <div
+      className={`skinCardLive skinCardLive__${skin.rarity}`}
+      style={{ width, height }}
+    >
       <div className="skinCardLiveInner">
         <svg
           className="skinCardLiveLogo"
@@ -32,8 +41,8 @@ export const SkinCard = () => {
           src={skin.itemImage}
           alt={skin.marketName}
           priority
-          width={142}
-          height={142}
+          width={94}
+          height={94}
         />
 
         <div className="skinCardLiveInfo">

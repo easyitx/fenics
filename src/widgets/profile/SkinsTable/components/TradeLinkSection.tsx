@@ -27,19 +27,19 @@ export const TradeLinkSection: React.FC<TradeLinkSectionProps> = ({
             height={24}
             className={styles.topbarIcon}
           />
-          <Typography size="small" weight="semibold" color="secondary">
+          <Typography weight="normal" color="secondary">
             Трейд - ссылка
           </Typography>
         </div>
         <div className="flex items-center gap-2">
           <Image
-            src="/icons/question.svg"
+            src="/icons/message-question.svg"
             alt="Help"
             width={24}
             height={24}
             className={styles.topbarIcon}
           />
-          <Typography size="small" weight="semibold" color="primary">
+          <Typography weight="normal" color="primary">
             Где взять?
           </Typography>
         </div>

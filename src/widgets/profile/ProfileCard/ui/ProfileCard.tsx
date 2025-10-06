@@ -14,7 +14,6 @@ export function ProfileCard({ className }: ProfileCardProps) {
   return (
     <div className={`${styles.profileCard} ${className || ""}`}>
       <div className={styles.userNameContainer}>
-        {/* Avatar */}
         <div className={styles.avatarContainer}>
           <Image
             src="/avatar.png"
@@ -24,7 +23,6 @@ export function ProfileCard({ className }: ProfileCardProps) {
             className={styles.avatar}
           />
         </div>
-        {/* Username */}
         <Typography
           as="h2"
           size="h3"
@@ -35,14 +33,12 @@ export function ProfileCard({ className }: ProfileCardProps) {
           samuray
         </Typography>
 
-        {/* Balance */}
         <Typography as="p" size="h4" weight="bold" className={styles.balance}>
           $3 239.24
         </Typography>
 
-        {/* User ID */}
         <div className={styles.userId}>
-          <UnstyledButton className="flex items-center gap-2">
+          <UnstyledButton>
             <Image
               src="/icons/copy.svg"
               alt="ID"
@@ -57,16 +53,15 @@ export function ProfileCard({ className }: ProfileCardProps) {
         </div>
       </div>
 
-      {/* Withdrawal Info */}
       <div className={styles.withdrawalInfo}>
         <Typography
-          size="small"
           color="scarlet"
+          weight="semibold"
           className={styles.withdrawalLabel}
         >
           Выведено:
         </Typography>
-        <div className="flex items-center justify-center gap-2">
+        <div className={styles.withdrawalInfoContent}>
           <Image
             src="/icons/convert.svg"
             alt="Money"
@@ -74,15 +69,14 @@ export function ProfileCard({ className }: ProfileCardProps) {
             height={24}
             className={styles.moneyIcon}
           />
-          <Typography size="small" weight="medium">
-            <span className="text-white">58 предметов</span> на $25 000
+          <Typography size="small" weight="bold" color="primary">
+            <span className={styles.withdrawalInfoText}>58 предметов на</span>{" "}
+            $25 000
           </Typography>
         </div>
       </div>
 
-      {/* Social Links */}
       <div className={styles.socialLinks}>
-        {/* Telegram */}
         <div className={styles.socialItem}>
           <Button className="w-fit h-full">
             <Image
@@ -93,20 +87,25 @@ export function ProfileCard({ className }: ProfileCardProps) {
               className={styles.socialIcon}
             />
           </Button>
-          <Button className="w-2/3 flex flex-col items-center justify-center h-full">
+          <Button className={styles.socialButton}>
             <Typography size="small" weight="semibold" color="white">
               TELEGRAM
             </Typography>
             <div className={styles.status}>
-              <div className={styles.statusDot}></div>
-              <Typography size="xs" color="white">
+              <Image
+                src="/icons/active.svg"
+                alt="Check"
+                width={8}
+                height={8}
+                className={styles.statusIcon}
+              />
+              <Typography size="xs" color="white" weight="normal">
                 Активно
               </Typography>
             </div>
           </Button>
         </div>
 
-        {/* VK */}
         <div className={styles.socialItem}>
           <Button className="w-fit h-full" variant="surface">
             <Image
@@ -117,16 +116,19 @@ export function ProfileCard({ className }: ProfileCardProps) {
               className={styles.socialIcon}
             />
           </Button>
-          <Button
-            variant="surface"
-            className="w-2/3 flex flex-col items-center justify-center h-full"
-          >
+          <Button variant="surface" className={styles.socialButton}>
             <Typography size="small" weight="semibold" color="white">
               VK
             </Typography>
             <div className={styles.status}>
-              <div className={styles.statusDot}></div>
-              <Typography size="xs" color="white">
+              <Image
+                src="/icons/notActive.svg"
+                alt="Check"
+                width={8}
+                height={8}
+                className={styles.statusIcon}
+              />
+              <Typography size="xs" color="scarlet" weight="normal">
                 Не активно
               </Typography>
             </div>
