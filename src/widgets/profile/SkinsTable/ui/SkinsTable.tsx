@@ -18,7 +18,6 @@ export function SkinsTable({ className }: SkinsTableProps) {
   const [activeTab, setActiveTab] = useState<"inventory" | "upgrades">(
     "inventory"
   );
-  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [inStockOnly, setInStockOnly] = useState(false);
   const [tradeLink, setTradeLink] = useState("");
   const handleSellAll = () => {
@@ -54,11 +53,7 @@ export function SkinsTable({ className }: SkinsTableProps) {
       </div>
 
       {activeTab === "inventory" ? (
-        <InventoryGrid
-          hoveredItem={hoveredItem}
-          onItemHover={setHoveredItem}
-          onItemAction={handleItemAction}
-        />
+        <InventoryGrid onItemAction={handleItemAction} />
       ) : (
         <UpgradesPlaceholder />
       )}
