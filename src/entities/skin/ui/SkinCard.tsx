@@ -51,6 +51,7 @@ export const SkinCard = ({
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         ></svg>
+        <Image src="/icons/vector.svg" alt="csgo" width={94} height={94} />
         <Image
           className="skinCardLiveImage"
           src={skinData.itemImage}
