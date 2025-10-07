@@ -1,9 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import { Slider } from "@/components/ui/slider";
+import { Slider } from "@/components/ui/slider/slider";
 import { IBalanceSliderProps } from "@/entities/balance";
 import styles from "./BalanceSlider.module.scss";
+import { Typography } from "@/shared/ui/Typography";
 
 export const BalanceSlider: React.FC<IBalanceSliderProps> = ({
   balance,
@@ -21,11 +22,15 @@ export const BalanceSlider: React.FC<IBalanceSliderProps> = ({
   return (
     <div className={`${styles.balanceSlider} ${className || ""}`}>
       <div className={styles.balanceHeader}>
-        <span className={styles.balanceLabel}>Баланс</span>
-        <span className={styles.balanceValue}>
-          {selectedValue} {balance.currency} / {balance.total}{" "}
-          {balance.currency}
-        </span>
+        <Typography color="secondary" size="sm" weight="bold">
+          Баланс
+        </Typography>
+        <Typography color="primary" size="sm" weight="bold">
+          {selectedValue} {balance.currency} /{" "}
+          <span style={{ color: "var(--color-text-white)" }}>
+            {balance.total} {balance.currency}
+          </span>
+        </Typography>
       </div>
       <div className={styles.sliderContainer}>
         <Slider
