@@ -52,7 +52,7 @@ export const LiveStream: React.FC<{ classname?: string }> = ({ classname }) => {
 
         <div className="itemsList">
           {new Array(20).fill(0).map((_, i) => (
-            <SkinCard key={i} />
+            <SkinCard key={i} withPrice={false} />
           ))}
         </div>
       </div>

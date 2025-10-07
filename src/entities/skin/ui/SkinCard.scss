@@ -21,6 +21,12 @@
     height: 100%;
     border-radius: inherit;
 
+    .skinCardLivePrice {
+      position: absolute;
+      top: 0px;
+      right: 5px;
+    }
+
     &:before {
       content: "";
       position: absolute;

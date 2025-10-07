@@ -497,3 +497,57 @@
     @include responsive-typography(10px, 12px, 14px, 16px);
   }
 }
+
+.upgradesGrid {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  max-height: calc(200px * 3 + var(--spacing-sm) * 2 + var(--spacing-md) * 2);
+  overflow-y: auto;
+  padding-right: var(--spacing-md);
+  align-content: flex-start;
+
+  @media (max-width: 1024px) {
+    max-height: calc(200px * 3 + var(--spacing-sm) * 2 + var(--spacing-md) * 2);
+  }
+
+  @media (max-width: 768px) {
+    gap: var(--spacing-sm);
+    max-height: calc(180px * 3 + var(--spacing-sm) * 2 + var(--spacing-md) * 2);
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--color-background);
+    border-radius: var(--radius-sm);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-background);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent-primary);
+  }
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) var(--color-background);
+}
+
+.upgradeItemWrapper {
+  flex: 0 0 calc(50% - var(--spacing-sm) / 2);
+  max-width: calc(50% - var(--spacing-sm) / 2);
+
+  @media (max-width: 1024px) {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}

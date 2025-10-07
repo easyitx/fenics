@@ -1,1 +1,1 @@
-export { IBalance, IBalanceSliderProps } from "./model/types";
+export type { IBalance, IBalanceSliderProps } from "./model/types";

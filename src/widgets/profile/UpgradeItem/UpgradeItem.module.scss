@@ -1,0 +1,64 @@
+.upgradeItem {
+  background: linear-gradient(135deg, #51eb2b1c 15%, #110b0f 50%);
+  border-radius: 12px;
+  padding: var(--spacing-md);
+  position: relative;
+}
+
+.upgradeHeader {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.chanceBadge {
+  position: absolute;
+  border-radius: 20px;
+  padding: 6px 16px;
+  right: 0;
+}
+
+.win {
+  background: rgba(19, 93, 0, 0.25);
+}
+
+.lose {
+  background: rgba(235, 43, 43, 0.25);
+}
+
+.skinsContainer {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  justify-content: center;
+}
+
+.skinWrapper {
+  flex: 1;
+  max-width: 200px;
+}
+
+.arrowContainer {
+  width: 24px;
+  height: 24px;
+  background: #00ff88;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .skinsContainer {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  .skinWrapper {
+    max-width: 100%;
+  }
+}

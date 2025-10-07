@@ -5,6 +5,9 @@ export const textColors = [
   "white",
   "black",
   "scarlet",
+  "gray",
+  "green",
+  "red",
 ] as const;
 
 export type TextColor = (typeof textColors)[number];
