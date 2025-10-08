@@ -187,30 +187,43 @@ export default function Upgrades() {
                 {mockSkins.map((skinItem) => (
                   <div key={skinItem.id} className={styles.skinCardWrapper}>
                     <SkinCard skin={skinItem} />
-                    <div className={styles.hoverActions}>
-                      <UnstyledButton
-                        className={styles.actionButton}
-                        onClick={() => handleMySkinClick(skinItem)}
-                      >
-                        <div className={styles.plusIcon}>
-                          {mySkin?.id === skinItem.id ? (
-                            <Image
-                              src="/icons/addedSkin.svg"
-                              alt="addedSkin"
-                              width={40}
-                              height={40}
-                            />
-                          ) : (
-                            <Image
-                              src="/icons/addSkin.svg"
-                              alt="Skin"
-                              width={40}
-                              height={40}
-                            />
-                          )}
-                        </div>
-                      </UnstyledButton>
-                    </div>
+                    {mySkin?.id !== skinItem.id && (
+                      <div className={styles.hoverActions}>
+                        <UnstyledButton
+                          className={styles.actionButton}
+                          onClick={() => handleMySkinClick(skinItem)}
+                        >
+                          <div className={styles.plusIcon}>
+                            {mySkin?.id === skinItem.id ? (
+                              <Image
+                                src="/icons/addedSkin.svg"
+                                alt="addedSkin"
+                                width={40}
+                                height={40}
+                              />
+                            ) : (
+                              <Image
+                                src="/icons/addSkin.svg"
+                                alt="Skin"
+                                width={40}
+                                height={40}
+                              />
+                            )}
+                          </div>
+                        </UnstyledButton>
+                      </div>
+                    )}
+
+                    {mySkin?.id === skinItem.id && (
+                      <div className={styles.selectedOverlay}>
+                        <Image
+                          src="/icons/addedSkin.svg"
+                          alt="addedSkin"
+                          width={40}
+                          height={40}
+                        />
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
@@ -264,30 +277,42 @@ export default function Upgrades() {
                 {mockSkinsForUpgrade.map((skinItem) => (
                   <div key={skinItem.id} className={styles.skinCardWrapper}>
                     <SkinCard skin={skinItem} />
-                    <div className={styles.hoverActions}>
-                      <UnstyledButton
-                        className={styles.actionButton}
-                        onClick={() => handleSkinClick(skinItem)}
-                      >
-                        <div className={styles.plusIcon}>
-                          {skin?.id === skinItem.id ? (
-                            <Image
-                              src="/icons/addedSkin.svg"
-                              alt="addedSkin"
-                              width={40}
-                              height={40}
-                            />
-                          ) : (
-                            <Image
-                              src="/icons/addSkin.svg"
-                              alt="addedSkin"
-                              width={40}
-                              height={40}
-                            />
-                          )}
-                        </div>
-                      </UnstyledButton>
-                    </div>
+                    {skin?.id !== skinItem.id && (
+                      <div className={styles.hoverActions}>
+                        <UnstyledButton
+                          className={styles.actionButton}
+                          onClick={() => handleSkinClick(skinItem)}
+                        >
+                          <div className={styles.plusIcon}>
+                            {skin?.id === skinItem.id ? (
+                              <Image
+                                src="/icons/addedSkin.svg"
+                                alt="addedSkin"
+                                width={40}
+                                height={40}
+                              />
+                            ) : (
+                              <Image
+                                src="/icons/addSkin.svg"
+                                alt="addedSkin"
+                                width={40}
+                                height={40}
+                              />
+                            )}
+                          </div>
+                        </UnstyledButton>
+                      </div>
+                    )}
+                    {skin?.id === skinItem.id && (
+                      <div className={styles.selectedOverlay}>
+                        <Image
+                          src="/icons/addedSkin.svg"
+                          alt="addedSkin"
+                          width={40}
+                          height={40}
+                        />
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
