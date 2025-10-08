@@ -21,6 +21,54 @@
   aspect-ratio: 431 / 431;
   max-width: 431px;
   max-height: 431px;
+  position: relative;
+}
+
+.usersSkin {
+  background-image: url("/upgrades/usersSkin.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 23%;
+  aspect-ratio: 431 / 431;
+  max-width: 431px;
+  max-height: 431px;
+  position: relative;
+}
+
+.skinName {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 15%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+}
+
+.skinImage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+}
+
+.itemPrice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-text-white);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xs);
+  position: absolute;
+  top: 40%;
+  right: 21%;
+  transform: translateY(-50%);
 }
 
 .initial {
@@ -32,6 +80,16 @@
   aspect-ratio: 877 / 425;
   max-width: 877px;
   max-height: 425px;
+  position: relative;
+}
+
+.blureImage {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  bottom: -40%;
+  transform: translateX(-50%);
 }
 
 .upgradeItem {
@@ -43,6 +101,19 @@
   aspect-ratio: 431 / 431;
   max-width: 431px;
   max-height: 431px;
+  position: relative;
+}
+
+.upgradeSkin {
+  background-image: url("/upgrades/usersSkin.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 23%;
+  aspect-ratio: 431 / 431;
+  max-width: 431px;
+  max-height: 431px;
+  position: relative;
 }
 
 .gridContainer {
@@ -81,8 +152,28 @@
   width: 100%;
   height: 90px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: var(--spacing-md);
+}
+
+.inputContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  gap: var(--spacing-xs);
+  width: 60%;
+}
+
+.input {
+  height: 45px;
+  padding: 0 var(--spacing-sm);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-secondary);
+
+  &::placeholder {
+    color: var(--color-text-secondary);
+  }
 }
 
 .balanceSection {
@@ -99,4 +190,102 @@
 .balanceWidget {
   max-width: 400px;
   width: 100%;
+}
+
+.skinsGrid {
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  max-height: calc(120px * 4 + var(--spacing-xs) * 4 + var(--spacing-md) * 2);
+  overflow-y: auto;
+  padding-right: var(--spacing-xs);
+  align-content: flex-start;
+
+  @media (max-width: 768px) {
+    gap: var(--spacing-sm);
+    max-height: calc(80px * 5 + var(--spacing-sm) * 4 + var(--spacing-md) * 2);
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--color-background);
+    border-radius: var(--radius-sm);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-background);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent-primary);
+  }
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) var(--color-background);
+}
+
+.skinCardWrapper {
+  position: relative;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.hoverActions {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 60, 197, 0.4);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  z-index: 10;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.2s ease-in-out;
+  pointer-events: none;
+}
+
+.skinCardWrapper:hover .hoverActions {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+.actionButton {
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: var(--color-accent-primary);
+    transform: scale(1.1);
+  }
+}
+
+.plusIcon {
+  color: var(--color-text-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

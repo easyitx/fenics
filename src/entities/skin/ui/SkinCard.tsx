@@ -4,7 +4,7 @@ import "./SkinCard.scss";
 import { Typography } from "@/shared/ui/Typography";
 
 export interface SkinData {
-  _id: string;
+  id: string;
   marketName: string;
   weaponName: string;
   shortName: string;
@@ -59,6 +59,7 @@ export const SkinCard = ({
           priority
           width={94}
           height={94}
+          style={{ objectFit: "contain", width: "70%", height: "auto" }}
         />
         {withPrice && (
           <Typography className="skinCardLivePrice" color="white" weight="bold">

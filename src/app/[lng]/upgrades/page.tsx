@@ -7,9 +7,24 @@ import { IBalance } from "@/entities/balance";
 import { ToggleButtons } from "@/components/ui/ToggleButtons";
 import { MultiplierButtons } from "@/components/ui/MultiplierButtons";
 import { Typography } from "@/shared/ui/Typography";
-import { user } from "@/mocks/profile";
-import { Button } from "@/shared/ui/Button";
+import { user, mockSkins, mockSkinsForUpgrade } from "@/mocks/profile";
 
+interface SkinItem {
+  id: string;
+  marketName: string;
+  weaponName: string;
+  shortName: string;
+  itemImage: string;
+  rarity: string;
+  price: number;
+  isHighlighted?: boolean;
+}
+import { Button } from "@/shared/ui/Button";
+import { SkinCard } from "@/entities/skin";
+import { Input } from "@/components/ui/input";
+import Image from "next/image";
+import { UnstyledButton } from "@/shared/ui/Button";
+import { cn } from "@/shared/lib/utils";
 export default function Upgrades() {
   const [activeTab, setActiveTab] = useState<"skin" | "balance">("balance");
   const [activeMultiplier, setActiveMultiplier] = useState<number>(1.5);
@@ -18,6 +33,10 @@ export default function Upgrades() {
     total: 24,
     currency: "$",
   });
+  const [mySkin, setMySkin] = useState<SkinItem | null>(null);
+  const [skin, setSkin] = useState<SkinItem | null>(null);
+
+  console.log(mySkin, skin);
 
   const handleBalanceChange = (newValue: number) => {
     setBalance((prev) => ({
@@ -34,12 +53,92 @@ export default function Upgrades() {
     setActiveMultiplier(multiplier);
   };
 
+  const handleMySkinClick = (skinItem: SkinItem) => {
+    setMySkin(skinItem);
+  };
+
+  const handleSkinClick = (skinItem: SkinItem) => {
+    setSkin(skinItem);
+  };
+
   return (
     <div className="min-h-screen" style={{ background: "rgba(15, 10, 13, 1)" }}>
       <div className={styles.container}>
-        <div className={styles.usersItem}></div>
-        <div className={styles.initial}></div>
-        <div className={styles.upgradeItem}></div>
+        <div className={cn(mySkin ? styles.usersSkin : styles.usersItem)}>
+          {mySkin && (
+            <>
+              <Image
+                src={mySkin.itemImage}
+                alt="upgradeSkin"
+                width={100}
+                height={100}
+                className={styles.skinImage}
+              />
+              <div className={styles.skinName}>
+                <Typography
+                  color="secondary"
+                  weight="bold"
+                  size="sm"
+                  lineHeight="none"
+                >
+                  {mySkin.weaponName}
+                </Typography>
+                <Typography color="white" weight="semibold" lineHeight="none">
+                  {mySkin.shortName}
+                </Typography>
+              </div>
+            </>
+          )}
+        </div>
+        <div className={styles.initial}>
+          {(skin || mySkin) && (
+            <>
+              <Image
+                src={"/upgrades/blure.svg"}
+                alt="upgradeSkin"
+                width={100}
+                height={100}
+                className={styles.blureImage}
+              />
+            </>
+          )}
+        </div>
+        <div className={cn(skin ? styles.upgradeSkin : styles.upgradeItem)}>
+          {skin && (
+            <>
+              <div className={styles.itemPrice}>
+                <Typography
+                  color="black"
+                  weight="bold"
+                  size="sm"
+                  lineHeight="none"
+                >
+                  {skin.price}$
+                </Typography>
+              </div>
+              <Image
+                src={skin.itemImage}
+                alt="upgradeSkin"
+                width={100}
+                height={100}
+                className={styles.skinImage}
+              />
+              <div className={styles.skinName}>
+                <Typography
+                  color="secondary"
+                  weight="bold"
+                  size="sm"
+                  lineHeight="none"
+                >
+                  {skin.weaponName}
+                </Typography>
+                <Typography color="white" weight="semibold" lineHeight="none">
+                  {skin.shortName}
+                </Typography>
+              </div>
+            </>
+          )}
+        </div>
         <div className={styles.balanceSection}>
           <BalanceSlider
             balance={balance}
@@ -54,15 +153,67 @@ export default function Upgrades() {
         </div>
       </div>
       <div className={styles.gridContainer}>
-        <div className={styles.gridItem}>
+        <div
+          className={styles.gridItem}
+          style={{ height: user ? "fit-content" : "650px" }}
+        >
           <div className={styles.filters}>
             <Typography color="secondary" weight="semibold" size="xl">
               Ваш инвентарь
             </Typography>
+            <div className={styles.inputContainer}>
+              <Input placeholder="От" className={styles.input} endIcon={"$"} />
+              <Input placeholder="До" className={styles.input} endIcon={"$"} />
+              <Input
+                className={styles.input}
+                endIcon={
+                  <Image
+                    src="/icons/search-normal.svg"
+                    alt="search"
+                    width={24}
+                    height={24}
+                    className={styles.searchIcon}
+                  />
+                }
+              />
+            </div>
           </div>
-          <div className={styles.inventoryContainer}>
-            {!user ? (
-              <div className={styles.inventoryList}>123</div>
+          <div
+            className={styles.inventoryContainer}
+            style={{ height: user ? "fit-content" : "555px" }}
+          >
+            {user ? (
+              <div className={styles.skinsGrid}>
+                {mockSkins.map((skinItem) => (
+                  <div key={skinItem.id} className={styles.skinCardWrapper}>
+                    <SkinCard skin={skinItem} />
+                    <div className={styles.hoverActions}>
+                      <UnstyledButton
+                        className={styles.actionButton}
+                        onClick={() => handleMySkinClick(skinItem)}
+                      >
+                        <div className={styles.plusIcon}>
+                          {mySkin?.id === skinItem.id ? (
+                            <Image
+                              src="/icons/addedSkin.svg"
+                              alt="addedSkin"
+                              width={40}
+                              height={40}
+                            />
+                          ) : (
+                            <Image
+                              src="/icons/addSkin.svg"
+                              alt="Skin"
+                              width={40}
+                              height={40}
+                            />
+                          )}
+                        </div>
+                      </UnstyledButton>
+                    </div>
+                  </div>
+                ))}
+              </div>
             ) : (
               <div className={styles.inventoryEmpty}>
                 <Typography color="secondary" weight="semibold" size="xl">
@@ -79,15 +230,67 @@ export default function Upgrades() {
             )}
           </div>
         </div>
-        <div className={styles.gridItem}>
+        <div
+          className={styles.gridItem}
+          style={{ height: user ? "fit-content" : "650px" }}
+        >
           <div className={styles.filters}>
             <Typography color="secondary" weight="semibold" size="xl">
               Скины
             </Typography>
+            <div className={styles.inputContainer}>
+              <Input placeholder="От" className={styles.input} endIcon={"$"} />
+              <Input placeholder="До" className={styles.input} endIcon={"$"} />
+              <Input
+                className={styles.input}
+                endIcon={
+                  <Image
+                    src="/icons/search-normal.svg"
+                    alt="search"
+                    width={24}
+                    height={24}
+                    className={styles.searchIcon}
+                  />
+                }
+              />
+            </div>
           </div>
-          <div className={styles.inventoryContainer}>
-            {!user ? (
-              <div className={styles.inventoryList}>123</div>
+          <div
+            className={styles.inventoryContainer}
+            style={{ height: user ? "fit-content" : "555px" }}
+          >
+            {user ? (
+              <div className={styles.skinsGrid}>
+                {mockSkinsForUpgrade.map((skinItem) => (
+                  <div key={skinItem.id} className={styles.skinCardWrapper}>
+                    <SkinCard skin={skinItem} />
+                    <div className={styles.hoverActions}>
+                      <UnstyledButton
+                        className={styles.actionButton}
+                        onClick={() => handleSkinClick(skinItem)}
+                      >
+                        <div className={styles.plusIcon}>
+                          {skin?.id === skinItem.id ? (
+                            <Image
+                              src="/icons/addedSkin.svg"
+                              alt="addedSkin"
+                              width={40}
+                              height={40}
+                            />
+                          ) : (
+                            <Image
+                              src="/icons/addSkin.svg"
+                              alt="addedSkin"
+                              width={40}
+                              height={40}
+                            />
+                          )}
+                        </div>
+                      </UnstyledButton>
+                    </div>
+                  </div>
+                ))}
+              </div>
             ) : (
               <div className={styles.inventoryEmpty}>
                 <Typography color="secondary" weight="semibold" size="xl">
