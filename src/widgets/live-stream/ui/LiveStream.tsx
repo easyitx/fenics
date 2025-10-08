@@ -2,9 +2,11 @@
 
 import React from "react";
 import "./LiveStream.scss";
-import { UnstyledButton, Icon } from "@/shared/ui";
+import { UnstyledButton, Icon, Button } from "@/shared/ui";
 import { SkinCard } from "@/entities/skin";
 import { cn } from "@/shared/lib/utils";
+import { Typography } from "@/shared/ui/Typography";
+import Image from "next/image";
 
 type FilterType = "live" | "top";
 
@@ -52,7 +54,37 @@ export const LiveStream: React.FC<{ classname?: string }> = ({ classname }) => {
 
         <div className="itemsList">
           {new Array(20).fill(0).map((_, i) => (
-            <SkinCard key={i} withPrice={false} />
+            <div key={i} className="skinCardWrapper">
+              <SkinCard withPrice={false} />
+              <div className="hoverActions">
+                <Button className="actionButton">
+                  <Image
+                    src="/icons/shopping.svg"
+                    alt="Sell"
+                    width={12}
+                    height={12}
+                  />
+                  <Typography size="small" weight="semibold" color="white">
+                    Продать
+                  </Typography>
+                </Button>
+                <Button
+                  className="actionButton"
+                  variant="outline"
+                  style={{ background: "white" }}
+                >
+                  <Image
+                    src="/icons/change.svg"
+                    alt="Change"
+                    width={12}
+                    height={12}
+                  />
+                  <Typography size="small" weight="semibold" color="primary">
+                    Заменить
+                  </Typography>
+                </Button>
+              </div>
+            </div>
           ))}
         </div>
       </div>

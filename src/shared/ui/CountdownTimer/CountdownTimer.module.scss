@@ -1,6 +1,9 @@
 .countdown {
   display: flex;
   gap: var(--spacing-lg);
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .label {

@@ -4,6 +4,7 @@ export interface Case {
   image: string;
   price: number;
   isAvailable: boolean;
+  isFree: boolean;
 }
 
 export const casesMock: Case[] = [
@@ -13,6 +14,7 @@ export const casesMock: Case[] = [
     image: "2.png",
     price: 2500,
     isAvailable: true,
+    isFree: true,
   },
   {
     id: "2",
@@ -20,6 +22,7 @@ export const casesMock: Case[] = [
     image: "2.png",
     price: 1800,
     isAvailable: true,
+    isFree: true,
   },
   {
     id: "3",
@@ -27,6 +30,7 @@ export const casesMock: Case[] = [
     image: "2.png",
     price: 1200,
     isAvailable: false,
+    isFree: true,
   },
   {
     id: "4",
@@ -34,6 +38,7 @@ export const casesMock: Case[] = [
     image: "2.png",
     price: 3200,
     isAvailable: true,
+    isFree: true,
   },
   {
     id: "5",
@@ -41,6 +46,7 @@ export const casesMock: Case[] = [
     image: "2.png",
     price: 2800,
     isAvailable: true,
+    isFree: true,
   },
   {
     id: "6",
@@ -48,6 +54,7 @@ export const casesMock: Case[] = [
     image: "2.png",
     price: 4500,
     isAvailable: false,
+    isFree: false,
   },
   {
     id: "7",
@@ -55,6 +62,7 @@ export const casesMock: Case[] = [
     image: "2.png",
     price: 1500,
     isAvailable: true,
+    isFree: false,
   },
   {
     id: "8",
@@ -62,6 +70,7 @@ export const casesMock: Case[] = [
     image: "2.png",
     price: 800,
     isAvailable: true,
+    isFree: false,
   },
   {
     id: "9",
@@ -69,6 +78,7 @@ export const casesMock: Case[] = [
     image: "2.png",
     price: 600,
     isAvailable: false,
+    isFree: false,
   },
   {
     id: "10",
@@ -76,5 +86,6 @@ export const casesMock: Case[] = [
     image: "2.png",
     price: 900,
     isAvailable: true,
+    isFree: false,
   },
 ];

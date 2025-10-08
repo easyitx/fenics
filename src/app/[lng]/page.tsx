@@ -12,8 +12,11 @@ export default function Home() {
       <Banners />
 
       <div className="boxes__section">
-        <div className="flex items-center justify-between">
-          <div className="boxes__section__inner">
+        <div className="flex items-center justify-center relative">
+          <div
+            className="boxes__section__inner"
+            style={{ position: "absolute", top: 0, left: 0 }}
+          >
             <Image src="/icons/info.svg" alt="info" width={24} height={24} />
             Что это такое?
           </div>
@@ -36,48 +39,50 @@ export default function Home() {
         </div>
 
         <div className="boxes__section__list">
-          {casesMock.slice(0, 5).map((caseItem) => (
-            <div key={caseItem.id} className="boxesListItem">
-              <div className="boxesListItem__case">
-                <Image
-                  className="caseImage"
-                  src={`/cases/${caseItem.image}`}
-                  alt={caseItem.name}
-                  width={300}
-                  height={300}
-                />
-              </div>
-              <div className="boxesListItem__footer">
-                <Typography
-                  className="caseName"
-                  size="h6"
-                  color={caseItem.isAvailable ? "white" : "secondary"}
-                >
-                  {caseItem.name}
-                </Typography>
-                {caseItem.isAvailable ? (
-                  <Button className="w-1/3" size="medium">
-                    <Image
-                      src="/icons/key.svg"
-                      alt="buy"
-                      width={24}
-                      height={24}
-                    />
-                  </Button>
-                ) : (
-                  <Button
-                    variant="outline"
-                    size="medium"
-                    className="button_budget"
+          {casesMock
+            .filter((caseItem) => caseItem.isFree)
+            .map((caseItem) => (
+              <div key={caseItem.id} className="boxesListItem">
+                <div className="boxesListItem__case">
+                  <Image
+                    className="caseImage"
+                    src={`/cases/${caseItem.image}`}
+                    alt={caseItem.name}
+                    width={300}
+                    height={300}
+                  />
+                </div>
+                <div className="boxesListItem__footer">
+                  <Typography
+                    className="caseName"
+                    size="h6"
+                    color={caseItem.isAvailable ? "white" : "secondary"}
                   >
-                    <Typography size="h6" color={"secondary"} weight="normal">
-                      {caseItem.price} ₽
-                    </Typography>
-                  </Button>
-                )}
+                    {caseItem.name}
+                  </Typography>
+                  {caseItem.isFree ? (
+                    <Button className="w-1/3" size="medium">
+                      <Image
+                        src="/icons/key.svg"
+                        alt="buy"
+                        width={24}
+                        height={24}
+                      />
+                    </Button>
+                  ) : (
+                    <Button
+                      variant="outline"
+                      size="medium"
+                      className="button_budget"
+                    >
+                      <Typography size="h6" color={"secondary"} weight="normal">
+                        {caseItem.price} ₽
+                      </Typography>
+                    </Button>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
       </div>
 
@@ -109,26 +114,16 @@ export default function Home() {
                   >
                     {caseItem.name}
                   </Typography>
-                  {caseItem.isAvailable ? (
-                    <Button className="w-1/3" size="medium">
-                      <Image
-                        src="/icons/key.svg"
-                        alt="buy"
-                        width={24}
-                        height={24}
-                      />
-                    </Button>
-                  ) : (
-                    <Button
-                      variant="outline"
-                      size="medium"
-                      className="button_budget"
-                    >
-                      <Typography size="h6" color={"secondary"} weight="normal">
-                        {caseItem.price} ₽
-                      </Typography>
-                    </Button>
-                  )}
+
+                  <Button
+                    variant="outline"
+                    size="medium"
+                    className="button_budget"
+                  >
+                    <Typography size="h6" color={"secondary"} weight="normal">
+                      {caseItem.price} ₽
+                    </Typography>
+                  </Button>
                 </div>
               </div>
             ))}
@@ -163,26 +158,16 @@ export default function Home() {
                   >
                     {caseItem.name}
                   </Typography>
-                  {caseItem.isAvailable ? (
-                    <Button className="w-1/3" size="medium">
-                      <Image
-                        src="/icons/key.svg"
-                        alt="buy"
-                        width={24}
-                        height={24}
-                      />
-                    </Button>
-                  ) : (
-                    <Button
-                      variant="outline"
-                      size="medium"
-                      className="button_budget"
-                    >
-                      <Typography size="h6" color={"secondary"} weight="normal">
-                        {caseItem.price} ₽
-                      </Typography>
-                    </Button>
-                  )}
+
+                  <Button
+                    variant="outline"
+                    size="medium"
+                    className="button_budget"
+                  >
+                    <Typography size="h6" color={"secondary"} weight="normal">
+                      {caseItem.price} ₽
+                    </Typography>
+                  </Button>
                 </div>
               </div>
             ))}

@@ -31,13 +31,29 @@
         &--active {
           color: var(--color-text-white);
 
+          .navigationText {
+            color: var(--color-text-white) !important;
+          }
+
+          .navigationIcon {
+            color: var(--color-text-primary) !important;
+          }
+
           svg {
-            color: var(--color-text-primary);
+            color: var(--color-text-primary) !important;
           }
         }
 
         &:hover:not(&--disabled):not(&--active) {
           color: var(--color-text-white);
+
+          .navigationText {
+            color: var(--color-text-white) !important;
+          }
+
+          svg {
+            color: var(--color-text-white);
+          }
         }
 
         svg {
