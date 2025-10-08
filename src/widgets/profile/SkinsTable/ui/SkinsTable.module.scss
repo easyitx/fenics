@@ -459,7 +459,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(255, 60, 197, 0.4);
+  background: var(--color-hover);
   border-radius: var(--radius-md);
   display: flex;
   flex-direction: column;
