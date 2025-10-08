@@ -202,7 +202,7 @@
   overflow-y: auto;
   padding-right: var(--spacing-xs);
   align-content: flex-start;
-
+  justify-content: center;
   @media (max-width: 768px) {
     gap: var(--spacing-sm);
     max-height: calc(80px * 5 + var(--spacing-sm) * 4 + var(--spacing-md) * 2);
