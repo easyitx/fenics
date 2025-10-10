@@ -59,12 +59,14 @@ export default function Upgrades() {
 
   const handleMySkinClick = (skinItem: SkinItem) => {
     setMySkin(skinItem);
+    setUpgradeResult(null);
   };
 
   const handleSkinClick = (skinItem: SkinItem) => {
     setSkin(skinItem);
+    setUpgradeResult(null);
     if (mySkin && skinItem) {
-      const newChance = Math.floor(Math.random() * 50) + 50; // 50-100%
+      const newChance = Math.floor(Math.random() * 50) + 50;
       setUpgradeChance(newChance);
     }
   };

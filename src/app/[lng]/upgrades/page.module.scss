@@ -81,6 +81,7 @@
   max-width: 877px;
   max-height: 425px;
   position: relative;
+  overflow: visible;
 }
 
 .initialAdded {
@@ -93,6 +94,7 @@
   max-width: 877px;
   max-height: 425px;
   position: relative;
+  overflow: visible;
 }
 
 .initialBtn {
@@ -109,6 +111,7 @@
   height: 61%;
   min-width: 200px;
   min-height: 150px;
+  overflow: visible;
 
   button {
     border-radius: var(--radius-full) !important;
@@ -369,6 +372,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: visible;
 
   .circular-progress {
     width: 100% !important;

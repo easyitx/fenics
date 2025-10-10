@@ -10,7 +10,6 @@ interface CircularProgressBarProps {
   strokeWidth?: number;
   className?: string;
   children?: React.ReactNode;
-  showProgress?: boolean;
   isSpinning?: boolean;
   onSpinComplete?: (isWin: boolean) => void;
 }
@@ -21,13 +20,13 @@ export const CircularProgressBar: React.FC<CircularProgressBarProps> = ({
   strokeWidth = 8,
   className,
   children,
-  showProgress = true,
   isSpinning = false,
   onSpinComplete,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [dimensions, setDimensions] = useState({ width: 200, height: 200 });
   const [spinAngle, setSpinAngle] = useState(0);
+  const [finalAngle, setFinalAngle] = useState(0);
   const [isWin, setIsWin] = useState<boolean | null>(null);
 
   useEffect(() => {
@@ -47,6 +46,8 @@ export const CircularProgressBar: React.FC<CircularProgressBarProps> = ({
   useEffect(() => {
     if (isSpinning) {
       setIsWin(null);
+      setSpinAngle(0);
+      setFinalAngle(0);
       const spinDuration = 3000;
       const startTime = Date.now();
 
@@ -63,9 +64,11 @@ export const CircularProgressBar: React.FC<CircularProgressBarProps> = ({
         if (progress < 1) {
           requestAnimationFrame(spin);
         } else {
-          const finalAngle = currentAngle % 360;
+          const calculatedFinalAngle = currentAngle % 360;
           const progressAngle = (percentage / 100) * 360;
-          const isWinResult = finalAngle <= progressAngle;
+
+          setFinalAngle(calculatedFinalAngle);
+          const isWinResult = calculatedFinalAngle <= progressAngle;
 
           setIsWin(isWinResult);
           onSpinComplete?.(isWinResult);
@@ -75,6 +78,11 @@ export const CircularProgressBar: React.FC<CircularProgressBarProps> = ({
       requestAnimationFrame(spin);
     }
   }, [isSpinning, percentage, onSpinComplete]);
+
+  useEffect(() => {
+    setIsWin(null);
+    setFinalAngle(0);
+  }, [percentage]);
 
   const actualSize = size || Math.min(dimensions.width, dimensions.height);
   const radius = (actualSize - strokeWidth) / 2;
@@ -135,13 +143,15 @@ export const CircularProgressBar: React.FC<CircularProgressBarProps> = ({
           className="circular-progress__arrow"
           style={{
             transformOrigin: `${actualSize / 2}px ${actualSize / 2}px`,
-            transform: `rotate(${spinAngle}deg)`,
+            transform: `rotate(${
+              isSpinning ? spinAngle + 90 : finalAngle + 90
+            }deg)`,
           }}
         >
           <image
             href="/upgrades/diamond.svg"
             x={actualSize / 2 - 12}
-            y={actualSize / 2 - radius - 12}
+            y={actualSize / 2 - radius - 30}
             width={24}
             height={24}
             className="circular-progress__arrow-icon"
