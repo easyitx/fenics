@@ -41,8 +41,7 @@ export default function Upgrades() {
   const [upgradeResult, setUpgradeResult] = useState<boolean | null>(null);
   const [resetProgressColors, setResetProgressColors] =
     useState<boolean>(false);
-
-  console.log(mySkin, skin);
+  const [isPulsing, setIsPulsing] = useState<boolean>(false);
 
   const handleBalanceChange = (newValue: number) => {
     setBalance((prev) => ({
@@ -62,6 +61,7 @@ export default function Upgrades() {
   const handleMySkinClick = (skinItem: SkinItem) => {
     setMySkin(skinItem);
     setUpgradeResult(null);
+    setIsPulsing(false);
     setResetProgressColors(true);
     // Сбрасываем флаг после небольшой задержки
     setTimeout(() => setResetProgressColors(false), 100);
@@ -70,6 +70,7 @@ export default function Upgrades() {
   const handleSkinClick = (skinItem: SkinItem) => {
     setSkin(skinItem);
     setUpgradeResult(null);
+    setIsPulsing(false);
     if (mySkin && skinItem) {
       const newChance = Math.floor(Math.random() * 50) + 50;
       setUpgradeChance(newChance);
@@ -87,6 +88,12 @@ export default function Upgrades() {
   const handleSpinComplete = (isWin: boolean) => {
     setIsSpinning(false);
     setUpgradeResult(isWin);
+    setIsPulsing(true);
+
+    // Останавливаем анимацию через 3 секунды (3 повторения по 1 секунде)
+    setTimeout(() => {
+      setIsPulsing(false);
+    }, 3000);
   };
 
   const getInitialClassName = () => {
@@ -99,11 +106,36 @@ export default function Upgrades() {
     return styles.initialLosed;
   };
 
+  const getSkinItemClassName = () => {
+    if (upgradeResult === null) {
+      return skin ? styles.upgradeSkin : styles.upgradeItem;
+    }
+    if (upgradeResult === true) {
+      return styles.skinWon;
+    }
+    return styles.skinLosed;
+  };
+
+  const getZonePulseClassName = () => {
+    if (!isPulsing) return "";
+    if (upgradeResult === true) return styles.zonePulseWin;
+    if (upgradeResult === false) return styles.zonePulseLose;
+    return styles.zonePulse;
+  };
+
   return (
     <div className="min-h-screen" style={{ background: "rgba(15, 10, 13, 1)" }}>
       <div className={styles.container}>
-        <div className={cn(mySkin ? styles.usersSkin : styles.usersItem)}>
-          {mySkin && (
+        <div
+          className={cn(
+            upgradeResult !== null
+              ? styles.usersItem
+              : mySkin
+              ? styles.usersSkin
+              : styles.usersItem
+          )}
+        >
+          {upgradeResult === null && mySkin && (
             <>
               <Image
                 src={mySkin.itemImage}
@@ -128,7 +160,13 @@ export default function Upgrades() {
             </>
           )}
         </div>
-        <div className={cn(getInitialClassName(), styles.zone)}>
+        <div
+          className={cn(
+            getInitialClassName(),
+            styles.zone,
+            getZonePulseClassName()
+          )}
+        >
           {skin && mySkin && (
             <div className={styles.initialBtn} style={{ zIndex: 10 }}>
               <CircularProgressBar
@@ -182,7 +220,7 @@ export default function Upgrades() {
               </CircularProgressBar>
             </div>
           )}
-          {(skin || mySkin) && (
+          {upgradeResult !== null && (skin || mySkin) && (
             <Image
               src={"/upgrades/blure.svg"}
               alt="upgradeSkin"
@@ -192,8 +230,28 @@ export default function Upgrades() {
               style={{ zIndex: 5 }}
             />
           )}
+          {upgradeResult === false && (
+            <Image
+              src={"/upgrades/blureLosed.svg"}
+              alt="upgradeSkin"
+              width={100}
+              height={100}
+              className={styles.blureImage}
+              style={{ zIndex: 5 }}
+            />
+          )}
+          {upgradeResult === true && (
+            <Image
+              src={"/upgrades/blureWon.svg"}
+              alt="upgradeSkin"
+              width={100}
+              height={100}
+              className={styles.blureImage}
+              style={{ zIndex: 5 }}
+            />
+          )}
         </div>
-        <div className={cn(skin ? styles.upgradeSkin : styles.upgradeItem)}>
+        <div className={cn(getSkinItemClassName(), styles.itemZone)}>
           {skin && (
             <>
               <div className={styles.itemPrice}>

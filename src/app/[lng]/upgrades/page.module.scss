@@ -1,3 +1,48 @@
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulseWin {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulseLose {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 .container {
   background-image: url("/upgrades/cubes.svg");
   background-repeat: no-repeat;
@@ -81,6 +126,19 @@
   max-height: 425px;
   position: relative;
   overflow: visible;
+  transition: all 0.3s ease-in-out;
+}
+
+.zonePulse {
+  animation: pulse 1s ease-in-out 3;
+}
+
+.zonePulseWin {
+  animation: pulseWin 1s ease-in-out 3;
+}
+
+.zonePulseLose {
+  animation: pulseLose 1s ease-in-out 3;
 }
 
 .initial {
@@ -149,8 +207,7 @@
   transform: translateX(-50%);
 }
 
-.upgradeItem {
-  background-image: url("/upgrades/upgradeItem.svg");
+.itemZone {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -161,16 +218,20 @@
   position: relative;
 }
 
+.upgradeItem {
+  background-image: url("/upgrades/upgradeItem.svg");
+}
+
 .upgradeSkin {
   background-image: url("/upgrades/usersSkin.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  width: 23%;
-  aspect-ratio: 431 / 431;
-  max-width: 431px;
-  max-height: 431px;
-  position: relative;
+}
+
+.skinWon {
+  background-image: url("/upgrades/wonItem.svg");
+}
+
+.skinLosed {
+  background-image: url("/upgrades/losedItem.svg");
 }
 
 .gridContainer {
