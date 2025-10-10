@@ -71,8 +71,7 @@
   transform: translateY(-50%);
 }
 
-.initial {
-  background-image: url("/upgrades/initial.svg");
+.zone {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -84,17 +83,20 @@
   overflow: visible;
 }
 
+.initial {
+  background-image: url("/upgrades/initial.svg");
+}
+
 .initialAdded {
   background-image: url("/upgrades/initialAdded.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  width: 46.7%;
-  aspect-ratio: 877 / 425;
-  max-width: 877px;
-  max-height: 425px;
-  position: relative;
-  overflow: visible;
+}
+
+.initialWon {
+  background-image: url("/upgrades/initialWon.svg");
+}
+
+.initialLosed {
+  background-image: url("/upgrades/initialLosed.svg");
 }
 
 .initialBtn {

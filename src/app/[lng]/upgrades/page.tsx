@@ -39,6 +39,8 @@ export default function Upgrades() {
   const [upgradeChance, setUpgradeChance] = useState<number>(75);
   const [isSpinning, setIsSpinning] = useState<boolean>(false);
   const [upgradeResult, setUpgradeResult] = useState<boolean | null>(null);
+  const [resetProgressColors, setResetProgressColors] =
+    useState<boolean>(false);
 
   console.log(mySkin, skin);
 
@@ -60,6 +62,9 @@ export default function Upgrades() {
   const handleMySkinClick = (skinItem: SkinItem) => {
     setMySkin(skinItem);
     setUpgradeResult(null);
+    setResetProgressColors(true);
+    // Сбрасываем флаг после небольшой задержки
+    setTimeout(() => setResetProgressColors(false), 100);
   };
 
   const handleSkinClick = (skinItem: SkinItem) => {
@@ -82,7 +87,16 @@ export default function Upgrades() {
   const handleSpinComplete = (isWin: boolean) => {
     setIsSpinning(false);
     setUpgradeResult(isWin);
-    console.log("Результат апгрейда:", isWin ? "Выигрыш!" : "Проигрыш!");
+  };
+
+  const getInitialClassName = () => {
+    if (upgradeResult === null) {
+      return skin || mySkin ? styles.initialAdded : styles.initial;
+    }
+    if (upgradeResult === true) {
+      return styles.initialWon;
+    }
+    return styles.initialLosed;
   };
 
   return (
@@ -114,9 +128,7 @@ export default function Upgrades() {
             </>
           )}
         </div>
-        <div
-          className={cn(skin || mySkin ? styles.initialAdded : styles.initial)}
-        >
+        <div className={cn(getInitialClassName(), styles.zone)}>
           {skin && mySkin && (
             <div className={styles.initialBtn} style={{ zIndex: 10 }}>
               <CircularProgressBar
@@ -125,6 +137,7 @@ export default function Upgrades() {
                 className={styles.upgradeProgress}
                 isSpinning={isSpinning}
                 onSpinComplete={handleSpinComplete}
+                resetColors={resetProgressColors}
               >
                 {upgradeResult === null && (
                   <Typography

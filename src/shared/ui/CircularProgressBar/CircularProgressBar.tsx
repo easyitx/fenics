@@ -12,6 +12,7 @@ interface CircularProgressBarProps {
   children?: React.ReactNode;
   isSpinning?: boolean;
   onSpinComplete?: (isWin: boolean) => void;
+  resetColors?: boolean;
 }
 
 export const CircularProgressBar: React.FC<CircularProgressBarProps> = ({
@@ -22,6 +23,7 @@ export const CircularProgressBar: React.FC<CircularProgressBarProps> = ({
   children,
   isSpinning = false,
   onSpinComplete,
+  resetColors = false,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [dimensions, setDimensions] = useState({ width: 200, height: 200 });
@@ -83,6 +85,13 @@ export const CircularProgressBar: React.FC<CircularProgressBarProps> = ({
     setIsWin(null);
     setFinalAngle(0);
   }, [percentage]);
+
+  useEffect(() => {
+    if (resetColors) {
+      setIsWin(null);
+      setFinalAngle(0);
+    }
+  }, [resetColors]);
 
   const actualSize = size || Math.min(dimensions.width, dimensions.height);
   const radius = (actualSize - strokeWidth) / 2;
