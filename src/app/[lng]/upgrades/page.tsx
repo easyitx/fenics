@@ -209,8 +209,8 @@ export default function Upgrades() {
                 >
                   {upgradeResult !== null
                     ? upgradeResult
-                      ? "Выигрыш!"
-                      : "Проигрыш!"
+                      ? "Успех!"
+                      : "Неудача!"
                     : "шанс апгрейда"}
                 </Typography>
                 {upgradeResult === null && (
