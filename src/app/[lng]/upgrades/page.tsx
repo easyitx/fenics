@@ -25,6 +25,7 @@ import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import { UnstyledButton } from "@/shared/ui/Button";
 import { cn } from "@/shared/lib/utils";
+import { CircularProgressBar } from "@/shared/ui/CircularProgressBar";
 export default function Upgrades() {
   const [activeTab, setActiveTab] = useState<"skin" | "balance">("balance");
   const [activeMultiplier, setActiveMultiplier] = useState<number>(1.5);
@@ -35,6 +36,9 @@ export default function Upgrades() {
   });
   const [mySkin, setMySkin] = useState<SkinItem | null>(null);
   const [skin, setSkin] = useState<SkinItem | null>(null);
+  const [upgradeChance, setUpgradeChance] = useState<number>(75);
+  const [isSpinning, setIsSpinning] = useState<boolean>(false);
+  const [upgradeResult, setUpgradeResult] = useState<boolean | null>(null);
 
   console.log(mySkin, skin);
 
@@ -59,6 +63,24 @@ export default function Upgrades() {
 
   const handleSkinClick = (skinItem: SkinItem) => {
     setSkin(skinItem);
+    if (mySkin && skinItem) {
+      const newChance = Math.floor(Math.random() * 50) + 50; // 50-100%
+      setUpgradeChance(newChance);
+    }
+  };
+
+  const handleUpgrade = () => {
+    if (mySkin && skin && !isSpinning) {
+      console.log("Выполняем апгрейд с шансом:", upgradeChance);
+      setIsSpinning(true);
+      setUpgradeResult(null);
+    }
+  };
+
+  const handleSpinComplete = (isWin: boolean) => {
+    setIsSpinning(false);
+    setUpgradeResult(isWin);
+    console.log("Результат апгрейда:", isWin ? "Выигрыш!" : "Проигрыш!");
   };
 
   return (
@@ -90,17 +112,70 @@ export default function Upgrades() {
             </>
           )}
         </div>
-        <div className={styles.initial}>
+        <div
+          className={cn(skin || mySkin ? styles.initialAdded : styles.initial)}
+        >
+          {skin && mySkin && (
+            <div className={styles.initialBtn} style={{ zIndex: 10 }}>
+              <CircularProgressBar
+                percentage={upgradeChance}
+                strokeWidth={8}
+                className={styles.upgradeProgress}
+                isSpinning={isSpinning}
+                onSpinComplete={handleSpinComplete}
+              >
+                {upgradeResult === null && (
+                  <Typography
+                    color="white"
+                    size="h2"
+                    weight="semibold"
+                    lineHeight="none"
+                  >
+                    {upgradeChance}%
+                  </Typography>
+                )}
+
+                <Typography
+                  color={upgradeResult === null ? "secondary" : "white"}
+                  weight={upgradeResult === null ? "normal" : "extrabold"}
+                  size={upgradeResult === null ? "base" : "h3"}
+                  lineHeight="none"
+                >
+                  {upgradeResult !== null
+                    ? upgradeResult
+                      ? "Выигрыш!"
+                      : "Проигрыш!"
+                    : "шанс апгрейда"}
+                </Typography>
+                {upgradeResult === null && (
+                  <Button
+                    variant="primary"
+                    size="medium"
+                    onClick={handleUpgrade}
+                    disabled={isSpinning}
+                  >
+                    {isSpinning ? "Вращение..." : "Апгрейд"}{" "}
+                    <Image
+                      src="/upgrades/diamond.svg"
+                      alt="upgrade"
+                      width={16}
+                      height={16}
+                      className={styles.diamondIcon}
+                    />
+                  </Button>
+                )}
+              </CircularProgressBar>
+            </div>
+          )}
           {(skin || mySkin) && (
-            <>
-              <Image
-                src={"/upgrades/blure.svg"}
-                alt="upgradeSkin"
-                width={100}
-                height={100}
-                className={styles.blureImage}
-              />
-            </>
+            <Image
+              src={"/upgrades/blure.svg"}
+              alt="upgradeSkin"
+              width={100}
+              height={100}
+              className={styles.blureImage}
+              style={{ zIndex: 5 }}
+            />
           )}
         </div>
         <div className={cn(skin ? styles.upgradeSkin : styles.upgradeItem)}>

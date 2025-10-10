@@ -1,0 +1,113 @@
+.circular-progress {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+
+  &__svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+  }
+
+  &__background {
+    stroke: rgba(255, 255, 255, 0.1);
+    stroke-linecap: round;
+  }
+
+  &__progress {
+    stroke: var(--color-primary);
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.5s ease-in-out;
+  }
+
+  &__indicator {
+    fill: var(--color-primary);
+    transition: all 0.3s ease-in-out;
+  }
+
+  &__arrow {
+    transition: transform 0.1s ease-out;
+    transform: rotate(180deg);
+  }
+
+  &__arrow-icon {
+    filter: brightness(0) saturate(100%) invert(39%) sepia(8%) saturate(1090%)
+      hue-rotate(314deg) brightness(95%) contrast(88%);
+  }
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 2;
+  }
+}
+
+.circular-progress--completed {
+  .circular-progress__progress {
+    stroke: var(--color-accent-primary);
+  }
+
+  .circular-progress__indicator {
+    fill: var(--color-accent-primary);
+  }
+}
+
+.circular-progress--low {
+  .circular-progress__progress {
+    stroke: #ff6b6b;
+  }
+
+  .circular-progress__indicator {
+    fill: #ff6b6b;
+  }
+}
+
+.circular-progress--medium {
+  .circular-progress__progress {
+    stroke: #ffa726;
+  }
+
+  .circular-progress__indicator {
+    fill: #ffa726;
+  }
+}
+
+.circular-progress--high {
+  .circular-progress__progress {
+    stroke: var(--color-primary);
+  }
+
+  .circular-progress__indicator {
+    fill: var(--color-primary);
+  }
+}
+
+.circular-progress--win {
+  .circular-progress__progress {
+    stroke: var(--color-text-green) !important;
+  }
+
+  .circular-progress__arrow-icon {
+    filter: brightness(0) saturate(100%) invert(39%) sepia(100%) saturate(2000%)
+      hue-rotate(120deg) brightness(90%) contrast(120%);
+  }
+}
+
+.circular-progress--lose {
+  .circular-progress__progress {
+    stroke: var(--color-text-red) !important;
+  }
+
+  .circular-progress__arrow-icon {
+    filter: brightness(0) saturate(100%) invert(20%) sepia(100%) saturate(2000%)
+      hue-rotate(0deg) brightness(90%) contrast(120%);
+  }
+}

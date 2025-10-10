@@ -7,3 +7,4 @@ export { RemSystemProvider } from "./RemSystemProvider";
 export { CountdownTimer } from "./CountdownTimer";
 export { ProgressBar } from "./ProgressBar";
 export { StatsCounters } from "./StatsCounters";
+export { CircularProgressBar } from "./CircularProgressBar";
