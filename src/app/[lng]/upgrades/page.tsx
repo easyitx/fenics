@@ -123,6 +123,19 @@ export default function Upgrades() {
     return styles.zonePulse;
   };
 
+  const getBlurImageSrc = () => {
+    if (upgradeResult === null && (skin || mySkin)) {
+      return "/upgrades/blure.svg";
+    }
+    if (upgradeResult === false) {
+      return "/upgrades/blureLosed.svg";
+    }
+    if (upgradeResult === true) {
+      return "/upgrades/blureWon.svg";
+    }
+    return null;
+  };
+
   return (
     <div className="min-h-screen" style={{ background: "rgba(15, 10, 13, 1)" }}>
       <div className={styles.container}>
@@ -220,29 +233,9 @@ export default function Upgrades() {
               </CircularProgressBar>
             </div>
           )}
-          {upgradeResult !== null && (skin || mySkin) && (
+          {getBlurImageSrc() && (
             <Image
-              src={"/upgrades/blure.svg"}
-              alt="upgradeSkin"
-              width={100}
-              height={100}
-              className={styles.blureImage}
-              style={{ zIndex: 5 }}
-            />
-          )}
-          {upgradeResult === false && (
-            <Image
-              src={"/upgrades/blureLosed.svg"}
-              alt="upgradeSkin"
-              width={100}
-              height={100}
-              className={styles.blureImage}
-              style={{ zIndex: 5 }}
-            />
-          )}
-          {upgradeResult === true && (
-            <Image
-              src={"/upgrades/blureWon.svg"}
+              src={getBlurImageSrc()!}
               alt="upgradeSkin"
               width={100}
               height={100}
