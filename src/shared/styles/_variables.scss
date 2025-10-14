@@ -49,6 +49,8 @@
   --radius-md: 10px;
   --radius-lg: 12px;
   --radius-xl: 16px;
+  --radius-2xl: 20px;
+
   --radius-full: 9999px;
 
   /* Размеры */
@@ -113,5 +115,5 @@ $breakpoints: (
   // Tablets landscape / small laptops
   xl: 1920px,
   // Desktop
-  xxl: 2560px // Large desktop,,,,,,,,,,,,,,,
+  xxl: 2560px // Large desktop,,,,,,,,,,,,,,,,,
 );
