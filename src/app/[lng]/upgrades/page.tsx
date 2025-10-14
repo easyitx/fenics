@@ -63,7 +63,6 @@ export default function Upgrades() {
     setUpgradeResult(null);
     setIsPulsing(false);
     setResetProgressColors(true);
-    // Сбрасываем флаг после небольшой задержки
     setTimeout(() => setResetProgressColors(false), 100);
   };
 
@@ -90,7 +89,6 @@ export default function Upgrades() {
     setUpgradeResult(isWin);
     setIsPulsing(true);
 
-    // Останавливаем анимацию через 3 секунды (3 повторения по 1 секунде)
     setTimeout(() => {
       setIsPulsing(false);
     }, 3000);

@@ -5,16 +5,37 @@ export interface Case {
   price: number;
   isAvailable: boolean;
   isFree: boolean;
+  rarity: string;
+}
+
+export interface SkinData {
+  id: string;
+  marketName: string;
+  weaponName: string;
+  shortName: string;
+  itemImage: string;
+  rarity: string;
+  price: number;
 }
 
 export const casesMock: Case[] = [
   {
-    id: "1",
+    id: "341",
     name: "Dragon Lore",
     image: "2.png",
     price: 2500,
     isAvailable: true,
     isFree: true,
+    rarity: "legendary",
+  },
+  {
+    id: "0",
+    name: "Dragon Lore",
+    image: "2.png",
+    price: 2500,
+    isAvailable: true,
+    isFree: true,
+    rarity: "legendary",
   },
   {
     id: "2",
@@ -23,6 +44,7 @@ export const casesMock: Case[] = [
     price: 1800,
     isAvailable: true,
     isFree: true,
+    rarity: "mythical",
   },
   {
     id: "3",
@@ -31,6 +53,7 @@ export const casesMock: Case[] = [
     price: 1200,
     isAvailable: false,
     isFree: true,
+    rarity: "rare",
   },
   {
     id: "4",
@@ -39,6 +62,7 @@ export const casesMock: Case[] = [
     price: 3200,
     isAvailable: true,
     isFree: true,
+    rarity: "ancient",
   },
   {
     id: "5",
@@ -47,15 +71,9 @@ export const casesMock: Case[] = [
     price: 2800,
     isAvailable: true,
     isFree: true,
+    rarity: "legendary",
   },
-  {
-    id: "6",
-    name: "AWP | Dragon Lore",
-    image: "2.png",
-    price: 4500,
-    isAvailable: false,
-    isFree: false,
-  },
+
   {
     id: "7",
     name: "M9 Bayonet | Crimson Web",
@@ -63,29 +81,52 @@ export const casesMock: Case[] = [
     price: 1500,
     isAvailable: true,
     isFree: false,
+    rarity: "rare",
   },
   {
     id: "8",
-    name: "Glock-18 | Fade",
+    name: "Karambit | Tiger Tooth",
     image: "2.png",
-    price: 800,
+    price: 1500,
     isAvailable: true,
     isFree: false,
+    rarity: "uncommon",
   },
   {
     id: "9",
-    name: "AK-47 | Redline",
+    name: "AK-47 | Vulcan",
     image: "2.png",
-    price: 600,
-    isAvailable: false,
+    price: 1500,
+    isAvailable: true,
     isFree: false,
+    rarity: "common",
   },
   {
     id: "10",
-    name: "AWP | Asiimov",
+    name: "AWP | Medusa",
     image: "2.png",
-    price: 900,
+    price: 1500,
     isAvailable: true,
     isFree: false,
+    rarity: "mythical",
+  },
+
+  {
+    id: "12",
+    name: "AK-47 | Redline",
+    image: "2.png",
+    price: 4600,
+    isAvailable: false,
+    isFree: false,
+    rarity: "rare",
+  },
+  {
+    id: "13",
+    name: "AWP | Asiimov",
+    image: "2.png",
+    price: 3900,
+    isAvailable: true,
+    isFree: false,
+    rarity: "uncommon",
   },
 ];

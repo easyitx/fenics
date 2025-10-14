@@ -16,11 +16,8 @@
 
 .topBar {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: var(--spacing-lg);
-  flex-wrap: wrap;
+  grid-template-columns: 0.9fr 1fr;
+  gap: var(--spacing-sm);
 
   @media (max-width: 1024px) {
     flex-direction: column;
@@ -347,10 +344,6 @@
   cursor: pointer;
   transition: var(--transition-fast);
   height: 41px;
-  &:hover {
-    background: var(--color-accent-primary);
-    transform: translateY(-1px);
-  }
 
   p {
     color: var(--color-text-white);
@@ -460,7 +453,7 @@
   right: 0;
   bottom: 0;
   background: var(--color-hover);
-  border-radius: var(--radius-md);
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;

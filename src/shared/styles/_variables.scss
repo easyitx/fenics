@@ -17,6 +17,7 @@
   --color-text-gray: #0f0a0d;
   --color-text-green: #51eb2b;
   --color-text-red: #eb2b2b;
+  --color-text-lightGray: #a6a6a6;
   /* Акцентные цвета */
   --color-accent-primary: #f5b0db;
   --color-accent-secondary: "";
@@ -112,5 +113,5 @@ $breakpoints: (
   // Tablets landscape / small laptops
   xl: 1920px,
   // Desktop
-  xxl: 2560px // Large desktop,,,,,,,,,,,,,,
+  xxl: 2560px // Large desktop,,,,,,,,,,,,,,,
 );

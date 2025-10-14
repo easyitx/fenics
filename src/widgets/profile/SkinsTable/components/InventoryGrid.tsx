@@ -17,7 +17,7 @@ export const InventoryGrid: React.FC<InventoryGridProps> = ({
     <div className={styles.skinsGrid}>
       {mockSkins.map((skin) => (
         <div key={skin.id} className={styles.skinCardWrapper}>
-          <SkinCard />
+          <SkinCard skin={skin} />
 
           <div className={styles.hoverActions}>
             <Button

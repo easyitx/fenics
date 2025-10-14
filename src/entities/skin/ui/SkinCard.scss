@@ -1,4 +1,4 @@
-@use "../../../shared/styles/cards_mixins" as *;
+@use "../../../shared/styles/_cards_mixins" as *;
 
 .skinCardLive {
   position: relative;
@@ -10,6 +10,12 @@
 
   // Для фона
   @include container-bg;
+
+  // Для цвета блока :before
+  @include before-color;
+
+  // Для цвета логотипа
+  @include logo-color;
 
   .skinCardLiveInner {
     position: relative;
@@ -36,13 +42,12 @@
       width: 66px;
       height: 20px;
       border-radius: 8px;
-      background: #f9f273;
       border: 1.5px solid var(--color-background);
     }
 
     .skinCardLiveLogo {
-      width: 67px;
-      height: 67px;
+      width: 80px;
+      height: 80px;
       object-fit: contain;
     }
 
@@ -51,8 +56,8 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 94px;
-      height: 94px;
+      width: 110px;
+      height: 110px;
       object-fit: contain;
     }
 
@@ -66,7 +71,7 @@
       .skinName {
         color: #ffffffab;
         font-weight: 400;
-        font-size: 12px;
+        font-size: 14px;
         line-height: 14px;
         letter-spacing: 0;
         text-wrap: nowrap;
@@ -77,7 +82,7 @@
 
       .skinWeapon {
         font-weight: 700;
-        font-size: 13px;
+        font-size: 16px;
         line-height: 16px;
         letter-spacing: 0;
         color: var(--color-text-white);

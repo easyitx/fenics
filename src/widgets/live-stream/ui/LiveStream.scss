@@ -140,17 +140,18 @@
       bottom: 0;
       background: var(--color-hover);
 
-      border-radius: var(--radius-md);
+      border-radius: 8px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: start;
       gap: var(--spacing-xs);
       z-index: 10;
       opacity: 0;
       transform: translateY(-10px);
       transition: all 0.2s ease-in-out;
       pointer-events: none;
+      padding-top: var(--spacing-sm);
     }
 
     .skinCardWrapper:hover .hoverActions {
