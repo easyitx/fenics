@@ -2,7 +2,9 @@
   &__inner {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    min-height: 50vh;
+    height: 50vh;
+
+    min-height: 450px;
     gap: 1rem;
 
     .sliderSection {

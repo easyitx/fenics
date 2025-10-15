@@ -41,4 +41,63 @@
     height: 126px;
     padding-bottom: 15px;
   }
+
+  // Мобилка
+  @media (max-width: 768px) {
+    &__container {
+      padding: var(--spacing-md) 1rem;
+      justify-content: space-between;
+
+      .app_logo {
+        img {
+          height: 24px;
+          width: 76px;
+        }
+      }
+
+      .header_navigation {
+        display: none;
+      }
+
+      .header_actions {
+        margin-left: 0;
+        gap: 10px;
+
+        .flex.items-center {
+          display: none;
+        }
+
+        .mobile-actions {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 769px) {
+    &__container {
+      .header_actions {
+        .mobile-actions {
+          display: none;
+        }
+      }
+    }
+  }
+
+  // Планшет
+  @media (max-width: 1024px) and (min-width: 769px) {
+    &__container {
+      padding: var(--spacing-md) var(--spacing-xl);
+
+      .header_navigation {
+        margin-left: 30px;
+      }
+
+      .header_actions {
+        gap: 12px;
+      }
+    }
+  }
 }

@@ -32,34 +32,75 @@ export const Header: React.FC<IHeaderProps> = ({ classname = "" }) => {
 
         <div className="header_actions">
           {user ? (
-            <div className="flex items-center" style={{ gap: "10px" }}>
+            <>
+              {/* Десктопная версия */}
+              <div className="flex items-center" style={{ gap: "10px" }}>
+                <Button variant="primary" className="h-[59px]">
+                  Депозит
+                  <Icon name="add-circle" color="primary" size={20} />
+                </Button>
+                <ProfileBalanceWidget user={user} />
+                <UnstyledButton className="w-[59px] h-[59px]">
+                  <Image
+                    src="/icons/notification.svg"
+                    alt="Notification"
+                    width={24}
+                    height={24}
+                  />
+                </UnstyledButton>
+                <UnstyledButton className="w-[59px] h-[59px]">
+                  <Image
+                    src="/icons/Exit.svg"
+                    alt="Exit"
+                    width={24}
+                    height={24}
+                  />
+                </UnstyledButton>
+              </div>
+
+              {/* Мобильная версия */}
+              <div className="mobile-actions">
+                <UnstyledButton className="w-[32px] h-[32px]">
+                  <Image
+                    src="/icons/notification.svg"
+                    alt="notification"
+                    width={20}
+                    height={20}
+                  />
+                </UnstyledButton>
+                <UnstyledButton className="w-[32px] h-[32px]">
+                  <Image
+                    src="/icons/menu.svg"
+                    alt="menu"
+                    width={20}
+                    height={20}
+                  />
+                </UnstyledButton>
+              </div>
+            </>
+          ) : (
+            <>
+              {/* Десктопная версия */}
               <Button variant="primary" className="h-[59px]">
-                Депозит
+                Войти
                 <Icon name="add-circle" color="primary" size={20} />
               </Button>
-              <ProfileBalanceWidget user={user} />
-              <UnstyledButton className="w-[59px] h-[59px]">
-                <Image
-                  src="/icons/notification.svg"
-                  alt="Notification"
-                  width={24}
-                  height={24}
-                />
-              </UnstyledButton>
-              <UnstyledButton className="w-[59px] h-[59px]">
-                <Image
-                  src="/icons/Exit.svg"
-                  alt="Exit"
-                  width={24}
-                  height={24}
-                />
-              </UnstyledButton>
-            </div>
-          ) : (
-            <Button variant="primary" className="h-[59px]">
-              Войти
-              <Icon name="add-circle" color="primary" size={20} />
-            </Button>
+
+              {/* Мобильная версия */}
+              <div className="mobile-actions">
+                <UnstyledButton className="w-[40px] h-[40px]">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M3 12H21M3 6H21M3 18H21"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </UnstyledButton>
+              </div>
+            </>
           )}
         </div>
       </div>

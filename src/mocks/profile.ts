@@ -1084,4 +1084,83 @@ export const mockSkinsForLiveStream: SkinItem[] = [
     itemImage: "/cases/skin.svg",
     rarity: "common",
   },
+  {
+    id: "live-41",
+    marketName: "Glock-18 | Sand Dune",
+    weaponName: "Glock-18",
+    shortName: "Sand Dune",
+    price: 8,
+    itemImage: "/cases/skin.svg",
+    rarity: "common",
+  },
+  // Uncommon rarity
+  {
+    id: "live-42",
+    marketName: "USP-S | Guardian",
+    weaponName: "USP-S",
+    shortName: "Guardian",
+    price: 75,
+    itemImage: "/cases/skin.svg",
+    rarity: "uncommon",
+  },
+  // Rare rarity
+  {
+    id: "live-43",
+    marketName: "AK-47 | Redline",
+    weaponName: "AK-47",
+    shortName: "Redline",
+    price: 45,
+    itemImage: "/cases/skin.svg",
+    rarity: "rare",
+  },
+  // Mythical rarity
+  {
+    id: "live-44",
+    marketName: "AWP | Medusa",
+    weaponName: "AWP",
+    shortName: "Medusa",
+    price: 200,
+    itemImage: "/cases/skin.svg",
+    rarity: "mythical",
+  },
+  // Legendary rarity
+  {
+    id: "live-45",
+    marketName: "AWP | Dragon Lore",
+    weaponName: "AWP",
+    shortName: "Dragon Lore",
+    price: 1200,
+    itemImage: "/cases/skin.svg",
+    rarity: "legendary",
+  },
+  // Ancient rarity
+  {
+    id: "live-46",
+    marketName: "AK-47 | Hydroponic",
+    weaponName: "AK-47",
+    shortName: "Hydroponic",
+    price: 300,
+    itemImage: "/cases/skin.svg",
+    rarity: "ancient",
+  },
+  // Other rarity
+  {
+    id: "live-47",
+    marketName: "★ StatTrak™ Flip Knife | Case Hardened",
+    weaponName: "Flip Knife",
+    shortName: "Case Hardened",
+    price: 500,
+    itemImage: "/cases/skin.svg",
+    rarity: "other",
+    isHighlighted: true,
+  },
+  {
+    id: "live-48",
+    marketName: "Glock-18 | Sand Dune",
+    weaponName: "Glock-18",
+    shortName: "Sand Dune",
+    price: 8,
+    itemImage: "/cases/skin.svg",
+    rarity: "common",
+  },
 ];
