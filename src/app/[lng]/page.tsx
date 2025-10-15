@@ -12,13 +12,16 @@ export default function Home() {
       <Banners />
 
       <div className="boxes__section">
-        <div className="flex items-center justify-center relative">
+        <div className="boxes__section__inner_container">
           <div
             className="boxes__section__inner"
             style={{ position: "absolute", top: 0, left: 0 }}
           >
             <Image src="/icons/info.svg" alt="info" width={24} height={24} />
             Что это такое?
+          </div>
+          <div className="boxes__section__inner_mobile">
+            <Image src="/icons/info.svg" alt="info" width={20} height={20} />
           </div>
           <div className="boxes__section__heading">
             <h1 className="title">БЕСПЛАТНЫЕ КЕЙСЫ</h1>

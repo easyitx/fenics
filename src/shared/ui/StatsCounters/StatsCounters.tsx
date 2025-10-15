@@ -46,17 +46,26 @@ export const StatsCounters: React.FC<StatsCountersProps> = ({ className }) => {
                 alt={stat.label}
                 width={30}
                 height={30}
+                className={styles.statIcon}
               />
-              <div className={styles.statInfo}>
-                <div className={styles.statValue}>
-                  <Typography size="h6" weight="bold">
-                    {stat.value}
-                  </Typography>
-                </div>
+
+              <div className={styles.statValue}>
+                <Typography
+                  size="h6"
+                  weight="bold"
+                  className={styles.statValueText}
+                >
+                  {stat.value}
+                </Typography>
               </div>
             </div>
             <div className={styles.statLabel}>
-              <Typography size="h6" weight="bold" color="secondary">
+              <Typography
+                size="h6"
+                weight="bold"
+                color="secondary"
+                className={styles.statLabelText}
+              >
                 {stat.label}
               </Typography>
             </div>

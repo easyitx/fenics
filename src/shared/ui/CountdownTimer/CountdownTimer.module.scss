@@ -4,6 +4,14 @@
   position: absolute;
   top: 0;
   right: 0;
+
+  @media (max-width: 768px) {
+    gap: var(--spacing-xs);
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+  }
 }
 
 .label {
@@ -14,11 +22,21 @@
   align-items: start;
   justify-content: start;
   padding-top: 1rem;
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-xs);
+    padding-top: 0rem;
+    text-align: center;
+  }
 }
 
 .timer {
   display: flex;
   gap: 8px;
+
+  @media (max-width: 768px) {
+    gap: 4px;
+  }
 }
 
 .timeBlock {
@@ -32,6 +50,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+  }
 }
 
 .unit {
@@ -39,4 +63,20 @@
   font-size: var(--font-size-lg);
   font-weight: 400;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-xs);
+  }
+}
+
+.number {
+  @media (max-width: 768px) {
+    font-size: var(--font-size-lg) !important;
+  }
+}
+
+.labelText {
+  @media (max-width: 768px) {
+    font-size: var(--font-size-sm) !important;
+  }
 }

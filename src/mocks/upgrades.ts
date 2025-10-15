@@ -57,7 +57,7 @@ export const upgradeItemsMock: UpgradeItemMock[] = [
     percent: 25.0,
     fromSkin: {
       id: "5",
-      marketName: "M9 Bayonet | Crimson Web",
+      marketName: "M9 Bayonet | Web",
       weaponName: "M9 Bayonet",
       shortName: "Crimson Web",
       itemImage: "/cases/skin.svg",
@@ -277,7 +277,7 @@ export const upgradeItemsMock: UpgradeItemMock[] = [
     percent: 7.0,
     fromSkin: {
       id: "25",
-      marketName: "Karambit | Tiger Tooth",
+      marketName: "Karambit | Tiger",
       weaponName: "Karambit",
       shortName: "Tiger Tooth",
       itemImage: "/cases/skin.svg",

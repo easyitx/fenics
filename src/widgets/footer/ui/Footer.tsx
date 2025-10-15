@@ -8,7 +8,13 @@ import { cn } from "@/shared/lib/utils";
 export const Footer: React.FC<{ classname?: string }> = ({ classname }) => {
   return (
     <footer className={cn("footer", [classname])}>
-      <Image src="/app_logo.svg" alt="logo" width={140} height={44} />
+      <Image
+        src="/app_logo.svg"
+        alt="logo"
+        width={140}
+        height={44}
+        className="footer__logo"
+      />
       <div className="footer__main">
         <StatsCounters />
       </div>

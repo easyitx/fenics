@@ -77,7 +77,12 @@ export const CountdownTimer: React.FC<CountdownTimerProps> = ({
     <div className={`${styles.countdown} ${className || ""}`}>
       <div className={styles.label}>
         <div>
-          <Typography size="lg" weight="normal" color="secondary">
+          <Typography
+            size="lg"
+            weight="normal"
+            color="secondary"
+            className={styles.labelText}
+          >
             До обнуления:
           </Typography>
         </div>

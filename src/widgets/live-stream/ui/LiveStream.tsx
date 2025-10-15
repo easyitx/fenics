@@ -67,6 +67,7 @@ export const LiveStream: React.FC<{ classname?: string }> = ({ classname }) => {
                     alt="Avatar"
                     width={42}
                     height={42}
+                    className="avatar"
                   />
                   <div>
                     <Typography
@@ -74,6 +75,7 @@ export const LiveStream: React.FC<{ classname?: string }> = ({ classname }) => {
                       weight="normal"
                       color="white"
                       lineHeight="none"
+                      className="username"
                     >
                       samuray
                     </Typography>
@@ -82,6 +84,7 @@ export const LiveStream: React.FC<{ classname?: string }> = ({ classname }) => {
                       weight="normal"
                       color="lightGray"
                       lineHeight="tight"
+                      className="weapon"
                     >
                       Ледянной дракон
                     </Typography>

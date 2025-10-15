@@ -62,7 +62,7 @@ export const mockSkins: SkinItem[] = [
   },
   {
     id: "51",
-    marketName: "Karambit | Tiger Tooth",
+    marketName: "Karambit | Tiger",
     weaponName: "Karambit",
     shortName: "Tiger Tooth",
     price: 120,
@@ -543,7 +543,7 @@ export const mockSkinsForUpgrade: SkinItem[] = [
   },
   {
     id: "51",
-    marketName: "Karambit | Tiger Tooth",
+    marketName: "Karambit | Tiger",
     weaponName: "Karambit",
     shortName: "Tiger Tooth",
     price: 120,

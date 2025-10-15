@@ -76,7 +76,7 @@ export const casesMock: Case[] = [
 
   {
     id: "7",
-    name: "M9 Bayonet | Crimson Web",
+    name: "M9 Bayonet",
     image: "2.png",
     price: 1500,
     isAvailable: true,
@@ -85,7 +85,7 @@ export const casesMock: Case[] = [
   },
   {
     id: "8",
-    name: "Karambit | Tiger Tooth",
+    name: "Karambit | Tiger",
     image: "2.png",
     price: 1500,
     isAvailable: true,

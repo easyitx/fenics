@@ -182,5 +182,94 @@
         font-weight: 600;
       }
     }
+
+    .avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .username {
+      font-size: var(--font-size-xs);
+      font-weight: var(--font-weight-normal);
+      color: var(--color-text-white);
+      line-height: 1;
+      margin: 0;
+    }
+
+    .weapon {
+      font-size: var(--font-size-xs);
+      font-weight: var(--font-weight-normal);
+      color: var(--color-text-secondary);
+      line-height: 1.2;
+      margin: 0;
+    }
+  }
+
+  // Мобильная версия
+  @media (max-width: 768px) {
+    padding: 0 0 0 1rem;
+
+    &:before {
+      display: none;
+    }
+
+    &__online {
+      min-width: 40px;
+      height: 84px;
+
+      .onlineContent {
+        height: 84px;
+        gap: 1px;
+
+        .contentText {
+          font-size: 12px;
+          line-height: 13px;
+        }
+
+        .contentLabel {
+          display: none;
+        }
+      }
+    }
+
+    &__items {
+      .itemsFilter {
+        gap: 2px;
+        padding: 0 2px;
+
+        .liveBtn {
+          width: 40px;
+          height: 40px;
+          border-radius: 6px;
+
+          .filterLabel {
+            font-size: 10px;
+          }
+        }
+      }
+
+      .skinCardWrapper {
+        width: 120px;
+        height: 84px;
+      }
+
+      .avatar {
+        width: 30px;
+        height: 30px;
+      }
+
+      .username {
+        font-size: 10px;
+        line-height: 1;
+      }
+
+      .weapon {
+        font-size: 9px;
+        line-height: 1.1;
+      }
+    }
   }
 }
