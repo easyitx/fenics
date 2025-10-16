@@ -16,6 +16,7 @@ export interface SkinData {
   itemImage: string;
   rarity: string;
   price: number;
+  state?: "sold" | "steam";
 }
 
 export const casesMock: Case[] = [

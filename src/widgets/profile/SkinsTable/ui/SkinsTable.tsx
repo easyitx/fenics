@@ -24,7 +24,10 @@ export function SkinsTable({ className }: SkinsTableProps) {
     console.log("Sell all items");
   };
 
-  const handleItemAction = (action: "sell" | "withdraw", itemId: string) => {
+  const handleItemAction = (
+    action: "sell" | "withdraw" | "replace",
+    itemId: string
+  ) => {
     console.log(`${action} item ${itemId}`);
   };
 

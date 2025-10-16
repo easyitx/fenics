@@ -325,7 +325,7 @@ export default function Upgrades() {
               <div className={styles.skinsGrid}>
                 {mockSkins.map((skinItem) => (
                   <div key={skinItem.id} className={styles.skinCardWrapper}>
-                    <SkinCard skin={skinItem} />
+                    <SkinCard skin={skinItem} withState={false} />
                     {mySkin?.id !== skinItem.id && (
                       <div className={styles.hoverActions}>
                         <UnstyledButton
@@ -415,7 +415,7 @@ export default function Upgrades() {
               <div className={styles.skinsGrid}>
                 {mockSkinsForUpgrade.map((skinItem) => (
                   <div key={skinItem.id} className={styles.skinCardWrapper}>
-                    <SkinCard skin={skinItem} />
+                    <SkinCard skin={skinItem} withState={false} />
                     {skin?.id !== skinItem.id && (
                       <div className={styles.hoverActions}>
                         <UnstyledButton

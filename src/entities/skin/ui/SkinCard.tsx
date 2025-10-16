@@ -2,17 +2,20 @@ import React from "react";
 import "./SkinCard.scss";
 import { Typography } from "@/shared/ui/Typography";
 import { SkinData } from "@/mocks/cases";
+import Image from "next/image";
 
 export const SkinCard = ({
   width,
   height,
   withPrice = true,
   skin,
+  withState = true,
 }: {
   width?: number;
   height?: number;
   withPrice?: boolean;
   skin?: SkinData;
+  withState?: boolean;
 }) => {
   const defaultSkin = {
     _id: "zx",
@@ -73,6 +76,25 @@ export const SkinCard = ({
           <Typography className="skinCardLivePrice" color="white" weight="bold">
             {skinData.price} $
           </Typography>
+        )}
+
+        {skin?.state === "sold" && withState && (
+          <Image
+            src="/cases/sold.svg"
+            alt="Sold"
+            width={30}
+            height={30}
+            className="stateIcon"
+          />
+        )}
+        {skin?.state === "steam" && withState && (
+          <Image
+            src="/cases/steam.svg"
+            alt="Sold"
+            width={30}
+            height={30}
+            className="stateIcon"
+          />
         )}
         <div className="skinCardLiveInfo">
           <span className="skinName">{skinData.shortName}</span>

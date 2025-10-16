@@ -23,6 +23,7 @@ export const mockSkins: SkinItem[] = [
     price: 35,
     itemImage: "/cases/mySkin.svg",
     rarity: "rare",
+    state: "sold",
   },
   {
     id: "47",
@@ -32,6 +33,7 @@ export const mockSkins: SkinItem[] = [
     price: 29,
     itemImage: "/cases/mySkin.svg",
     rarity: "rare",
+    state: "steam",
   },
   {
     id: "48",
@@ -41,6 +43,7 @@ export const mockSkins: SkinItem[] = [
     price: 145,
     itemImage: "/cases/mySkin.svg",
     rarity: "legendary",
+    state: "steam",
   },
   {
     id: "49",
