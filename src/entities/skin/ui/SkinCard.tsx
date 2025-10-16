@@ -19,8 +19,7 @@ export const SkinCard = ({
     marketName: "★ StatTrak™ Flip Knife | Case Hardened (Well-Worn)",
     weaponName: "Flip Knife",
     shortName: "Case Hardened",
-    itemImage:
-      "https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9rbmlmZV9rdWtyaV9hYV9mYWRlX2xpZ2h0LjUyOWY0MTlkNmE5MGUxMTgwNjRiMDdmNjgwMzFmMDMzOGUyNGZjMTIucG5n/auto/auto/85/notrim/d7a25ab6147067a3f83e410138152aaa.png",
+    itemImage: "/cases/skin.svg",
     rarity: "legendary",
     price: 100,
   };

@@ -44,12 +44,21 @@ export function SkinsTable({ className }: SkinsTableProps) {
       </div>
 
       <div className={styles.navigation}>
+        <div className={styles.actionButtonsMobile}>
+          <ActionButtons
+            onSellAll={handleSellAll}
+            inStockOnly={inStockOnly}
+            onInStockToggle={setInStockOnly}
+          />
+        </div>
         <TabNavigation activeTab={activeTab} onTabChange={setActiveTab} />
-        <ActionButtons
-          onSellAll={handleSellAll}
-          inStockOnly={inStockOnly}
-          onInStockToggle={setInStockOnly}
-        />
+        <div className={styles.actionButtons}>
+          <ActionButtons
+            onSellAll={handleSellAll}
+            inStockOnly={inStockOnly}
+            onInStockToggle={setInStockOnly}
+          />
+        </div>
       </div>
 
       {activeTab === "inventory" ? (

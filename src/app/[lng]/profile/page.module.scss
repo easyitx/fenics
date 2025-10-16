@@ -8,6 +8,7 @@
 
   @media (max-width: 768px) {
     padding: var(--spacing-md);
+    padding-top: 0;
   }
 }
 
@@ -19,13 +20,9 @@
   margin: 0 auto;
   justify-content: center;
 
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    gap: var(--spacing-lg);
-  }
-
   @media (max-width: 768px) {
-    gap: var(--spacing-md);
+    flex-direction: column;
+    gap: var(--spacing-sm);
   }
 }
 

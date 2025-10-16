@@ -10,9 +10,9 @@
   gap: var(--spacing-md);
 
   @media (max-width: 768px) {
-    min-width: 100%;
-    max-width: 100%;
-    padding: var(--spacing-md);
+    width: 100%;
+    padding: 0;
+    gap: var(--spacing-sm);
   }
 }
 
@@ -25,26 +25,48 @@
   align-items: center;
   text-align: center;
   width: fit-content;
+
+  @media (max-width: 768px) {
+    padding: var(--spacing-sm) var(--spacing-md);
+    width: 100%;
+    position: relative;
+  }
 }
 
 .avatarContainer {
   position: relative;
   margin-bottom: var(--spacing-sm);
+  @media (max-width: 768px) {
+    margin-bottom: 0;
+  }
 }
 
 .avatar {
   object-fit: cover;
+
+  @media (max-width: 768px) {
+    width: 100px !important;
+    height: 100px !important;
+  }
 }
 
 .username {
   @include responsive-typography(20px, 24px, 28px, 32px, 1.2, 700);
   color: var(--color-text-white);
+
+  @media (max-width: 768px) {
+    font-size: 1.25rem; // text-xl
+  }
 }
 
 .balance {
   @include responsive-typography(24px, 28px, 32px, 36px, 1.2, 700);
   color: var(--color-text-primary);
   margin-bottom: var(--spacing-sm);
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem; // text-2xl
+  }
 }
 
 .userId {
@@ -55,6 +77,13 @@
   border-radius: var(--radius-md);
   padding: var(--spacing-xs) var(--spacing-sm);
 
+  @media (max-width: 768px) {
+    padding: 0.25rem 0.5rem;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+  }
+
   button {
     display: flex;
     align-items: center;
@@ -64,11 +93,20 @@
   p {
     color: var(--color-text-white);
     margin: 0;
+
+    @media (max-width: 768px) {
+      font-size: 0.75rem; // text-xs
+    }
   }
 }
 
 .moneyIcon {
   margin-right: var(--spacing-xs);
+
+  @media (max-width: 768px) {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 .withdrawalInfo {
@@ -79,6 +117,10 @@
   flex-direction: column;
   gap: var(--spacing-xs);
   width: 100%;
+
+  @media (max-width: 768px) {
+    padding: var(--spacing-sm);
+  }
 
   .withdrawalInfoContent {
     display: flex;
@@ -91,11 +133,19 @@
   .withdrawalInfoText {
     color: var(--color-text-white);
     font-weight: var(--font-weight-normal);
+
+    @media (max-width: 768px) {
+      font-size: 0.875rem; // text-sm
+    }
   }
 }
 
 .withdrawalLabel {
   color: var(--color-text-secondary);
+
+  @media (max-width: 768px) {
+    font-size: 0.875rem; // text-sm
+  }
 }
 
 .socialLinks {
@@ -103,6 +153,9 @@
   flex-direction: column;
   gap: var(--spacing-md);
   width: 100%;
+  @media (max-width: 768px) {
+    gap: var(--spacing-sm);
+  }
 }
 
 .socialItem {
@@ -112,6 +165,10 @@
   height: 56px;
   width: 100%;
   gap: var(--spacing-xs);
+
+  @media (max-width: 768px) {
+    height: 48px;
+  }
 }
 
 .socialButton {
@@ -122,6 +179,12 @@
   justify-content: center;
   height: 100%;
   gap: 0;
+
+  p {
+    @media (max-width: 768px) {
+      font-size: 0.75rem; // text-xs
+    }
+  }
 }
 
 .telegramButton {
@@ -174,6 +237,28 @@
   align-items: center;
   justify-content: center;
   gap: var(--spacing-xs);
+}
+
+.socialIcon {
+  @media (max-width: 768px) {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.userIdIcon {
+  @media (max-width: 768px) {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.statusIcon {
+  @media (max-width: 768px) {
+    width: 6px;
+    height: 6px;
+    margin-bottom: 4px;
+  }
 }
 
 .statusDot {

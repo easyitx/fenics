@@ -27,7 +27,11 @@ export const TradeLinkSection: React.FC<TradeLinkSectionProps> = ({
             height={24}
             className={styles.topbarIcon}
           />
-          <Typography weight="normal" color="secondary">
+          <Typography
+            weight="normal"
+            color="secondary"
+            className={styles.tradeLinkText}
+          >
             Трейд - ссылка
           </Typography>
         </div>
@@ -39,7 +43,11 @@ export const TradeLinkSection: React.FC<TradeLinkSectionProps> = ({
             height={24}
             className={styles.topbarIcon}
           />
-          <Typography weight="normal" color="primary">
+          <Typography
+            weight="normal"
+            color="primary"
+            className={styles.helpText}
+          >
             Где взять?
           </Typography>
         </div>
@@ -52,8 +60,17 @@ export const TradeLinkSection: React.FC<TradeLinkSectionProps> = ({
           onChange={(e) => onTradeLinkChange(e.target.value)}
           className={styles.inputField}
         />
-        <Button className="bg-primary rounded-md p-2" onClick={onAddLink}>
-          <Image src="/icons/addLink.svg" alt="Copy" width={24} height={24} />
+        <Button
+          className={`bg-primary rounded-md p-2 ${styles.addButton}`}
+          onClick={onAddLink}
+        >
+          <Image
+            src="/icons/addLink.svg"
+            alt="Copy"
+            width={24}
+            height={24}
+            className={styles.addButtonIcon}
+          />
         </Button>
       </div>
     </div>

@@ -5,4 +5,30 @@
   background: var(--color-surface);
   border-radius: var(--radius-md);
   padding: var(--spacing-md);
+
+  @media (max-width: 768px) {
+    padding: var(--spacing-sm);
+    gap: var(--spacing-sm);
+  }
+}
+
+.title {
+  @media (max-width: 768px) {
+    font-size: 1.125rem; // text-lg
+  }
+}
+
+.description {
+  @media (max-width: 768px) {
+    font-size: 0.875rem; // text-sm
+  }
+}
+
+.skinCardWrapper {
+  :global(.skinCardLive) {
+    @media (min-width: 769px) {
+      width: 170px !important;
+      height: 100px !important;
+    }
+  }
 }

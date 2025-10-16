@@ -46,7 +46,12 @@ export const UpgradeItem: React.FC<UpgradeItemProps> = ({
       </div>
 
       <div className={styles.skinsContainer}>
-        <SkinCard width={170} height={120} withPrice={true} skin={fromSkin} />
+        <div className={styles.skinWrapper}>
+          <SkinCard width={170} height={120} withPrice={true} skin={fromSkin} />
+        </div>
+        <div className={styles.skinWrapperMobile}>
+          <SkinCard width={130} height={90} withPrice={true} skin={fromSkin} />
+        </div>
 
         <div
           className={styles.arrowContainer}
@@ -66,6 +71,9 @@ export const UpgradeItem: React.FC<UpgradeItemProps> = ({
 
         <div className={styles.skinWrapper}>
           <SkinCard width={170} height={120} withPrice={true} skin={toSkin} />
+        </div>
+        <div className={styles.skinWrapperMobile}>
+          <SkinCard width={130} height={90} withPrice={true} skin={fromSkin} />
         </div>
       </div>
     </div>

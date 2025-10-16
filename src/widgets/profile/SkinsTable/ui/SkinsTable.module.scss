@@ -10,7 +10,8 @@
   max-width: 900px;
 
   @media (max-width: 768px) {
-    padding: var(--spacing-md);
+    padding: 0;
+    gap: var(--spacing-sm);
   }
 }
 
@@ -21,12 +22,51 @@
 
   @media (max-width: 1024px) {
     flex-direction: column;
-    gap: var(--spacing-md);
+    gap: var(--spacing-sm);
+  }
+}
+
+@media (max-width: 768px) {
+  .topBar {
+    display: flex;
+    flex-direction: column;
   }
 }
 
 .topbarIcon {
   margin-right: var(--spacing-sm);
+
+  @media (max-width: 768px) {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.tradeLinkText {
+  @media (max-width: 768px) {
+    font-size: 0.875rem; // text-sm
+  }
+}
+
+.helpText {
+  @media (max-width: 768px) {
+    font-size: 0.875rem; // text-sm
+  }
+}
+
+.addButton {
+  @media (max-width: 768px) {
+    padding: 0.5rem; // p-2 -> p-2 but smaller
+    min-width: 40px;
+    height: 48px; // same as input field height
+  }
+}
+
+.addButtonIcon {
+  @media (max-width: 768px) {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 .tradeLinkSection {
@@ -42,7 +82,10 @@
   width: 100%;
 
   @media (max-width: 768px) {
-    min-width: 100%;
+    padding: var(--spacing-sm);
+    gap: var(--spacing-xs);
+    min-width: 280px;
+    max-width: 100%;
   }
 }
 
@@ -96,6 +139,12 @@
   color: var(--color-text-white);
   outline: none;
   @include responsive-typography(12px, 14px, 16px, 18px);
+
+  @media (max-width: 768px) {
+    height: 48px;
+    margin-right: var(--spacing-sm);
+    padding: var(--spacing-xs);
+  }
 
   &::placeholder {
     color: var(--color-text-secondary);
@@ -201,17 +250,40 @@
   justify-content: space-between;
   align-items: center;
   gap: var(--spacing-lg);
-  flex-wrap: wrap;
   height: 41px;
+  width: 100%;
+
+  .actionButtons {
+    display: block;
+  }
+
+  .actionButtonsMobile {
+    width: 100%;
+    display: none;
+  }
 
   @media (max-width: 768px) {
     flex-direction: column;
-    gap: var(--spacing-md);
+    flex-wrap: nowrap;
+    gap: var(--spacing-sm);
+
+    .actionButtons {
+      width: 100%;
+      display: none;
+    }
+
+    .actionButtonsMobile {
+      width: 100%;
+      display: block;
+    }
   }
 }
 
 .tabs {
   display: flex;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 }
 
 .tab {
@@ -224,6 +296,12 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-xs);
+
+  @media (max-width: 768px) {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
 
   img {
     filter: brightness(0) saturate(100%) invert(39%) sepia(8%) saturate(1090%)
@@ -410,8 +488,9 @@
   align-content: flex-start;
 
   @media (max-width: 768px) {
-    gap: var(--spacing-sm);
-    max-height: calc(80px * 5 + var(--spacing-sm) * 4 + var(--spacing-md) * 2);
+    gap: var(--spacing-xs);
+    max-height: calc(80px * 3 + var(--spacing-sm) * 4 + var(--spacing-md) * 2);
+    margin-top: 50px;
   }
 
   &::-webkit-scrollbar {
@@ -464,6 +543,11 @@
   transform: translateY(-10px);
   transition: all 0.2s ease-in-out;
   pointer-events: none;
+
+  @media (max-width: 768px) {
+    gap: var(--spacing-xs);
+    padding: 5px;
+  }
 }
 
 .skinCardWrapper:hover .hoverActions {
@@ -484,10 +568,20 @@
   height: 28px;
   gap: var(--spacing-xs);
 
+  @media (max-width: 768px) {
+    padding: 10px 10px !important;
+    width: 70px !important;
+    height: 20px !important;
+  }
+
   p {
     color: var(--color-text-white);
     margin: 0;
     @include responsive-typography(10px, 12px, 14px, 16px);
+
+    @media (max-width: 768px) {
+      font-size: 0.625rem; // text-xs
+    }
   }
 }
 
@@ -510,6 +604,7 @@
   @media (max-width: 768px) {
     gap: var(--spacing-sm);
     max-height: calc(180px * 3 + var(--spacing-sm) * 2 + var(--spacing-md) * 2);
+    margin-top: 50px;
   }
 
   &::-webkit-scrollbar {
