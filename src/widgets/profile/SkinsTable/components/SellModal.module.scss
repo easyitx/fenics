@@ -1,0 +1,48 @@
+.modal {
+  :global(.modal) {
+    max-width: 400px;
+    width: 100%;
+  }
+
+  :global(.content) {
+    padding: 0;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+}
+
+.description {
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+@media (max-width: 425px) {
+  .content {
+    padding: var(--spacing-lg);
+    gap: var(--spacing-md);
+  }
+
+  .skinPreview {
+    :global(.skinCardLive) {
+      width: 100px;
+      height: 70px;
+    }
+  }
+
+  .sellButton,
+  .cancelButton {
+    height: 44px;
+  }
+}

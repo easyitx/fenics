@@ -6,6 +6,7 @@ import { SkinCard } from "@/entities/skin";
 import { mockSkins } from "@/mocks/profile";
 import { SkinData } from "@/mocks/cases";
 import { ReplaceSkinModal } from "./ReplaceSkinModal";
+import { SellModal } from "./SellModal";
 import styles from "../ui/SkinsTable.module.scss";
 
 interface InventoryGridProps {
@@ -21,6 +22,9 @@ export const InventoryGrid: React.FC<InventoryGridProps> = ({
 }) => {
   const [isReplaceModalOpen, setIsReplaceModalOpen] = useState(false);
   const [selectedSkinForReplace, setSelectedSkinForReplace] =
+    useState<SkinData | null>(null);
+  const [isSellModalOpen, setIsSellModalOpen] = useState(false);
+  const [selectedSkinForSell, setSelectedSkinForSell] =
     useState<SkinData | null>(null);
 
   const handleReplaceClick = (skin: SkinData) => {
@@ -39,6 +43,22 @@ export const InventoryGrid: React.FC<InventoryGridProps> = ({
     }
   };
 
+  const handleSellClick = (skin: SkinData) => {
+    setSelectedSkinForSell(skin);
+    setIsSellModalOpen(true);
+  };
+
+  const handleSellModalClose = () => {
+    setIsSellModalOpen(false);
+    setSelectedSkinForSell(null);
+  };
+
+  const handleSell = () => {
+    if (selectedSkinForSell) {
+      onItemAction("sell", selectedSkinForSell.id);
+    }
+  };
+
   return (
     <>
       <div className={styles.skinsGrid}>
@@ -49,7 +69,7 @@ export const InventoryGrid: React.FC<InventoryGridProps> = ({
               <div className={styles.hoverActions}>
                 <Button
                   className={styles.actionButton}
-                  onClick={() => onItemAction("sell", skin.id)}
+                  onClick={() => handleSellClick(skin)}
                 >
                   <Image
                     src="/icons/shopping.svg"
@@ -105,6 +125,13 @@ export const InventoryGrid: React.FC<InventoryGridProps> = ({
         onClose={handleReplaceModalClose}
         selectedSkin={selectedSkinForReplace}
         onReplace={handleReplace}
+      />
+
+      <SellModal
+        isOpen={isSellModalOpen}
+        onClose={handleSellModalClose}
+        onConfirm={handleSell}
+        skin={selectedSkinForSell}
       />
     </>
   );
