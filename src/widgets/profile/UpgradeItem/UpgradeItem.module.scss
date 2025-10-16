@@ -40,14 +40,15 @@
 .skinsContainer {
   display: flex;
   align-items: center;
-  gap: var(--spacing-sm);
+  gap: var(--spacing-xs);
   justify-content: center;
 }
 
 .skinWrapper {
-  flex: 1;
   max-width: 200px;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .skinWrapperMobile {
@@ -69,7 +70,6 @@
   .skinsContainer {
     gap: var(--spacing-xs);
     align-items: center;
-    justify-content: space-between;
   }
 
   .skinWrapper {

@@ -17,8 +17,8 @@
 
 .topBar {
   display: grid;
-  grid-template-columns: 0.9fr 1fr;
-  gap: var(--spacing-sm);
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: var(--spacing-md);
 
   @media (max-width: 1024px) {
     flex-direction: column;
@@ -75,10 +75,11 @@
   border-radius: var(--radius-md);
   padding: var(--spacing-md);
   flex-direction: column;
-  gap: var(--spacing-sm);
+  gap: var(--spacing-md);
   flex: 1;
   min-width: 300px;
   max-width: 400px;
+  height: 140px;
   width: 100%;
 
   @media (max-width: 768px) {
