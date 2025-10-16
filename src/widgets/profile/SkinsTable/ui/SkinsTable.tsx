@@ -26,9 +26,14 @@ export function SkinsTable({ className }: SkinsTableProps) {
 
   const handleItemAction = (
     action: "sell" | "withdraw" | "replace",
-    itemId: string
+    itemId: string,
+    replacementId?: string
   ) => {
-    console.log(`${action} item ${itemId}`);
+    console.log(
+      `${action} item ${itemId}${
+        replacementId ? ` with replacement ${replacementId}` : ""
+      }`
+    );
   };
 
   const handleAddLink = () => {

@@ -133,6 +133,13 @@
   * {
     @apply border-border outline-ring/50;
   }
+
+  * {
+    font-family: var(--font-proxima-nova), sans-serif;
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+  }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -223,5 +230,13 @@
   }
   .font-black {
     font-weight: var(--font-weight-black);
+  }
+
+  [data-portal] {
+    font-family: var(--font-proxima-nova), sans-serif;
+
+    * {
+      font-family: inherit;
+    }
   }
 }
