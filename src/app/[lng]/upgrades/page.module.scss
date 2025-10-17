@@ -185,13 +185,6 @@
     min-width: 150px;
     min-height: 120px;
   }
-
-  @media (max-width: 480px) {
-    width: 50%;
-    height: 45%;
-    min-width: 120px;
-    min-height: 100px;
-  }
 }
 
 .diamondIcon {
@@ -448,4 +441,402 @@
   .circular-progress__content {
     gap: var(--spacing-xs);
   }
+}
+
+.containerMobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .container {
+    display: none;
+  }
+  .gridContainer {
+    display: none;
+  }
+  .containerMobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-md);
+  }
+
+  .zoneMobile {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-md);
+  }
+
+  .initialMobile {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    min-width: 0;
+    min-height: 0;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    z-index: 5;
+
+    button {
+      border-radius: var(--radius-full);
+      height: 40px;
+      margin-bottom: var(--spacing-lg);
+    }
+  }
+
+  .initialMobileImg {
+    background-image: url("/upgrades/initialMob.svg");
+  }
+
+  .initialAddedMob {
+    background-image: url("/upgrades/initialAddedMob.svg");
+  }
+
+  .addedMobBlureIcon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    bottom: 0%;
+    transform: translateX(-50%);
+    border-radius: var(--radius-2xl);
+    z-index: 1;
+  }
+
+  .initialWonMob {
+    background-image: url("/upgrades/initialAddedMob.svg");
+  }
+
+  .initialLosedMob {
+    background-image: url("/upgrades/initialAddedMob.svg");
+  }
+
+  .mobileProgressContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 42.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .mobileUpgradeProgress {
+    width: 48%;
+    height: 48%;
+  }
+
+  .mobileUpgradeButton {
+    border-radius: var(--radius-full) !important;
+    height: 40px;
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .upgradeResultTextMob {
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .initialBtnMob {
+    width: 50%;
+    height: 50px;
+    aspect-ratio: 1 / 1;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .convertIcon {
+    width: 38px;
+    height: 38px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+  }
+
+  .convertIconContainer {
+    width: 38px;
+    height: 38px;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-xs);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .convertIconContainerAdded {
+    background-color: var(--color-primary);
+  }
+
+  .convertIconContainerLosed {
+    background-color: var(--color-text-red);
+  }
+
+  .convertIconContainerWon {
+    background-color: var(--color-text-green);
+  }
+
+  .itemsZoneMobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    width: 100%;
+    padding: var(--spacing-sm) 0;
+    position: relative;
+  }
+
+  .itemZoneMobile {
+    border-radius: var(--radius-2xl);
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    max-width: 100%;
+    max-height: 100%;
+    background: rgba(0, 0, 0, 0.25);
+    padding: var(--spacing-md);
+    position: relative;
+  }
+
+  .itemMob {
+    border-radius: var(--radius-2xl);
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    padding: var(--spacing-xs);
+  }
+
+  .itemMobInitial {
+    border: 5px solid var(--color-surface);
+  }
+
+  .itemMobAdded {
+    border: 5px solid var(--color-text-primary);
+  }
+  .itemMobLosed {
+    border: 5px solid var(--color-text-red);
+  }
+  .itemMobWon {
+    border: 5px solid var(--color-text-green);
+  }
+
+  .addIcon {
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+  }
+
+  .initialLogoIcon {
+    width: 40%;
+    height: 40%;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    z-index: 4;
+  }
+
+  .initialText {
+    text-align: center;
+  }
+
+  .toggleButtonsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-xs);
+    width: 100%;
+  }
+
+  .balanceWidgetMobile {
+    width: 100% !important;
+    max-width: 100%;
+    margin-top: var(--spacing-sm);
+    padding-bottom: var(--spacing-sm) !important;
+  }
+}
+
+// Mobile grid container styles
+.gridContainerMobile {
+  display: none;
+}
+
+.mobileTabs {
+  display: flex;
+  border-radius: 0;
+  padding: 0;
+  gap: 0;
+  width: 50%;
+  overflow: hidden;
+}
+
+.mobileTab {
+  flex: 1;
+  background: transparent;
+  background: var(--color-surface);
+  border: none;
+  border-radius: 0;
+  padding: var(--spacing-sm) var(--spacing-sm) !important;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  text-align: center;
+  position: relative;
+
+  &:first-child {
+    border-top-left-radius: var(--radius-md);
+  }
+
+  &:last-child {
+    border-top-right-radius: var(--radius-md);
+  }
+
+  &.active {
+    background: var(--color-primary);
+  }
+}
+
+.mobileTabText {
+  white-space: nowrap;
+}
+
+.mobileGridItem {
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  padding: 0 var(--spacing-xs);
+}
+
+@media (max-width: 768px) {
+  .gridContainer {
+    display: none;
+  }
+
+  .gridContainerMobile {
+    display: block;
+    padding: 0 var(--spacing-md) var(--spacing-md) var(--spacing-md);
+  }
+
+  .mobileTab {
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+
+  .mobileGridItem {
+    border-radius: 0;
+    padding-bottom: var(--spacing-xs);
+  }
+
+  .filters {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    height: auto;
+  }
+
+  .inputContainer {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xs);
+    width: 100%;
+  }
+
+  .input {
+    height: 35px;
+    width: 100% !important;
+    font-size: var(--font-size-sm);
+  }
+
+  .inventoryContainer {
+    height: auto;
+  }
+
+  .skinsGrid {
+    max-height: calc(100px * 3 + var(--spacing-xs) * 3 + var(--spacing-sm) * 2);
+    padding: var(--spacing-sm);
+    gap: var(--spacing-xs);
+  }
+
+  .skinCardWrapper {
+    :global(.skinCardLive) {
+      width: 100px;
+      height: 70px;
+    }
+    :global(.skinCardLivePrice) {
+      font-size: var(--font-size-xs);
+    }
+  }
+}
+
+.convertIcon {
+  margin: var(--spacing-sm) 0;
+  align-self: center;
+}
+
+.selectedSkinImage {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.minusIcon {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.selectedSkinName {
+  text-align: center;
+  margin-top: var(--spacing-xs);
+}
+
+.selectedSkinShortName {
+  text-align: center;
+  margin-top: 2px;
+}
+
+.selectedSkinPrice {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  background: var(--color-text-white);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xs);
 }

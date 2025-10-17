@@ -20,7 +20,13 @@ export const ToggleButtons: React.FC<ToggleButtonsProps> = ({
         } ${styles.leftButton}`}
         onClick={() => onTabChange("skin")}
       >
-        <Image src="/icons/gun.svg" alt="Skin" width={30} height={30} />
+        <Image
+          src="/icons/gun.svg"
+          alt="Skin"
+          width={30}
+          height={30}
+          className={styles.icon}
+        />
         <Typography
           weight="semibold"
           color={activeTab === "skin" ? "white" : "secondary"}
@@ -34,7 +40,13 @@ export const ToggleButtons: React.FC<ToggleButtonsProps> = ({
         } ${styles.rightButton}`}
         onClick={() => onTabChange("balance")}
       >
-        <Image src="/icons/wallet.svg" alt="Balance" width={30} height={30} />
+        <Image
+          src="/icons/wallet.svg"
+          alt="Balance"
+          width={30}
+          height={30}
+          className={styles.icon}
+        />
         <Typography
           weight="semibold"
           color={activeTab === "balance" ? "white" : "secondary"}

@@ -10,7 +10,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, endIcon, ...props }, ref) => {
     if (endIcon) {
       return (
-        <div className="relative">
+        <div className="relative w-full">
           <input
             type={type}
             className={cn(

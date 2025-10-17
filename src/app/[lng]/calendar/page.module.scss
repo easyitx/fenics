@@ -1,0 +1,48 @@
+@use "../../../shared/styles/cards_mixins" as *;
+
+.bonusesContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  width: 100%;
+  height: 100vh;
+  padding: 1rem;
+  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 100vh;
+  }
+}
+
+.bonusCard {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.tg {
+    background-image: url("/bonuses/tg.svg");
+  }
+
+  &.vk {
+    background-image: url("/bonuses/vk.svg");
+  }
+
+  @media (max-width: 768px) {
+    min-height: 400px;
+  }
+
+  @media (max-width: 480px) {
+    min-height: 350px;
+  }
+}
