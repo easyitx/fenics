@@ -420,7 +420,7 @@ export default function Upgrades() {
                 disabled={isSpinning}
                 className={styles.mobileUpgradeButton}
               >
-                {isSpinning ? "Вращение..." : "Апгрейд"}{" "}
+                Апгрейд{" "}
                 <Image
                   src="/upgrades/diamond.svg"
                   alt="upgrade"
